@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "YouCon – De studievereniging voor jonge constructeurs",
+    "description": "YouCon verbindt studenten en jonge constructeurs met excursies, thema-avonden en een netwerk in de constructieve wereld."
+  },
+  "nav": {
+    "association": "Vereniging",
+    "activities": "Activiteiten",
+    "join": "Word lid",
+    "partners": "Verenigingen",
+    "contact": "Contact",
+    "login": "Inloggen",
+    "menu": "Menu",
+    "language": "Taal"
+  },
+  "home": {
+    "eyebrow": "Studievereniging voor jonge constructeurs",
+    "title": "Bouw je netwerk in de constructieve wereld",
+    "intro": "YouCon brengt studenten en jonge constructeurs samen op de bouwplaats, bij thema-avonden en tijdens de borrel. Leer van vakgenoten en ontdek de projecten van morgen.",
+    "ctaActivities": "Bekijk activiteiten",
+    "ctaJoin": "Word lid",
+    "pillarsTitle": "Wat we doen",
+    "pillars": [
+      {
+        "title": "Excursies",
+        "text": "Achter de schermen bij bijzondere bouwprojecten, met uitleg van de constructeurs zelf."
+      },
+      {
+        "title": "Thema-avonden",
+        "text": "Verdieping in actuele onderwerpen zoals transformatie, nieuwe materialen en digitalisering."
+      },
+      {
+        "title": "Netwerk",
+        "text": "Ontmoet studenten en jonge professionals van ingenieursbureaus, aannemers en opleidingen."
+      }
+    ],
+    "upcomingTitle": "Activiteiten",
+    "allActivities": "Alle activiteiten"
+  },
+  "association": {
+    "title": "Vereniging",
+    "intro": "YouCon is de studievereniging voor jonge en toekomstige constructeurs.",
+    "missionTitle": "Missie",
+    "missionText": "Nog aan te vullen: de missie van YouCon.",
+    "boardTitle": "Bestuur",
+    "boardText": "Nog aan te vullen: de huidige bestuursleden.",
+    "historyTitle": "Geschiedenis",
+    "historyText": "Nog aan te vullen: de geschiedenis van YouCon."
+  },
+  "activities": {
+    "title": "Activiteiten",
+    "intro": "Excursies, thema-avonden en events voor jonge constructeurs.",
+    "past": "Geweest",
+    "register": "Inschrijven",
+    "registerSoon": "Inschrijven via de website komt binnenkort.",
+    "englishSpoken": "Engelstalig",
+    "types": {
+      "excursion": "Excursie",
+      "theme-evening": "Thema-avond",
+      "event": "Event"
+    }
+  },
+  "join": {
+    "title": "Word lid",
+    "intro": "Word lid van YouCon en blijf op de hoogte van alle excursies en thema-avonden.",
+    "comingSoon": "Online aanmelden komt binnenkort. Neem tot die tijd contact met ons op."
+  },
+  "partners": {
+    "title": "Studie- en vakverenigingen",
+    "intro": "YouCon werkt samen met studie- en vakverenigingen in de bouw.",
+    "comingSoon": "Overzicht volgt."
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Vragen, ideeën voor een excursie of wil je samenwerken? Laat het ons weten.",
+    "emailLabel": "E-mail"
+  },
+  "login": {
+    "title": "Inloggen",
+    "comingSoon": "Inloggen voor leden en bestuur komt binnenkort."
+  },
+  "footer": {
+    "tagline": "De studievereniging voor jonge constructeurs.",
+    "newsletterTitle": "Nieuwsbrief",
+    "newsletterText": "Aanmelden voor de nieuwsbrief komt binnenkort."
+  },
+  "notFound": {
+    "title": "Pagina niet gevonden",
+    "text": "Deze pagina bestaat niet (meer).",
+    "back": "Naar de homepage"
+  }
+}

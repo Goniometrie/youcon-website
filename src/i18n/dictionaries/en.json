@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "YouCon – The study association for young structural engineers",
+    "description": "YouCon connects students and young structural engineers through site visits, theme evenings and a network in structural engineering."
+  },
+  "nav": {
+    "association": "Association",
+    "activities": "Activities",
+    "join": "Join",
+    "partners": "Associations",
+    "contact": "Contact",
+    "login": "Log in",
+    "menu": "Menu",
+    "language": "Language"
+  },
+  "home": {
+    "eyebrow": "Study association for young structural engineers",
+    "title": "Build your network in structural engineering",
+    "intro": "YouCon brings students and young structural engineers together on site, at theme evenings and over drinks. Learn from peers and discover the projects of tomorrow.",
+    "ctaActivities": "See activities",
+    "ctaJoin": "Join YouCon",
+    "pillarsTitle": "What we do",
+    "pillars": [
+      {
+        "title": "Site visits",
+        "text": "Behind the scenes at remarkable construction projects, explained by the engineers themselves."
+      },
+      {
+        "title": "Theme evenings",
+        "text": "Deep dives into current topics such as transformation, new materials and digitalisation."
+      },
+      {
+        "title": "Network",
+        "text": "Meet students and young professionals from engineering firms, contractors and universities."
+      }
+    ],
+    "upcomingTitle": "Activities",
+    "allActivities": "All activities"
+  },
+  "association": {
+    "title": "Association",
+    "intro": "YouCon is the study association for young and future structural engineers.",
+    "missionTitle": "Mission",
+    "missionText": "To be added: YouCon's mission.",
+    "boardTitle": "Board",
+    "boardText": "To be added: the current board members.",
+    "historyTitle": "History",
+    "historyText": "To be added: the history of YouCon."
+  },
+  "activities": {
+    "title": "Activities",
+    "intro": "Site visits, theme evenings and events for young structural engineers.",
+    "past": "Past",
+    "register": "Register",
+    "registerSoon": "Registering through the website is coming soon.",
+    "englishSpoken": "English-spoken",
+    "types": {
+      "excursion": "Site visit",
+      "theme-evening": "Theme evening",
+      "event": "Event"
+    }
+  },
+  "join": {
+    "title": "Join YouCon",
+    "intro": "Become a member of YouCon and stay up to date on all site visits and theme evenings.",
+    "comingSoon": "Online sign-up is coming soon. Until then, please get in touch."
+  },
+  "partners": {
+    "title": "Study and professional associations",
+    "intro": "YouCon works together with study and professional associations in construction.",
+    "comingSoon": "Overview coming soon."
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Questions, ideas for a site visit or want to collaborate? Let us know.",
+    "emailLabel": "Email"
+  },
+  "login": {
+    "title": "Log in",
+    "comingSoon": "Logging in for members and the board is coming soon."
+  },
+  "footer": {
+    "tagline": "The study association for young structural engineers.",
+    "newsletterTitle": "Newsletter",
+    "newsletterText": "Newsletter sign-up is coming soon."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "This page does not exist (anymore).",
+    "back": "Back to the homepage"
+  }
+}
