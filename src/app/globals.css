@@ -1,28 +1,39 @@
 @import "tailwindcss";
 
-/* YouCon brand colours (green/teal from the current house style). */
-:root {
-  --background: #ffffff;
-  --foreground: #14201a;
-  --muted: #f3f6f4;
-  --muted-foreground: #55645c;
-  --border: #dde5e0;
-  --brand: #357b49;
-  --brand-foreground: #ffffff;
-  --accent: #64a4b1;
+/*
+ * YouCon huisstijl — kleuren gemeten uit het logo (public/brand/youcon-logo.png).
+ * Zie docs/huisstijl.md. Light-only, net als het logo.
+ */
+@theme {
+  /* Teal-facetten van de "Y" en "C", licht → donker (vervangt Tailwinds teal) */
+  --color-teal-*: initial;
+  --color-teal-100: #87cfce;
+  --color-teal-200: #76bbc0;
+  --color-teal-300: #66a6af;
+  --color-teal-400: #56929d;
+  --color-teal-500: #447d8e;
+  --color-teal-600: #34687d;
+  --color-teal-700: #244b5a;
+  --color-teal-800: #17323d;
+
+  /* Grijze facetten van "o u o n" */
+  --color-grey-100: #cccccc;
+  --color-grey-200: #b4b4b4;
+  --color-grey-300: #a0a0a0;
+  --color-grey-400: #8c8c8c;
+  --color-grey-500: #787878;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0d1411;
-    --foreground: #e8efea;
-    --muted: #16201b;
-    --muted-foreground: #9aaba1;
-    --border: #26332c;
-    --brand: #4fa368;
-    --brand-foreground: #0d1411;
-    --accent: #7fbdc9;
-  }
+:root {
+  --background: #ffffff;
+  --foreground: #17323d;
+  --muted: #efefef;
+  --muted-foreground: #5a6a70;
+  --border: #dde3e5;
+  --brand: #34687d;
+  --brand-hover: #447d8e;
+  --brand-foreground: #ffffff;
+  --accent: #64a4b1;
 }
 
 @theme inline {
@@ -32,13 +43,23 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
   --color-brand-foreground: var(--brand-foreground);
   --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-open-sans);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* Laat decoratieve facetten naar links uitvloeien. */
+.fade-left {
+  mask-image: linear-gradient(to right, transparent, #000 45%);
+}
+
+/* Schuine sectierand, geleend van de diagonale vouwen in het logo. */
+.edge-slant {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3rem), 0 100%);
 }

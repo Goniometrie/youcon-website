@@ -17,7 +17,7 @@ export function LanguageSwitcher({
   return (
     <div
       aria-label={label}
-      className="flex rounded-full border border-border p-0.5 text-xs font-semibold uppercase"
+      className="flex rounded-md border border-border p-0.5 text-xs font-bold uppercase"
     >
       {locales.map((value) => (
         <Link
@@ -27,8 +27,8 @@ export function LanguageSwitcher({
           aria-current={value === locale ? "true" : undefined}
           className={
             value === locale
-              ? "rounded-full bg-foreground px-2 py-1 text-background"
-              : "rounded-full px-2 py-1 text-muted-foreground hover:text-foreground"
+              ? "rounded bg-teal-600 px-2 py-1 text-white"
+              : "rounded px-2 py-1 text-muted-foreground hover:text-brand"
           }
         >
           {value}

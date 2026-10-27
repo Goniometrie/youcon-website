@@ -21,7 +21,7 @@ export default async function AssociationPage() {
         <div className="grid gap-10 md:grid-cols-3">
           {blocks.map((block) => (
             <div key={block.id} id={block.id}>
-              <h2 className="text-xl font-semibold">{block.title}</h2>
+              <h2 className="text-xl font-bold text-teal-700">{block.title}</h2>
               <p className="mt-2 text-muted-foreground">{block.text}</p>
             </div>
           ))}

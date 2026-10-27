@@ -18,7 +18,7 @@ export default async function JoinPage() {
         <p className="text-muted-foreground">{dict.join.comingSoon}</p>
         <Link
           href={`/${locale}${routes.contact}`}
-          className="mt-6 inline-block rounded-full bg-brand px-6 py-3 font-semibold text-brand-foreground hover:opacity-90"
+          className="mt-6 inline-block rounded-md bg-brand px-6 py-3 font-bold text-brand-foreground transition-colors hover:bg-brand-hover"
         >
           {dict.nav.contact}
         </Link>
