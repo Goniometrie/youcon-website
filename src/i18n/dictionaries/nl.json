@@ -10,6 +10,7 @@
     "partners": "Verenigingen",
     "contact": "Contact",
     "login": "Inloggen",
+    "account": "Mijn account",
     "menu": "Menu",
     "language": "Taal"
   },
@@ -91,6 +92,40 @@
     "submitting": "Bezig met inloggen…",
     "invalid": "Het e-mailadres of wachtwoord klopt niet.",
     "forgotten": "Wachtwoord vergeten of nog geen account? Mail naar"
+  },
+  "account": {
+    "title": "Mijn account",
+    "intro": "Je gegevens bij YouCon, je naam en je wachtwoord.",
+    "details": "Gegevens",
+    "email": "E-mailadres",
+    "role": "Rol",
+    "roles": {
+      "member": "Lid",
+      "board": "Bestuur",
+      "admin": "Webbeheer"
+    },
+    "since": "Account sinds",
+    "emailHint": "Wil je een ander e-mailadres? Mail naar",
+    "name": "Naam",
+    "nameLabel": "Volledige naam",
+    "nameSave": "Naam opslaan",
+    "nameSaved": "Je naam is opgeslagen.",
+    "nameFailed": "Opslaan is niet gelukt. Probeer het later opnieuw.",
+    "password": "Wachtwoord wijzigen",
+    "currentPassword": "Huidig wachtwoord",
+    "newPassword": "Nieuw wachtwoord",
+    "newPasswordHint": "Minimaal {min} tekens.",
+    "confirmPassword": "Herhaal nieuw wachtwoord",
+    "passwordSave": "Wachtwoord wijzigen",
+    "saving": "Bezig met opslaan…",
+    "passwordSaved": "Je wachtwoord is gewijzigd.",
+    "passwordErrors": {
+      "current": "Je huidige wachtwoord klopt niet.",
+      "short": "Je nieuwe wachtwoord moet minimaal {min} tekens hebben.",
+      "mismatch": "De nieuwe wachtwoorden zijn niet hetzelfde.",
+      "same": "Kies een ander wachtwoord dan je huidige.",
+      "failed": "Wijzigen is niet gelukt. Probeer het later opnieuw."
+    }
   },
   "admin": {
     "title": "Beheer",

@@ -96,6 +96,9 @@ async function AccountLinks({ locale, dict }: { locale: Locale; dict: Dictionary
           {dict.admin.title}
         </Link>
       )}
+      <Link href={`/${locale}${routes.account}`} className="font-bold hover:underline">
+        {dict.nav.account}
+      </Link>
       <form action={signOut.bind(null, locale)}>
         <button type="submit" className="cursor-pointer font-bold hover:underline">
           {dict.admin.signOut}

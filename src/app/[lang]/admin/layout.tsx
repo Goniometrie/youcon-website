@@ -43,7 +43,13 @@ async function AdminShell({ children }: { children: React.ReactNode }) {
             {t.title}
           </Link>
           <span className="text-muted-foreground">
-            {t.signedInAs} <span className="font-semibold text-foreground">{profile.full_name || profile.email}</span>
+            {t.signedInAs}{" "}
+            <Link
+              href={`/${locale}${routes.account}`}
+              className="font-semibold text-foreground hover:text-brand hover:underline"
+            >
+              {profile.full_name || profile.email}
+            </Link>
           </span>
           <div className="ml-auto flex items-center gap-5">
             <Link href={`/${locale}`} className="font-semibold text-body hover:text-brand">

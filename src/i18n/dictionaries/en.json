@@ -10,6 +10,7 @@
     "partners": "Associations",
     "contact": "Contact",
     "login": "Log in",
+    "account": "My account",
     "menu": "Menu",
     "language": "Language"
   },
@@ -91,6 +92,40 @@
     "submitting": "Logging in…",
     "invalid": "The email address or password is incorrect.",
     "forgotten": "Forgot your password or need an account? Email"
+  },
+  "account": {
+    "title": "My account",
+    "intro": "Your YouCon details, your name and your password.",
+    "details": "Details",
+    "email": "Email address",
+    "role": "Role",
+    "roles": {
+      "member": "Member",
+      "board": "Board",
+      "admin": "Web admin"
+    },
+    "since": "Account since",
+    "emailHint": "Need a different email address? Email",
+    "name": "Name",
+    "nameLabel": "Full name",
+    "nameSave": "Save name",
+    "nameSaved": "Your name has been saved.",
+    "nameFailed": "Saving didn't work. Please try again later.",
+    "password": "Change password",
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "newPasswordHint": "At least {min} characters.",
+    "confirmPassword": "Repeat new password",
+    "passwordSave": "Change password",
+    "saving": "Saving…",
+    "passwordSaved": "Your password has been changed.",
+    "passwordErrors": {
+      "current": "Your current password is incorrect.",
+      "short": "Your new password needs at least {min} characters.",
+      "mismatch": "The new passwords don't match.",
+      "same": "Choose a password different from your current one.",
+      "failed": "Changing it didn't work. Please try again later."
+    }
   },
   "admin": {
     "title": "Admin",
