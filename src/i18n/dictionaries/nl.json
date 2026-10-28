@@ -5,7 +5,7 @@
   },
   "nav": {
     "association": "Vereniging",
-    "activities": "Activiteiten",
+    "activities": "Agenda",
     "join": "Word lid",
     "partners": "Verenigingen",
     "contact": "Contact",
@@ -13,29 +13,35 @@
     "menu": "Menu",
     "language": "Taal"
   },
+  "header": {
+    "tagline": "Dé studievereniging voor jonge constructeurs",
+    "home": "YouCon, naar de homepage"
+  },
   "home": {
-    "eyebrow": "Studievereniging voor jonge constructeurs",
-    "title": "Bouw je netwerk in de constructieve wereld",
-    "intro": "YouCon brengt studenten en jonge constructeurs samen op de bouwplaats, bij thema-avonden en tijdens de borrel. Leer van vakgenoten en ontdek de projecten van morgen.",
-    "ctaActivities": "Bekijk activiteiten",
-    "ctaJoin": "Word lid",
-    "pillarsTitle": "Wat we doen",
-    "pillars": [
-      {
-        "title": "Excursies",
-        "text": "Achter de schermen bij bijzondere bouwprojecten, met uitleg van de constructeurs zelf."
-      },
-      {
-        "title": "Thema-avonden",
-        "text": "Verdieping in actuele onderwerpen zoals transformatie, nieuwe materialen en digitalisering."
-      },
-      {
-        "title": "Netwerk",
-        "text": "Ontmoet studenten en jonge professionals van ingenieursbureaus, aannemers en opleidingen."
-      }
-    ],
-    "upcomingTitle": "Activiteiten",
-    "allActivities": "Alle activiteiten"
+    "agenda": {
+      "title": "Agenda",
+      "next": "Eerstvolgende activiteit",
+      "time": "Tijd",
+      "location": "Locatie",
+      "partner": "Partner",
+      "addToCalendar": "Zet in agenda",
+      "all": "Volledige agenda"
+    },
+    "community": {
+      "eyebrow": "Studievereniging voor jonge constructeurs",
+      "title": "Van collegezaal tot bouwplaats.",
+      "titleAccent": "Samen.",
+      "text": "YouCon brengt studenten en jonge constructeurs samen. Je leert van vakgenoten, kijkt mee op bijzondere bouwprojecten en bouwt een netwerk op dat je hele loopbaan meegaat.",
+      "board": "Maak kennis met het bestuur"
+    },
+    "newsletter": {
+      "title": "Mis geen excursie meer",
+      "text": "Nieuwe activiteiten staan vaak snel vol. Met de nieuwsbrief krijg je ze als eerste in je inbox.",
+      "email": "E-mailadres",
+      "placeholder": "naam@voorbeeld.nl",
+      "submit": "Aanmelden",
+      "comingSoon": "Aanmelden voor de nieuwsbrief komt binnenkort."
+    }
   },
   "association": {
     "title": "Vereniging",
@@ -53,7 +59,7 @@
     "past": "Geweest",
     "register": "Inschrijven",
     "registerSoon": "Inschrijven via de website komt binnenkort.",
-    "englishSpoken": "Engelstalig",
+    "englishSpoken": "English-spoken",
     "types": {
       "excursion": "Excursie",
       "theme-evening": "Thema-avond",
@@ -78,11 +84,6 @@
   "login": {
     "title": "Inloggen",
     "comingSoon": "Inloggen voor leden en bestuur komt binnenkort."
-  },
-  "footer": {
-    "tagline": "De studievereniging voor jonge constructeurs.",
-    "newsletterTitle": "Nieuwsbrief",
-    "newsletterText": "Aanmelden voor de nieuwsbrief komt binnenkort."
   },
   "notFound": {
     "title": "Pagina niet gevonden",

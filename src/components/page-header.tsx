@@ -9,7 +9,7 @@ export function PageHeader({ title, intro }: { title: string; intro?: string }) 
         greys
         className="pointer-events-none absolute inset-y-0 right-0 h-full w-full opacity-20 fade-left md:w-1/2 md:opacity-80"
       />
-      <div className="relative mx-auto max-w-6xl px-4 pt-14 pb-20 sm:px-6">
+      <div className="relative mx-auto max-w-site px-4 pt-14 pb-20 sm:px-6">
         <h1 className="text-3xl font-extrabold tracking-tight text-teal-700 sm:text-5xl">
           {title}
         </h1>
@@ -23,14 +23,21 @@ export function PageHeader({ title, intro }: { title: string; intro?: string }) 
 
 export function Section({ children }: { children: React.ReactNode }) {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">{children}</section>
+    <section className="mx-auto max-w-site px-4 py-12 sm:px-6">{children}</section>
   );
 }
 
 /** Sectietitel met een klein gevouwen driehoekje ervoor. */
-export function SectionTitle({ children }: { children: React.ReactNode }) {
+export function SectionTitle({
+  children,
+  className = "text-2xl text-teal-700",
+}: {
+  children: React.ReactNode;
+  /** Grootte en kleur van de kop. */
+  className?: string;
+}) {
   return (
-    <h2 className="flex items-center gap-3 text-2xl font-extrabold tracking-tight text-teal-700">
+    <h2 className={`flex items-center gap-3 font-extrabold tracking-tight ${className}`}>
       <svg viewBox="0 0 12 20" aria-hidden="true" className="h-5 w-3 shrink-0">
         <polygon points="0,0 12,0 12,20" fill="#87cfce" />
         <polygon points="0,0 12,20 0,20" fill="#447d8e" />
