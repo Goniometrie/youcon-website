@@ -4,7 +4,7 @@ import { useActionState } from "react";
 import { describedBy, Field, inputClass } from "@/components/admin/fields";
 import { buttonClass } from "@/components/button";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { type NameState, type PasswordState, updateName, updatePassword } from "./actions";
+import { type PasswordState, type ProfileState, updatePassword, updateProfile } from "./actions";
 import { MIN_PASSWORD_LENGTH } from "./password";
 
 type T = Dictionary["account"];
@@ -24,21 +24,29 @@ function Notice({ tone, children }: { tone: "success" | "error"; children: React
   );
 }
 
-export function NameForm({
+export function ProfileForm({
   t,
   firstName,
   lastName,
+  company,
+  birthDate,
+  today,
 }: {
   t: T;
   firstName: string;
   lastName: string;
+  company: string;
+  birthDate: string;
+  /** YYYY-MM-DD, the latest date the birth date picker allows. */
+  today: string;
 }) {
-  const [state, action, pending] = useActionState<NameState, FormData>(updateName, {});
+  const [state, action, pending] = useActionState<ProfileState, FormData>(updateProfile, {});
+  const birthDateError = state.invalidBirthDate ? t.birthDateError : undefined;
 
   return (
     <form action={action} className="mt-6 flex flex-col gap-5">
-      {state.saved && <Notice tone="success">{t.nameSaved}</Notice>}
-      {state.failed && <Notice tone="error">{t.nameFailed}</Notice>}
+      {state.saved && <Notice tone="success">{t.profileSaved}</Notice>}
+      {state.failed && <Notice tone="error">{t.profileFailed}</Notice>}
       <div className="grid gap-5 sm:grid-cols-2">
         <Field id="first_name" label={t.firstName}>
           <input
@@ -60,9 +68,31 @@ export function NameForm({
             className={inputClass}
           />
         </Field>
+        <Field id="company" label={t.company} hint={t.companyHint}>
+          <input
+            {...describedBy("company", undefined, t.companyHint)}
+            type="text"
+            autoComplete="organization"
+            maxLength={120}
+            defaultValue={state.values?.company ?? company}
+            className={inputClass}
+          />
+        </Field>
+        <Field id="birth_date" label={t.birthDate} hint={t.birthDateHint} error={birthDateError}>
+          <input
+            {...describedBy("birth_date", birthDateError, t.birthDateHint)}
+            type="date"
+            autoComplete="bday"
+            required
+            min="1900-01-01"
+            max={today}
+            defaultValue={state.values?.birth_date ?? birthDate}
+            className={inputClass}
+          />
+        </Field>
       </div>
       <button type="submit" disabled={pending} className={submitClass}>
-        {pending ? t.saving : t.nameSave}
+        {pending ? t.saving : t.profileSave}
       </button>
     </form>
   );

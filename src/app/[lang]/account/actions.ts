@@ -1,18 +1,45 @@
 "use server";
 
 import { refresh } from "next/cache";
+import { today } from "@/lib/activities";
 import { getCurrentProfile } from "@/lib/auth";
 import { createSessionClient } from "@/lib/supabase/server";
 import { MIN_PASSWORD_LENGTH } from "./password";
 
-type Name = { first_name: string; last_name: string };
-export type NameState = { saved?: boolean; failed?: boolean; values?: Name };
+type ProfileValues = {
+  first_name: string;
+  last_name: string;
+  company: string;
+  birth_date: string;
+};
+export type ProfileState = {
+  saved?: boolean;
+  failed?: boolean;
+  invalidBirthDate?: boolean;
+  values?: ProfileValues;
+};
 
-export async function updateName(_state: NameState, formData: FormData): Promise<NameState> {
-  const values: Name = {
-    first_name: String(formData.get("first_name") ?? "").trim(),
-    last_name: String(formData.get("last_name") ?? "").trim(),
+/** A real calendar date (YYYY-MM-DD) from 1900 up to today. */
+function isValidBirthDate(value: string) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const date = new Date(`${value}T00:00:00Z`);
+  const roundTrips = !Number.isNaN(date.getTime()) && date.toISOString().startsWith(value);
+  return roundTrips && value >= "1900-01-01" && value <= today();
+}
+
+export async function updateProfile(
+  _state: ProfileState,
+  formData: FormData,
+): Promise<ProfileState> {
+  const field = (name: keyof ProfileValues) => String(formData.get(name) ?? "").trim();
+  const values: ProfileValues = {
+    first_name: field("first_name"),
+    last_name: field("last_name"),
+    company: field("company"),
+    birth_date: field("birth_date"),
   };
+  if (!isValidBirthDate(values.birth_date)) return { invalidBirthDate: true, values };
+
   const profile = await getCurrentProfile();
   if (!profile) return { failed: true, values };
 
@@ -21,7 +48,12 @@ export async function updateName(_state: NameState, formData: FormData): Promise
   // row came back.
   const { data, error } = await supabase
     .from("profiles")
-    .update({ first_name: values.first_name || null, last_name: values.last_name || null })
+    .update({
+      first_name: values.first_name || null,
+      last_name: values.last_name || null,
+      company: values.company || null,
+      birth_date: values.birth_date,
+    })
     .eq("id", profile.id)
     .select("id");
   if (error || !data?.length) return { failed: true, values };
