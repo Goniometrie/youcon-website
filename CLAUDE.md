@@ -9,8 +9,10 @@ Nieuwe website voor YouCon, de studievereniging voor jonge constructeurs. Vervan
 - **Next.js 16** (App Router, `cacheComponents` aan), **React 19**, **TypeScript**
 - **Tailwind CSS v4** — kleuren als tokens in `src/app/globals.css` (`teal-*`, `grey-*`, `brand`, `accent`, `muted`, …); gebruik die in plaats van losse hex-waarden
 - **Huisstijl:** lees `docs/huisstijl.md` vóór je UI bouwt (logo, kleuren uit het logo, Open Sans, driehoek-vormtaal)
-- **Hosting:** Vercel (gepland)
-- **Backend:** Supabase (gepland) voor auth, leden, activiteiten, inschrijvingen en nieuwsbrief
+- **Repo:** Git + GitHub (`Goniometrie/youcon-website`); `main` = productie, werk via featurebranches en PR's
+- **Hosting:** Vercel (gepland): push naar `main` → productie, PR → preview-deploy
+- **Backend:** Supabase (gepland, gekozen boven Firebase) voor auth, leden, activiteiten, inschrijvingen en nieuwsbrief. Postgres met Row Level Security, EU-regio
+- Keuzes en onderbouwing: `docs/tech-stack.md`
 
 ## Commando's
 

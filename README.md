@@ -2,7 +2,7 @@
 
 De nieuwe website van **YouCon**, de studievereniging voor jonge constructeurs. Deze site vervangt de huidige WordPress-site op [youcon.nu](https://youcon.nu).
 
-Gebouwd met Next.js 16, React 19, TypeScript en Tailwind CSS v4. Tweetalig (NL/EN).
+Gebouwd met Next.js 16, React 19, TypeScript en Tailwind CSS v4. Tweetalig (NL/EN). Hosting op Vercel, database en inloggen via Supabase. Zie [docs/tech-stack.md](docs/tech-stack.md) voor de keuzes en de onderbouwing.
 
 ## Aan de slag
 
