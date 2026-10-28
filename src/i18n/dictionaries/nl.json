@@ -51,9 +51,35 @@
     "missionTitle": "Missie",
     "missionText": "Nog aan te vullen: de missie van YouCon.",
     "boardTitle": "Bestuur",
-    "boardText": "Nog aan te vullen: de huidige bestuursleden.",
+    "boardText": "Het bestuur organiseert de activiteiten en is je eerste aanspreekpunt.",
     "historyTitle": "Geschiedenis",
     "historyText": "Nog aan te vullen: de geschiedenis van YouCon."
+  },
+  "board": {
+    "title": "Bestuur",
+    "intro": "Zeven jonge constructeurs die naast hun werk YouCon draaiende houden. Zij organiseren de excursies en thema-avonden en zijn je eerste aanspreekpunt.",
+    "term": "Bestuur 2026–2027",
+    "groupPhotoAlt": "Groepsfoto van het bestuur van YouCon",
+    "groupPhotoSoon": "Groepsfoto volgt",
+    "photoSoon": "Foto volgt",
+    "membersTitle": "Maak kennis",
+    "roles": {
+      "chair": "Voorzitter",
+      "secretary": "Secretaris",
+      "treasurer": "Penningmeester",
+      "member": "Algemeen lid"
+    },
+    "bios": {
+      "tom": "Tom is BIM-constructeur bij BUCC en noemt zichzelf een moderne constructeur. De bouw ziet hij als een complexe puzzel, technisch én niet-technisch. Hij zet zich in voor automatiseren, kennisdeling en versimpelen, en laat graag zien wat AI voor het constructeursvak kan betekenen.",
+      "lise": "Lise is constructeur bij IMd Raadgevende Ingenieurs en studeerde aan de TU Delft. Als secretaris houdt ze de ledenadministratie en de mailbox bij, en zorgt ze dat afspraken en notulen op papier staan.",
+      "femke": "Femke is constructeur bij Witteveen+Bos en studeerde af op het hergebruik van in het werk gestort beton in nieuwbouwprojecten. Duurzaamheid en hergebruik van materialen lopen als een rode draad door haar werk. Daarbij combineert ze nieuwe technieken met traditionele kennis, want natuurkunde blijft de basis van elke constructie.",
+      "janPeter": "Jan-Peter is bruggenconstructeur bij Arup, waar hij al tien jaar werkt. Hij vertelt studenten graag hoe het is om constructeur te zijn, zoals bij de meet&greet op de Dag van de Constructeur.",
+      "coen": "Coen is constructeur bij Haskoning en studeerde aan de TU Delft.",
+      "paul": "Paul is constructeur bij Pieters en groeit door naar projectleider. Met een master Building Engineering aan de TU Delft en een MBA combineert hij techniek met management. Een van zijn grote projecten is De Waaren: de herontwikkeling van het voormalige V&D-pand in Leiden, een rijksmonument dat een gebouw wordt om te werken, winkelen en verblijven.",
+      "florine": "Florine is constructeur bij Movares."
+    },
+    "contactTitle": "Vragen voor het bestuur?",
+    "contactText": "Een idee voor een excursie, interesse in samenwerken of zin om zelf mee te organiseren? Mail ons, we horen het graag."
   },
   "activities": {
     "title": "Activiteiten",

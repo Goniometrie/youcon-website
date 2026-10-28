@@ -8,6 +8,7 @@ export const site = {
 export const routes = {
   home: "",
   association: "/vereniging",
+  board: "/bestuur",
   activities: "/activiteiten",
   join: "/lid-worden",
   partners: "/verenigingen",
