@@ -1,6 +1,9 @@
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
+import { LanguageBadge } from "@/components/language-badge";
+import { Registration } from "@/components/registration";
 import { formatActivityDate, type Activity } from "@/lib/activities";
+import { routes } from "@/lib/site";
 
 export function ActivityCard({
   activity,
@@ -40,11 +43,7 @@ export function ActivityCard({
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2 text-[11px] font-bold uppercase tracking-wider">
             <span className="text-teal-500">{dict.types[activity.type]}</span>
-            {activity.englishSpoken && (
-              <span className="rounded bg-teal-100/25 px-1.5 py-0.5 text-teal-600">
-                {dict.englishSpoken}
-              </span>
-            )}
+            <LanguageBadge language={activity.language} dict={dict} className="text-teal-600" />
           </div>
           <h3 className="mt-1 pr-6 text-lg leading-snug font-bold text-teal-800">
             {activity.title[locale]}
@@ -58,17 +57,14 @@ export function ActivityCard({
 
       <p className="flex-1 px-6 text-sm leading-6">{activity.summary[locale]}</p>
 
-      <div className="px-6 pt-4 pb-6">
-        {activity.registrationUrl ? (
-          <a
-            href={activity.registrationUrl}
-            className="text-sm font-bold text-brand hover:underline"
-          >
-            {dict.register} →
-          </a>
-        ) : (
-          <span className="h-5 block" />
-        )}
+      <div className="flex min-h-5 flex-wrap items-center gap-x-3 gap-y-1 px-6 pt-4 pb-6">
+        <Registration
+          activity={activity}
+          locale={locale}
+          dict={dict}
+          returnTo={`/${locale}${routes.activities}#${activity.slug}`}
+          variant="link"
+        />
       </div>
     </article>
   );

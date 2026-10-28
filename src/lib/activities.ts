@@ -4,8 +4,10 @@ import type { Tables } from "@/lib/supabase/database.types";
 import { createPublicClient } from "@/lib/supabase/server";
 
 export type ActivityType = Tables<"activities">["type"];
+export type ActivityLanguage = Tables<"activities">["language"];
 
 export type Activity = {
+  id: string;
   slug: string;
   type: ActivityType;
   /** YYYY-MM-DD */
@@ -15,9 +17,12 @@ export type Activity = {
   location: string;
   /** Short name of the partner organising it with us. */
   partner?: string;
-  englishSpoken?: boolean;
-  /** External sign-up link until registration lives in this site. */
+  /** The language the activity is held in. */
+  language: ActivityLanguage;
+  /** External sign-up link; without one, people sign up on this site. */
   registrationUrl?: string;
+  /** Maximum number of participants; omitted when there is none. */
+  capacity?: number;
   /** A path in `public/` or a Supabase Storage URL. */
   image?: { src: string; alt: Record<Locale, string> };
   title: Record<Locale, string>;
@@ -30,14 +35,16 @@ export const ACTIVITIES_TAG = "activities";
 /** Map a database row to an Activity; empty English fields fall back to Dutch. */
 export function toActivity(row: Tables<"activities">): Activity {
   return {
+    id: row.id,
     slug: row.slug,
     type: row.type,
     date: row.date,
     time: row.time?.slice(0, 5),
     location: row.location,
     partner: row.partner ?? undefined,
-    englishSpoken: row.english_spoken,
+    language: row.language,
     registrationUrl: row.registration_url ?? undefined,
+    capacity: row.capacity ?? undefined,
     image: row.image_url
       ? {
           src: row.image_url,

@@ -32,6 +32,8 @@ export default async function EditActivityPage({
           confirmMessage={t.activities.confirmDelete.replace("{title}", activity.title_nl)}
           label={t.activities.delete}
           pendingLabel={t.activities.deleting}
+          yes={t.activities.confirmYes}
+          no={t.activities.confirmNo}
         />
       </div>
     </AdminFormPage>

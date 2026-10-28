@@ -19,14 +19,15 @@ export type Database = {
     Tables: {
       activities: {
         Row: {
+          capacity: number | null
           created_at: string
           created_by: string | null
           date: string
-          english_spoken: boolean
           id: string
           image_alt_en: string | null
           image_alt_nl: string | null
           image_url: string | null
+          language: Database["public"]["Enums"]["activity_language"]
           location: string
           partner: string | null
           published: boolean
@@ -41,14 +42,15 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          capacity?: number | null
           created_at?: string
           created_by?: string | null
           date: string
-          english_spoken?: boolean
           id?: string
           image_alt_en?: string | null
           image_alt_nl?: string | null
           image_url?: string | null
+          language?: Database["public"]["Enums"]["activity_language"]
           location: string
           partner?: string | null
           published?: boolean
@@ -63,14 +65,15 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          capacity?: number | null
           created_at?: string
           created_by?: string | null
           date?: string
-          english_spoken?: boolean
           id?: string
           image_alt_en?: string | null
           image_alt_nl?: string | null
           image_url?: string | null
+          language?: Database["public"]["Enums"]["activity_language"]
           location?: string
           partner?: string | null
           published?: boolean
@@ -130,14 +133,54 @@ export type Database = {
         }
         Relationships: []
       }
+      registrations: {
+        Row: {
+          activity_id: string
+          created_at: string
+          profile_id: string
+        }
+        Insert: {
+          activity_id: string
+          created_at?: string
+          profile_id?: string
+        }
+        Update: {
+          activity_id?: string
+          created_at?: string
+          profile_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "registrations_activity_id_fkey"
+            columns: ["activity_id"]
+            isOneToOne: false
+            referencedRelation: "activities"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "registrations_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      registration_counts: {
+        Args: never
+        Returns: {
+          activity_id: string
+          count: number
+        }[]
+      }
     }
     Enums: {
+      activity_language: "nl" | "en-optional" | "en"
       activity_type: "excursion" | "theme-evening" | "event"
       app_role: "member" | "board" | "admin"
     }
@@ -225,6 +268,7 @@ export type Enums<
 export const Constants = {
   public: {
     Enums: {
+      activity_language: ["nl", "en-optional", "en"],
       activity_type: ["excursion", "theme-evening", "event"],
       app_role: ["member", "board", "admin"],
     },
