@@ -68,7 +68,7 @@ Componenten:
 - `FacetButton` (`src/components/button.tsx`) — parallellogramknop voor de hoofd-CTA "Word lid", met links en rechts twee driehoeken die bij hover en `focus-visible` gestaffeld van kleur wisselen.
 - `buttonClass(variant)` — gewone knoppen van 48px hoog: `primary` (teal-600 vlak), `outline` (teal-600 rand), `ghost` (lichte rand, voor secundaire acties zoals "Zet in agenda").
 - `FeaturedActivity` / `AgendaRow` (`src/components/agenda.tsx`) — de uitgelichte activiteit met foto en datumblok, en de agendaregels met datumtegel en schuivend pijltje.
-- `PhotoMosaic` — 4×2 staande tegels, elk diagonaal gedeeld in een foto en een gekleurd facet; kolom 2 en 4 zakken 30%.
+- `PhotoMosaic` — 4×2 staande tegels, elk diagonaal gedeeld in een foto en een gekleurd facet; kolom 2 en 4 zakken 30%. Het facet vervaagt langzaam en komt in een andere kleur terug in de tegenovergestelde hoek (en weer terug), zodat de hele foto een keer te zien is. Cyclus van 30s per tegel, fades van ~2,4s, tegels om de ~4s verspreid (`facet-swap-out`/`-in` in `globals.css`).
 - `NewsletterBand` — nieuwsbriefband op `muted`; het formulier staat uit tot er een backend is.
 
 - `Facets` (`src/components/facets.tsx`) — decoratief driehoekspatroon in logostijl, met `.fade-left` naar links uitvloeiend.
@@ -79,6 +79,6 @@ Componenten:
 
 ## Beweging
 
-Animaties zijn kort en functioneel: het logo vouwt op, driehoekjes verkleuren gestaffeld (0–0,21 s vertraging, 0,3 s duur), pijltjes schuiven 4px. Bij `prefers-reduced-motion: reduce` staan alle animaties en overgangen uit en staat het logo direct volledig in beeld (regel onderaan `globals.css`).
+Animaties zijn kort en functioneel: het logo vouwt op, driehoekjes verkleuren gestaffeld (0–0,21 s vertraging, 0,3 s duur), pijltjes schuiven 4px. De facetten in het fotomozaïek wisselen heel rustig en nooit allemaal tegelijk. Bij `prefers-reduced-motion: reduce` staan alle animaties en overgangen uit en staat het logo direct volledig in beeld (regel onderaan `globals.css`).
 
 Let op bij nieuwe keyframes: Tailwind v4 / Lightning CSS maakt van een `animation`-shorthand zonder naam `animation: none`. Gebruik losse eigenschappen (`animation-name`, `-duration`, `-timing-function`, `-fill-mode`).
