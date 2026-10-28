@@ -1,20 +1,30 @@
 import type { Metadata } from "next";
 import { PageHeader, Section } from "@/components/page-header";
-import { getDictionary } from "@/i18n/dictionaries";
+import { getDictionary, getLocale } from "@/i18n/dictionaries";
+import { site } from "@/lib/site";
+import { LoginForm } from "./login-form";
 
 export async function generateMetadata(): Promise<Metadata> {
   return { title: (await getDictionary()).login.title };
 }
 
-// Placeholder until Supabase Auth is added.
 export default async function LoginPage() {
-  const { login: t } = await getDictionary();
+  const [{ login: t }, locale] = await Promise.all([getDictionary(), getLocale()]);
 
   return (
     <>
-      <PageHeader title={t.title} />
+      <PageHeader title={t.title} intro={t.intro} />
       <Section>
-        <p className="text-muted-foreground">{t.comingSoon}</p>
+        <div className="max-w-md">
+          <LoginForm locale={locale} t={t} />
+          <p className="mt-8 text-sm text-muted-foreground">
+            {t.forgotten}{" "}
+            <a href={`mailto:${site.email}`} className="font-bold text-brand hover:underline">
+              {site.email}
+            </a>
+            .
+          </p>
+        </div>
       </Section>
     </>
   );
