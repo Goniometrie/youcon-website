@@ -2,6 +2,7 @@ import type { StaticImageData } from "next/image";
 import type { Locale } from "@/i18n/config";
 import betonevent from "../../public/images/betonevent.jpg";
 import cpoLeeuwenhoek from "../../public/images/cpo-leeuwenhoek.jpg";
+import gietijzerPerron from "../../public/images/gietijzer-perron.jpg";
 
 export type ActivityType = "excursion" | "theme-evening" | "event";
 
@@ -26,6 +27,26 @@ export type Activity = {
 // Static seed data taken from the current youcon.nu. This moves to Supabase
 // once activities can be created and joined through the site.
 const activities: Activity[] = [
+  {
+    slug: "thema-avond-gietijzer",
+    type: "theme-evening",
+    date: "2027-01-27",
+    time: "17:30",
+    location: "Movares, Utrecht",
+    partner: "Movares",
+    image: {
+      src: gietijzerPerron,
+      alt: {
+        nl: "Gietijzeren spanten van een overkapping boven een stationsperron",
+        en: "Cast iron trusses of a canopy over a railway platform",
+      },
+    },
+    title: { nl: "Thema-avond gietijzer", en: "Theme evening: cast iron" },
+    summary: {
+      nl: "Wim van 't Land van Movares vertelt over gietijzer als constructiemateriaal. Van stationskappen tot bruggen: ontdek hoe je met dit historische materiaal rekent. Schrijf je in, stel je vragen en praat na op de borrel!",
+      en: "Wim van 't Land of Movares talks about cast iron as a structural material. From station canopies to bridges: find out how to work with this historic material. Sign up, bring your questions and stay for drinks afterwards!",
+    },
+  },
   {
     slug: "excursie-zuidasdok",
     type: "excursion",
@@ -85,9 +106,11 @@ export async function getActivities(): Promise<Activity[]> {
 /** The next activity to feature, plus the ones after it, in date order. */
 export async function getAgenda(limit = 3) {
   // TODO: filter on `date >= today` once real data comes from Supabase. Until
-  // then the seed activities (all in the past) stand in, as in the design.
-  const [featured, ...rest] = [...activities].sort((a, b) => a.date.localeCompare(b.date));
-  return { featured, upcoming: rest.slice(0, limit) };
+  // then the newest seed activity is featured and the older ones stand in for
+  // what comes after it, as in the design.
+  const sorted = [...activities].sort((a, b) => a.date.localeCompare(b.date));
+  const featured = sorted.pop()!;
+  return { featured, upcoming: sorted.slice(0, limit) };
 }
 
 /** Format an activity's date in Dutch or English, in Amsterdam time. */
