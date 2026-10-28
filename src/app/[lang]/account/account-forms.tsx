@@ -24,23 +24,43 @@ function Notice({ tone, children }: { tone: "success" | "error"; children: React
   );
 }
 
-export function NameForm({ t, name }: { t: T; name: string }) {
+export function NameForm({
+  t,
+  firstName,
+  lastName,
+}: {
+  t: T;
+  firstName: string;
+  lastName: string;
+}) {
   const [state, action, pending] = useActionState<NameState, FormData>(updateName, {});
 
   return (
     <form action={action} className="mt-6 flex flex-col gap-5">
       {state.saved && <Notice tone="success">{t.nameSaved}</Notice>}
       {state.failed && <Notice tone="error">{t.nameFailed}</Notice>}
-      <Field id="full_name" label={t.nameLabel}>
-        <input
-          {...describedBy("full_name")}
-          type="text"
-          autoComplete="name"
-          maxLength={120}
-          defaultValue={state.name ?? name}
-          className={inputClass}
-        />
-      </Field>
+      <div className="grid gap-5 sm:grid-cols-2">
+        <Field id="first_name" label={t.firstName}>
+          <input
+            {...describedBy("first_name")}
+            type="text"
+            autoComplete="given-name"
+            maxLength={60}
+            defaultValue={state.values?.first_name ?? firstName}
+            className={inputClass}
+          />
+        </Field>
+        <Field id="last_name" label={t.lastName} hint={t.lastNameHint}>
+          <input
+            {...describedBy("last_name", undefined, t.lastNameHint)}
+            type="text"
+            autoComplete="family-name"
+            maxLength={80}
+            defaultValue={state.values?.last_name ?? lastName}
+            className={inputClass}
+          />
+        </Field>
+      </div>
       <button type="submit" disabled={pending} className={submitClass}>
         {pending ? t.saving : t.nameSave}
       </button>

@@ -66,7 +66,11 @@ async function AccountDetails({ dict, locale }: { dict: Dictionary; locale: Loca
 
         <div className={card}>
           <SectionTitle className="text-xl text-teal-700">{t.name}</SectionTitle>
-          <NameForm t={t} name={profile.full_name ?? ""} />
+          <NameForm
+            t={t}
+            firstName={profile.first_name ?? ""}
+            lastName={profile.last_name ?? ""}
+          />
         </div>
 
         <div className={card}>

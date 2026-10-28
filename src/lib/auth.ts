@@ -5,7 +5,7 @@ import type { Tables } from "@/lib/supabase/database.types";
 
 export type Profile = Pick<
   Tables<"profiles">,
-  "id" | "email" | "full_name" | "role" | "created_at"
+  "id" | "email" | "first_name" | "last_name" | "full_name" | "role" | "created_at"
 >;
 
 /** The signed-in user's profile, or null. Reads the request (cookies). */
@@ -17,7 +17,7 @@ export const getCurrentProfile = cache(async (): Promise<Profile | null> => {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("id, email, full_name, role, created_at")
+    .select("id, email, first_name, last_name, full_name, role, created_at")
     .eq("id", userId)
     .single();
   return profile;
