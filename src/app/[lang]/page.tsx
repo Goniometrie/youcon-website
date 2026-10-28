@@ -68,7 +68,7 @@ export default async function HomePage() {
               {dict.nav.join}
             </Link>
             <Link
-              href={`/${locale}${routes.association}#bestuur`}
+              href={`/${locale}${routes.board}`}
               className={buttonClass("outline")}
             >
               {dict.home.community.board}

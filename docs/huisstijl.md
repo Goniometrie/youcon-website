@@ -69,6 +69,7 @@ Componenten:
 - `buttonClass(variant)` — gewone knoppen van 48px hoog: `primary` (teal-600 vlak), `outline` (teal-600 rand), `ghost` (lichte rand, voor secundaire acties zoals "Zet in agenda").
 - `FeaturedActivity` / `AgendaRow` (`src/components/agenda.tsx`) — de uitgelichte activiteit met foto en datumblok, en de agendaregels met datumtegel en schuivend pijltje.
 - `PhotoMosaic` — 4×2 staande tegels, elk diagonaal gedeeld in een foto en een gekleurd facet; kolom 2 en 4 zakken 30%. Het facet vervaagt langzaam en komt in een andere kleur terug in de tegenovergestelde hoek (en weer terug), zodat de hele foto een keer te zien is. Cyclus van 30s per tegel, fades van ~2,4s, tegels om de ~4s verspreid (`facet-swap-out`/`-in` in `globals.css`).
+- `BoardGroupPhoto` / `BoardMemberRow` (`src/components/board.tsx`) — bestuurspagina: groepsfoto half over de paginakop, met schuin label en gevouwen hoek; daaronder per bestuurslid een staand portret (4:5) en tekst, om en om van kant, met een gevouwen hoek die naar de tekst wijst. Zonder foto een rustig facettenvlak. Namen en foto's staan in `src/lib/board.ts`, functies (`board.roles`) en teksten per persoon (`board.bios`) in de dictionaries.
 - `NewsletterBand` — nieuwsbriefband op `muted`; het formulier staat uit tot er een backend is.
 
 - `Facets` (`src/components/facets.tsx`) — decoratief driehoekspatroon in logostijl, met `.fade-left` naar links uitvloeiend.

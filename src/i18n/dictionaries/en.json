@@ -51,9 +51,35 @@
     "missionTitle": "Mission",
     "missionText": "To be added: YouCon's mission.",
     "boardTitle": "Board",
-    "boardText": "To be added: the current board members.",
+    "boardText": "The board organises the activities and is your first point of contact.",
     "historyTitle": "History",
     "historyText": "To be added: the history of YouCon."
+  },
+  "board": {
+    "title": "Board",
+    "intro": "Seven young structural engineers who run YouCon alongside their work. They organise the excursions and theme evenings and are your first point of contact.",
+    "term": "Board 2026–2027",
+    "groupPhotoAlt": "Group photo of the YouCon board",
+    "groupPhotoSoon": "Group photo coming soon",
+    "photoSoon": "Photo coming soon",
+    "membersTitle": "Meet the board",
+    "roles": {
+      "chair": "Chair",
+      "secretary": "Secretary",
+      "treasurer": "Treasurer",
+      "member": "General board member"
+    },
+    "bios": {
+      "tom": "Tom is a BIM structural engineer at BUCC and calls himself a modern structural engineer. He sees construction as a complex puzzle, both technical and non-technical. He is committed to automation, knowledge sharing and simplification, and likes to show what AI can do for structural engineering.",
+      "lise": "Lise is a structural engineer at IMd Raadgevende Ingenieurs and studied at TU Delft. As secretary she manages the membership records and the mailbox, and makes sure agreements and minutes are written down.",
+      "femke": "Femke is a structural engineer at Witteveen+Bos and graduated on reusing cast-in-place concrete in new construction. Sustainability and the reuse of materials run through her work. She combines new techniques with traditional knowledge, because physics remains the basis of every structure.",
+      "janPeter": "Jan-Peter is a bridge engineer at Arup, where he has worked for ten years. He enjoys telling students what it is like to be a structural engineer, for example at the meet & greet at the Dag van de Constructeur.",
+      "coen": "Coen is a structural engineer at Haskoning and studied at TU Delft.",
+      "paul": "Paul is a structural engineer at Pieters, growing into a project leader role. With a master's in Building Engineering from TU Delft and an MBA, he combines engineering with management. One of his major projects is De Waaren: the redevelopment of the former V&D building in Leiden, a listed monument that is becoming a place to work, shop and stay.",
+      "florine": "Florine is a structural engineer at Movares."
+    },
+    "contactTitle": "Questions for the board?",
+    "contactText": "An idea for an excursion, interested in working together or keen to help organise? Email us, we'd love to hear from you."
   },
   "activities": {
     "title": "Activities",
