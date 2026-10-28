@@ -8,6 +8,7 @@ Gebouwd met Next.js 16, React 19, TypeScript en Tailwind CSS v4. Tweetalig (NL/E
 
 ```bash
 npm install
+cp .env.example .env.local   # vul de Supabase-URL en publishable key in
 npm run dev
 ```
 
@@ -26,8 +27,9 @@ Open daarna [http://localhost:3000](http://localhost:3000). Je wordt automatisch
 
 - [x] Basis: tweetalige structuur, layout, pagina's
 - [ ] Content overzetten van de oude site
-- [ ] Inloggen (Supabase Auth)
-- [ ] Activiteiten aanmaken en inschrijven
+- [x] Inloggen voor het bestuur en activiteiten beheren (Supabase)
+- [ ] Inloggen voor leden
+- [ ] Inschrijven voor activiteiten
 - [ ] Nieuwsbrief
 - [ ] Livegang op Vercel + domein
 

@@ -34,6 +34,11 @@ export default async function HomePage() {
               {agenda.upcoming.map((activity) => (
                 <AgendaRow key={activity.slug} activity={activity} locale={locale} dict={dict} />
               ))}
+              {agenda.upcoming.length === 0 && (
+                <p className="border-b border-divider py-[18px] text-body">
+                  {dict.home.agenda.empty}
+                </p>
+              )}
             </div>
             <Link
               href={`/${locale}${routes.activities}`}

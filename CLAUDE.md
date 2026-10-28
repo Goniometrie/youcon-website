@@ -11,7 +11,7 @@ Nieuwe website voor YouCon, de studievereniging voor jonge constructeurs. Vervan
 - **Huisstijl:** lees `docs/huisstijl.md` vóór je UI bouwt (logo, kleuren uit het logo, Open Sans, driehoek-vormtaal)
 - **Repo:** Git + GitHub (`Goniometrie/youcon-website`); `main` = productie, werk via featurebranches en PR's
 - **Hosting:** Vercel (gepland): push naar `main` → productie, PR → preview-deploy
-- **Backend:** Supabase (gepland, gekozen boven Firebase) voor auth, leden, activiteiten, inschrijvingen en nieuwsbrief. Postgres met Row Level Security, EU-regio
+- **Backend:** Supabase (gekozen boven Firebase), project `youcon-website` in eu-central-1: auth, profielen met rollen, activiteiten, foto-opslag. Inschrijvingen en nieuwsbrief volgen. Postgres met Row Level Security
 - Keuzes en onderbouwing: `docs/tech-stack.md`
 
 ## Commando's
@@ -23,10 +23,13 @@ Nieuwe website voor YouCon, de studievereniging voor jonge constructeurs. Vervan
 ## Structuur
 
 - `src/app/[lang]/` — alle pagina's; `[lang]` is het root-segment (`nl` | `en`) en bevat de root layout
-- `src/proxy.ts` — stuurt URL's zonder taalprefix door naar `/nl` of `/en` (Accept-Language)
+- `src/proxy.ts` — stuurt URL's zonder taalprefix door naar `/nl` of `/en` (Accept-Language); ververst de Supabase-sessie op `/admin` en `/inloggen` en stuurt niet-ingelogden van `/admin` naar inloggen
 - `src/i18n/` — `config.ts` (locales), `dictionaries.ts` (`getDictionary()`, `getLocale()` via `next/root-params`), `dictionaries/{nl,en}.json`
 - `src/components/` — gedeelde UI (header, footer, kaarten)
-- `src/lib/` — data en helpers; `activities.ts` is tijdelijke seed-data tot Supabase er is
+- `src/app/[lang]/admin/` — beheer voor bestuur/admin (activiteiten aanmaken, bewerken, verwijderen); `inloggen/` is de loginpagina
+- `src/lib/` — data en helpers; `activities.ts` leest activiteiten uit Supabase (`use cache` + tag `activities`), `auth.ts` geeft het ingelogde profiel
+- `src/lib/supabase/` — clients: `createSessionClient()` (als ingelogde gebruiker, leest cookies), `createPublicClient()` (anoniem, veilig in `use cache`), browser-client voor foto-uploads; `database.types.ts` is gegenereerd
+- `supabase/migrations/` — databaseschema en RLS-policies
 
 ## Conventies
 
@@ -35,11 +38,13 @@ Nieuwe website voor YouCon, de studievereniging voor jonge constructeurs. Vervan
 - URL-slugs zijn Nederlands en voor beide talen gelijk (`/en/activiteiten`). Routes staan in `src/lib/site.ts`.
 - Links altijd met taalprefix: `` `/${locale}${routes.x}` ``.
 - Nederlands is de standaardtaal.
+- Elke Server Action die data wijzigt roept eerst `requireStaff()` aan en daarna `updateTag("activities")`. RLS in de database is de echte beveiliging; UI-checks zijn extra.
+- Sessie lezen (cookies) alleen achter een `<Suspense>`-grens of in een Server Action (`cacheComponents`).
 
 ## Roadmap
 
 1. Content van de oude site overzetten (missie, bestuur, geschiedenis, verenigingen)
-2. Supabase koppelen + inloggen (leden en bestuur, rollen)
-3. Activiteiten aanmaken (bestuur, admin-pagina) en inschrijven (leden)
+2. ~~Supabase koppelen + inloggen voor bestuur, activiteiten beheren~~ (klaar)
+3. Inloggen voor leden en inschrijven voor activiteiten
 4. Nieuwsbrief-aanmelding
 5. Deploy op Vercel en domein youcon.nu overzetten

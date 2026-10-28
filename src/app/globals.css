@@ -41,6 +41,9 @@
   --brand-hover: #447d8e;
   --brand-foreground: #ffffff;
   --accent: #64a4b1;
+  /* Foutmeldingen in formulieren (geen logokleur; rood voor herkenbaarheid). */
+  --danger: #b42318;
+  --danger-muted: #fef3f2;
 }
 
 @theme inline {
@@ -56,6 +59,8 @@
   --color-brand-hover: var(--brand-hover);
   --color-brand-foreground: var(--brand-foreground);
   --color-accent: var(--accent);
+  --color-danger: var(--danger);
+  --color-danger-muted: var(--danger-muted);
   --font-sans: var(--font-open-sans);
 }
 

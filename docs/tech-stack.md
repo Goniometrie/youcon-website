@@ -45,19 +45,38 @@ Supabase levert de database (Postgres), het inloggen (Auth) en de beveiliging pe
 
 Firebase zou ook werken, maar ons datamodel is relationeel en Firebase wordt dan het lastigere van de twee.
 
-### Datamodel (eerste opzet)
+### Project
 
-- `profiles` — één rij per lid, gekoppeld aan `auth.users`; bevat naam, studie, vereniging en rol (`lid` | `bestuur` | `admin`)
-- `activities` — titel, omschrijving (NL/EN), datum, locatie, maximaal aantal plekken
-- `registrations` — koppelt een lid aan een activiteit (uniek per lid per activiteit)
-- `newsletter_subscribers` — e-mailadres en aanmelddatum, ook zonder account
+- Supabase-project `youcon-website` (ref `ufnafujtromrhiruvrjo`), regio eu-central-1 (Frankfurt).
+- Migraties staan in `supabase/migrations/`; de types in `src/lib/supabase/database.types.ts` (opnieuw genereren na een migratie).
 
-De tijdelijke seed-data in `src/lib/activities.ts` gaat naar de tabel `activities` zodra Supabase gekoppeld is.
+### Datamodel
+
+- `profiles` — één rij per account, automatisch aangemaakt bij een nieuwe gebruiker; `role` is `member`, `board` of `admin`
+- `activities` — soort, datum, tijd, locatie, partner, titel en omschrijving (NL verplicht, EN optioneel), foto, externe inschrijflink, `published` (concept of zichtbaar)
+- Storage-bucket `activity-images` — foto's die het bestuur via het beheer uploadt (publiek leesbaar)
+- Nog te bouwen: `registrations` (inschrijvingen) en `newsletter_subscribers`
+
+### Rechten (Row Level Security)
+
+| Wie                  | Activiteiten                               | Foto's           |
+| -------------------- | ------------------------------------------ | ---------------- |
+| Bezoeker / lid       | gepubliceerde lezen                        | lezen            |
+| Bestuur (`board`) en `admin` | alles lezen, aanmaken, wijzigen, verwijderen | uploaden en verwijderen |
+
+Een rol wijzig je alleen via het Supabase-dashboard of SQL, nooit vanuit de site.
+
+### Een bestuurslid toegang geven
+
+1. Supabase-dashboard → **Authentication → Users → Add user → Create new user**: e-mailadres en een wachtwoord, met **Auto Confirm User** aan.
+2. In de SQL-editor: `update public.profiles set role = 'board' where email = 'naam@voorbeeld.nl';`
+3. Het bestuurslid logt in op `/nl/inloggen` en komt in het beheer op `/nl/admin`.
 
 ### Omgevingsvariabelen
+
+Zie `.env.example`. Lokaal in `.env.local`; op Vercel in de projectinstellingen.
 
 ```
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
-SUPABASE_SECRET_KEY=        # alleen server-side, nooit met NEXT_PUBLIC_
 ```

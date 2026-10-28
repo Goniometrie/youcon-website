@@ -13,4 +13,7 @@ export const routes = {
   partners: "/verenigingen",
   contact: "/contact",
   login: "/inloggen",
+  admin: "/admin",
+  /** Append `/nieuw` or `/{id}`. */
+  adminActivities: "/admin/activiteiten",
 } as const;
