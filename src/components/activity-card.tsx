@@ -1,6 +1,6 @@
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
-import type { Activity } from "@/lib/activities";
+import { formatActivityDate, type Activity } from "@/lib/activities";
 
 export function ActivityCard({
   activity,
@@ -11,13 +11,14 @@ export function ActivityCard({
   locale: Locale;
   dict: Dictionary["activities"];
 }) {
-  const date = new Date(`${activity.date}T12:00:00Z`);
-  const intlLocale = locale === "nl" ? "nl-NL" : "en-GB";
   const fmt = (options: Intl.DateTimeFormatOptions) =>
-    new Intl.DateTimeFormat(intlLocale, { timeZone: "Europe/Amsterdam", ...options }).format(date);
+    formatActivityDate(activity, locale, options);
 
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-lg border border-border bg-white shadow-sm transition-shadow hover:shadow-md">
+    <article
+      id={activity.slug}
+      className="group relative flex scroll-mt-6 flex-col overflow-hidden rounded-lg border border-border bg-white shadow-sm transition-shadow hover:shadow-md"
+    >
       {/* Gevouwen hoekje rechtsboven */}
       <svg
         viewBox="0 0 40 40"
@@ -32,7 +33,7 @@ export function ActivityCard({
         <div className="flex w-14 shrink-0 flex-col self-start items-center rounded-md bg-teal-600 py-2 text-white">
           <span className="text-2xl leading-none font-extrabold">{fmt({ day: "numeric" })}</span>
           <span className="mt-1 text-[11px] font-semibold uppercase">
-            {fmt({ month: "short" }).replace(".", "")}
+            {fmt({ month: "short" })}
           </span>
           <span className="text-[10px] text-teal-100">{fmt({ year: "numeric" })}</span>
         </div>
@@ -40,7 +41,7 @@ export function ActivityCard({
           <div className="flex flex-wrap items-center gap-2 text-[11px] font-bold uppercase tracking-wider">
             <span className="text-teal-500">{dict.types[activity.type]}</span>
             {activity.englishSpoken && (
-              <span className="rounded bg-teal-100/40 px-1.5 py-0.5 text-teal-600">
+              <span className="rounded bg-teal-100/25 px-1.5 py-0.5 text-teal-600">
                 {dict.englishSpoken}
               </span>
             )}
