@@ -1,6 +1,7 @@
 import "server-only";
 import { createClient } from "@supabase/supabase-js";
 import { createServerClient } from "@supabase/ssr";
+import { io } from "next/cache";
 import { cookies } from "next/headers";
 import type { Database } from "./database.types";
 
@@ -14,6 +15,9 @@ const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!;
  */
 export async function createSessionClient() {
   const cookieStore = await cookies();
+  // Checking the session's expiry reads the current time, which a prefetch
+  // prerender (cookies already known) doesn't allow. Requests pass straight on.
+  await io();
 
   return createServerClient<Database>(url, key, {
     cookies: {

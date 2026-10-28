@@ -96,6 +96,8 @@ export type Database = {
       }
       profiles: {
         Row: {
+          birth_date: string | null
+          company: string | null
           created_at: string
           email: string
           first_name: string | null
@@ -105,6 +107,8 @@ export type Database = {
           role: Database["public"]["Enums"]["app_role"]
         }
         Insert: {
+          birth_date?: string | null
+          company?: string | null
           created_at?: string
           email: string
           first_name?: string | null
@@ -114,6 +118,8 @@ export type Database = {
           role?: Database["public"]["Enums"]["app_role"]
         }
         Update: {
+          birth_date?: string | null
+          company?: string | null
           created_at?: string
           email?: string
           first_name?: string | null

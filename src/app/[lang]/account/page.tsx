@@ -4,9 +4,10 @@ import { Suspense } from "react";
 import { PageHeader, Section, SectionTitle } from "@/components/page-header";
 import type { Locale } from "@/i18n/config";
 import { type Dictionary, getDictionary, getLocale } from "@/i18n/dictionaries";
+import { today } from "@/lib/activities";
 import { getCurrentProfile } from "@/lib/auth";
 import { routes, site } from "@/lib/site";
-import { NameForm, PasswordForm } from "./account-forms";
+import { PasswordForm, ProfileForm } from "./account-forms";
 
 // Everything below the header waits on the session; signed-out visitors are
 // redirected by the proxy.
@@ -65,11 +66,14 @@ async function AccountDetails({ dict, locale }: { dict: Dictionary; locale: Loca
         </div>
 
         <div className={card}>
-          <SectionTitle className="text-xl text-teal-700">{t.name}</SectionTitle>
-          <NameForm
+          <SectionTitle className="text-xl text-teal-700">{t.profile}</SectionTitle>
+          <ProfileForm
             t={t}
             firstName={profile.first_name ?? ""}
             lastName={profile.last_name ?? ""}
+            company={profile.company ?? ""}
+            birthDate={profile.birth_date ?? ""}
+            today={today()}
           />
         </div>
 
