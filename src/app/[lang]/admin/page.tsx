@@ -15,8 +15,11 @@ export default async function AdminPage({ searchParams }: PageProps<"/[lang]/adm
     getDictionary(),
     getLocale(),
     searchParams,
-    // RLS shows staff drafts too.
-    supabase.from("activities").select("*").order("date", { ascending: false }),
+    // RLS shows staff drafts too, and everyone's registrations.
+    supabase
+      .from("activities")
+      .select("*, registrations(count)")
+      .order("date", { ascending: false }),
   ]);
   if (error) throw error;
 
@@ -74,7 +77,7 @@ function AdminRow({
   locale,
   dict,
 }: {
-  row: Tables<"activities">;
+  row: Tables<"activities"> & { registrations: { count: number }[] };
   locale: Locale;
   dict: Dictionary;
 }) {
@@ -83,6 +86,7 @@ function AdminRow({
   const fmt = (options: Intl.DateTimeFormatOptions) =>
     formatActivityDate(activity, locale, options);
   const editHref = `/${locale}${routes.adminActivities}/${row.id}`;
+  const registrations = row.registrations[0]?.count ?? 0;
 
   return (
     <li className="flex flex-wrap items-center gap-x-5 gap-y-3 px-4 py-4 sm:px-6">
@@ -110,6 +114,20 @@ function AdminRow({
           {[fmt({ weekday: "short" }), activity.time ?? t.noTime, activity.location].join(" · ")}
         </p>
       </div>
+      {!row.registration_url && (
+        <Link
+          href={`${editHref}/aanmeldingen`}
+          className="text-sm font-bold whitespace-nowrap text-brand hover:underline"
+        >
+          {(row.capacity
+            ? t.registrationsOf
+            : registrations === 1
+              ? t.registrationsOne
+              : t.registrations)
+            .replace("{count}", String(registrations))
+            .replace("{capacity}", String(row.capacity))}
+        </Link>
+      )}
       <div className="flex items-center gap-2">
         <Link href={editHref} className={`${buttonClass("ghost")} min-h-10 px-4 text-sm`}>
           {t.edit}
@@ -120,6 +138,8 @@ function AdminRow({
           confirmMessage={t.confirmDelete.replace("{title}", activity.title[locale])}
           label={t.delete}
           pendingLabel={t.deleting}
+          yes={t.confirmYes}
+          no={t.confirmNo}
         />
       </div>
     </li>

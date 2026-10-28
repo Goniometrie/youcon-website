@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { buttonClass } from "@/components/button";
+import { LanguageBadge } from "@/components/language-badge";
+import { Registration } from "@/components/registration";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { calendarUrl, formatActivityDate, type Activity } from "@/lib/activities";
@@ -53,15 +55,15 @@ export function FeaturedActivity({
         </div>
 
         <div className="flex min-w-0 flex-[1_1_320px] flex-col gap-3.5">
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <span className="text-xs font-extrabold tracking-[0.14em] text-teal-500 uppercase">
               {dict.activities.types[activity.type]}
             </span>
-            {activity.englishSpoken && (
-              <span className="rounded bg-teal-100/25 px-2 py-0.5 text-xs font-bold text-brand">
-                {dict.activities.englishSpoken}
-              </span>
-            )}
+            <LanguageBadge
+              language={activity.language}
+              dict={dict.activities}
+              className="px-2 text-xs text-brand"
+            />
           </div>
           <h2 className="text-[clamp(28px,3vw,40px)] leading-[1.1] font-extrabold tracking-[-0.02em]">
             {activity.title[locale]}
@@ -78,13 +80,13 @@ export function FeaturedActivity({
             ))}
           </dl>
           <div className="mt-1.5 flex flex-wrap gap-3">
-            {/* TODO: inschrijven via de site zodra leden kunnen inloggen (Supabase). */}
-            <Link
-              href={activity.registrationUrl ?? `/${locale}${routes.login}`}
-              className={buttonClass("primary")}
-            >
-              {dict.activities.register}
-            </Link>
+            <Registration
+              activity={activity}
+              locale={locale}
+              dict={dict.activities}
+              returnTo={`/${locale}`}
+              variant="button"
+            />
             <a
               href={calendarUrl(activity, locale)}
               download={`${activity.slug}.ics`}
@@ -138,8 +140,15 @@ export function AgendaRow({
         </span>
       </span>
       <span className="min-w-0 flex-1">
-        <span className="block text-xs font-extrabold tracking-[0.12em] text-teal-500 uppercase">
-          {dict.activities.types[activity.type]}
+        <span className="flex flex-wrap items-center gap-2">
+          <span className="text-xs font-extrabold tracking-[0.12em] text-teal-500 uppercase">
+            {dict.activities.types[activity.type]}
+          </span>
+          <LanguageBadge
+            language={activity.language}
+            dict={dict.activities}
+            className="text-[11px] text-brand"
+          />
         </span>
         <span className="mt-0.5 block text-[17px] font-bold transition-colors group-hover:text-brand">
           {activity.title[locale]}

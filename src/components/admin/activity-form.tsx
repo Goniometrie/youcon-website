@@ -17,10 +17,11 @@ import { Constants, type Tables } from "@/lib/supabase/database.types";
 
 /** Form values for an existing activity, or the defaults for a new one. */
 function initialValues(row?: Tables<"activities">): ActivityValues {
-  if (!row) return { type: "excursion", published: "on" };
+  if (!row) return { type: "excursion", language: "nl", published: "on" };
   const text = (value: string | null) => value ?? "";
   return {
     type: row.type,
+    language: row.language,
     date: row.date,
     time: text(row.time).slice(0, 5),
     location: row.location,
@@ -30,10 +31,10 @@ function initialValues(row?: Tables<"activities">): ActivityValues {
     summary_nl: row.summary_nl,
     summary_en: text(row.summary_en),
     registration_url: text(row.registration_url),
+    capacity: row.capacity?.toString() ?? "",
     image_url: text(row.image_url),
     image_alt_nl: text(row.image_alt_nl),
     image_alt_en: text(row.image_alt_en),
-    english_spoken: row.english_spoken ? "on" : "",
     published: row.published ? "on" : "",
   };
 }
@@ -70,26 +71,22 @@ export function ActivityForm({
       )}
 
       <Card title={t.basics}>
-        <fieldset>
-          <legend className="text-sm font-bold">{t.type}</legend>
-          <div className="mt-2 flex flex-wrap gap-2">
-            {Constants.public.Enums.activity_type.map((type) => (
-              <label
-                key={type}
-                className="cursor-pointer rounded-md border-2 border-input bg-white px-4 py-2 font-semibold transition-colors has-checked:border-brand has-checked:bg-brand has-checked:text-white has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-teal-100"
-              >
-                <input
-                  type="radio"
-                  name="type"
-                  value={type}
-                  defaultChecked={values.type === type}
-                  className="sr-only"
-                />
-                {dict.activities.types[type]}
-              </label>
-            ))}
-          </div>
-        </fieldset>
+        <Choice
+          name="type"
+          legend={t.type}
+          options={Constants.public.Enums.activity_type}
+          labels={dict.activities.types}
+          value={values.type}
+        />
+
+        <Choice
+          name="language"
+          legend={t.language}
+          hint={t.languageHint}
+          options={Constants.public.Enums.activity_language}
+          labels={dict.activities.languages}
+          value={values.language}
+        />
 
         <Field id="title_nl" label={t.titleNl} error={error("title_nl")}>
           <input
@@ -155,8 +152,6 @@ export function ActivityForm({
           />
         </Field>
 
-        <Checkbox name="english_spoken" label={t.englishSpoken} checked={values.english_spoken} />
-
         <details open={hasEnglish} className="group rounded-md border border-divider">
           <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 font-bold [&::-webkit-details-marker]:hidden">
             <span aria-hidden="true" className="text-brand transition-transform group-open:rotate-90">
@@ -214,6 +209,17 @@ export function ActivityForm({
             className={inputClass}
           />
         </Field>
+        <Field id="capacity" label={t.capacity} hint={t.capacityHint} error={error("capacity")}>
+          <input
+            {...describedBy("capacity", error("capacity"), t.capacityHint)}
+            type="number"
+            inputMode="numeric"
+            min={1}
+            step={1}
+            defaultValue={values.capacity}
+            className={`${inputClass} max-w-40`}
+          />
+        </Field>
         <Checkbox
           name="published"
           label={t.published}
@@ -244,6 +250,47 @@ function Card({ title, children }: { title: string; children: React.ReactNode })
       <h2 className="text-lg font-extrabold">{title}</h2>
       <div className="mt-5 flex flex-col gap-5">{children}</div>
     </section>
+  );
+}
+
+/** A row of radio buttons styled as chips. */
+function Choice<T extends string>({
+  name,
+  legend,
+  hint,
+  options,
+  labels,
+  value,
+}: {
+  name: string;
+  legend: string;
+  hint?: string;
+  options: readonly T[];
+  labels: Record<T, string>;
+  value?: string;
+}) {
+  return (
+    <fieldset>
+      <legend className="text-sm font-bold">{legend}</legend>
+      {hint && <p className="mt-0.5 text-sm text-muted-foreground">{hint}</p>}
+      <div className="mt-2 flex flex-wrap gap-2">
+        {options.map((option) => (
+          <label
+            key={option}
+            className="cursor-pointer rounded-md border-2 border-input bg-white px-4 py-2 font-semibold transition-colors has-checked:border-brand has-checked:bg-brand has-checked:text-white has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-teal-100"
+          >
+            <input
+              type="radio"
+              name={name}
+              value={option}
+              defaultChecked={value === option}
+              className="sr-only"
+            />
+            {labels[option]}
+          </label>
+        ))}
+      </div>
+    </fieldset>
   );
 }
 

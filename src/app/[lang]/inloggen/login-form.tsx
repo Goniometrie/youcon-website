@@ -7,7 +7,16 @@ import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { signIn, type SignInState } from "./actions";
 
-export function LoginForm({ locale, t }: { locale: Locale; t: Dictionary["login"] }) {
+export function LoginForm({
+  locale,
+  t,
+  next,
+}: {
+  locale: Locale;
+  t: Dictionary["login"];
+  /** Page to return to after logging in. */
+  next?: string;
+}) {
   const [state, action, pending] = useActionState<SignInState, FormData>(
     signIn.bind(null, locale),
     {},
@@ -15,6 +24,7 @@ export function LoginForm({ locale, t }: { locale: Locale; t: Dictionary["login"
 
   return (
     <form action={action} className="flex flex-col gap-5">
+      {next && <input type="hidden" name="next" value={next} />}
       {state.error && (
         <p role="alert" className="rounded-md bg-danger-muted px-4 py-3 text-sm font-semibold text-danger">
           {t.invalid}

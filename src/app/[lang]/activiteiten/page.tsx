@@ -19,9 +19,6 @@ export default async function ActivitiesPage() {
     <>
       <PageHeader title={dict.activities.title} intro={dict.activities.intro} />
       <Section>
-        <p className="mb-8 text-sm text-muted-foreground">
-          {dict.activities.registerSoon}
-        </p>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {activities.map((activity) => (
             <ActivityCard
