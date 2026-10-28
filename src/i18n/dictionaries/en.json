@@ -5,7 +5,7 @@
   },
   "nav": {
     "association": "Association",
-    "activities": "Activities",
+    "activities": "Calendar",
     "join": "Join",
     "partners": "Associations",
     "contact": "Contact",
@@ -13,29 +13,35 @@
     "menu": "Menu",
     "language": "Language"
   },
+  "header": {
+    "tagline": "The study association for young structural engineers",
+    "home": "YouCon, go to the homepage"
+  },
   "home": {
-    "eyebrow": "Study association for young structural engineers",
-    "title": "Build your network in structural engineering",
-    "intro": "YouCon brings students and young structural engineers together on site, at theme evenings and over drinks. Learn from peers and discover the projects of tomorrow.",
-    "ctaActivities": "See activities",
-    "ctaJoin": "Join YouCon",
-    "pillarsTitle": "What we do",
-    "pillars": [
-      {
-        "title": "Site visits",
-        "text": "Behind the scenes at remarkable construction projects, explained by the engineers themselves."
-      },
-      {
-        "title": "Theme evenings",
-        "text": "Deep dives into current topics such as transformation, new materials and digitalisation."
-      },
-      {
-        "title": "Network",
-        "text": "Meet students and young professionals from engineering firms, contractors and universities."
-      }
-    ],
-    "upcomingTitle": "Activities",
-    "allActivities": "All activities"
+    "agenda": {
+      "title": "Calendar",
+      "next": "Next activity",
+      "time": "Time",
+      "location": "Location",
+      "partner": "Partner",
+      "addToCalendar": "Add to calendar",
+      "all": "Full calendar"
+    },
+    "community": {
+      "eyebrow": "Study association for young structural engineers",
+      "title": "From lecture hall to building site.",
+      "titleAccent": "Together.",
+      "text": "YouCon brings students and young structural engineers together. You learn from peers, get a look behind the scenes at remarkable construction projects and build a network that lasts your whole career.",
+      "board": "Meet the board"
+    },
+    "newsletter": {
+      "title": "Never miss a site visit",
+      "text": "New activities often fill up fast. With the newsletter, they land in your inbox first.",
+      "email": "Email address",
+      "placeholder": "name@example.com",
+      "submit": "Sign up",
+      "comingSoon": "Newsletter sign-up is coming soon."
+    }
   },
   "association": {
     "title": "Association",
@@ -78,11 +84,6 @@
   "login": {
     "title": "Log in",
     "comingSoon": "Logging in for members and the board is coming soon."
-  },
-  "footer": {
-    "tagline": "The study association for young structural engineers.",
-    "newsletterTitle": "Newsletter",
-    "newsletterText": "Newsletter sign-up is coming soon."
   },
   "notFound": {
     "title": "Page not found",

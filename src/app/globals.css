@@ -16,12 +16,16 @@
   --color-teal-700: #244b5a;
   --color-teal-800: #17323d;
 
-  /* Grijze facetten van "o u o n" */
+  /* Grijze facetten van "o u o n"; grey-50 is een afgeleide, lichtere tint */
+  --color-grey-50: #e0e0e0;
   --color-grey-100: #cccccc;
   --color-grey-200: #b4b4b4;
   --color-grey-300: #a0a0a0;
   --color-grey-400: #8c8c8c;
   --color-grey-500: #787878;
+
+  /* Inhoudsbreedte van header, secties en footer (1200px). */
+  --container-site: 75rem;
 }
 
 :root {
@@ -29,7 +33,10 @@
   --foreground: #17323d;
   --muted: #efefef;
   --muted-foreground: #5a6a70;
+  --body: #4a5b62;
   --border: #dde3e5;
+  --divider: #e3e8ea;
+  --input: #c5d2d6;
   --brand: #34687d;
   --brand-hover: #447d8e;
   --brand-foreground: #ffffff;
@@ -41,7 +48,10 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --color-body: var(--body);
   --color-border: var(--border);
+  --color-divider: var(--divider);
+  --color-input: var(--input);
   --color-brand: var(--brand);
   --color-brand-hover: var(--brand-hover);
   --color-brand-foreground: var(--brand-foreground);
@@ -62,4 +72,116 @@ body {
 /* Schuine sectierand, geleend van de diagonale vouwen in het logo. */
 .edge-slant {
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3rem), 0 100%);
+}
+
+/*
+ * Driehoeks- en parallellogramvormen voor knoppen, taalwisselaar en het
+ * fotomozaïek. `clip-slant` schuint beide zijkanten af over `--slant`.
+ */
+@utility clip-slant {
+  clip-path: polygon(var(--slant, 12px) 0, 100% 0, calc(100% - var(--slant, 12px)) 100%, 0 100%);
+}
+@utility clip-tri-up {
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+@utility clip-tri-down {
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+@utility clip-tri-tl {
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+@utility clip-tri-tr {
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+@utility clip-tri-bl {
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+@utility clip-tri-br {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+/*
+ * Origami-logo: elke driehoek vouwt open vanaf zijn vouwrand. Losse
+ * animation-eigenschappen, want een shorthand zonder naam wordt
+ * `animation: none` na minificatie.
+ */
+.fold polygon {
+  transform-box: fill-box;
+  opacity: 0;
+}
+.fold.play polygon {
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.25, 1);
+  animation-fill-mode: both;
+}
+.fold.play .fold-b {
+  transform-origin: 50% 100%;
+  animation-name: foldB;
+}
+.fold.play .fold-l {
+  transform-origin: 0% 50%;
+  animation-name: foldL;
+}
+.fold.play .fold-r {
+  transform-origin: 100% 50%;
+  animation-name: foldR;
+}
+@keyframes foldB {
+  0% { opacity: 0; transform: scaleY(0) skewX(-22deg); filter: brightness(1.7); }
+  30% { opacity: 1; }
+  100% { opacity: 1; transform: none; filter: none; }
+}
+@keyframes foldL {
+  0% { opacity: 0; transform: scaleX(0) skewY(-22deg); filter: brightness(1.7); }
+  30% { opacity: 1; }
+  100% { opacity: 1; transform: none; filter: none; }
+}
+@keyframes foldR {
+  0% { opacity: 0; transform: scaleX(0) skewY(22deg); filter: brightness(1.7); }
+  30% { opacity: 1; }
+  100% { opacity: 1; transform: none; filter: none; }
+}
+
+/*
+ * Fotomozaïek: per tegel vervaagt het gekleurde facet langzaam, de hele foto
+ * staat even vrij, en dan verschijnt een ander facet in de tegenovergestelde
+ * hoek (en weer terug). Cyclus van 30s met fades van ~2,4s; de vertraging per
+ * tegel staat inline.
+ */
+.facet-swap-out,
+.facet-swap-in {
+  animation-duration: 30s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+.facet-swap-out {
+  animation-name: facetSwapOut;
+}
+.facet-swap-in {
+  opacity: 0;
+  animation-name: facetSwapIn;
+}
+@keyframes facetSwapOut {
+  0%, 34% { opacity: 1; }
+  42%, 92% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes facetSwapIn {
+  0%, 48% { opacity: 0; }
+  56%, 78% { opacity: 1; }
+  86%, 100% { opacity: 0; }
+}
+
+/* Minder beweging: geen animaties of overgangen, logo direct volledig. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .fold polygon {
+    opacity: 1 !important;
+  }
 }

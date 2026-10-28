@@ -1,0 +1,82 @@
+// Het YouCon-logo als losse driehoeken, uitgelezen uit public/brand/youcon-logo.png
+// (viewBox 0 0 328.1 82.7). Per letter op volgorde van onder naar boven, zodat de
+// origami-animatie het logo "opbouwt". `fold` is de vouwrand, `delay` in seconden.
+
+export type LogoFacet = {
+  points: string;
+  fill: string;
+  fold: "bottom" | "left" | "right";
+  delay: number;
+};
+
+export const LOGO_VIEWBOX = "0 0 328.1 82.7";
+
+export const logoFacets: LogoFacet[] = [
+  { points: "31,52.6 43.4,73.8 31,73.8", fill: "#34687d", fold: "bottom", delay: 0.0 },
+  { points: "43.8,52.2 43.8,73.6 31.2,52.4", fill: "#447d8e", fold: "left", delay: 0.05 },
+  { points: "43.8,30.4 43.8,51.8 31.2,51.8", fill: "#56929d", fold: "bottom", delay: 0.1 },
+  { points: "18,30 30.6,30 30.6,51.2", fill: "#87cfce", fold: "right", delay: 0.15 },
+  { points: "44.2,30 56.6,30 44.2,51.2", fill: "#66a6af", fold: "bottom", delay: 0.2 },
+  { points: "18,8.6 30.6,29.8 18,29.8", fill: "#76bbc0", fold: "right", delay: 0.25 },
+  { points: "44.2,29.8 56.8,8.4 56.8,29.8", fill: "#76bbc0", fold: "bottom", delay: 0.3 },
+  { points: "5,8 17.6,8 17.6,29.4", fill: "#66a6af", fold: "right", delay: 0.35 },
+  { points: "57.2,8 69.8,8 57.2,29.2", fill: "#87cfce", fold: "bottom", delay: 0.4 },
+  { points: "75.8,56.6 85.8,73.4 75.8,73.4", fill: "#8c8c8c", fold: "bottom", delay: 0.2 },
+  { points: "96.4,56.2 96.4,73.6 86.2,73.6", fill: "#b4b4b4", fold: "left", delay: 0.25 },
+  { points: "65.4,56.2 75.4,56.2 75.4,73", fill: "#787878", fold: "bottom", delay: 0.3 },
+  { points: "96.6,56.2 106.6,56.2 96.6,73.2", fill: "#cccccc", fold: "left", delay: 0.35 },
+  { points: "65.4,55.8 75.4,38.8 75.4,55.8", fill: "#8c8c8c", fold: "bottom", delay: 0.4 },
+  { points: "96.6,38.8 106.6,55.8 96.6,55.8", fill: "#b4b4b4", fold: "left", delay: 0.45 },
+  { points: "65.2,38.4 75.4,38.4 65.2,55.6", fill: "#a0a0a0", fold: "bottom", delay: 0.5 },
+  { points: "96.8,38.4 106.8,38.4 106.8,55.6", fill: "#8c8c8c", fold: "left", delay: 0.55 },
+  { points: "75.4,21.2 75.4,38.2 65.4,38.2", fill: "#b4b4b4", fold: "bottom", delay: 0.6 },
+  { points: "96.6,21.2 106.6,38.2 96.6,38.2", fill: "#787878", fold: "left", delay: 0.65 },
+  { points: "75.8,20.8 85.8,20.8 75.8,37.6", fill: "#cccccc", fold: "bottom", delay: 0.7 },
+  { points: "86.2,20.8 96.4,20.8 96.4,38", fill: "#8c8c8c", fold: "left", delay: 0.75 },
+  { points: "127.8,56.6 137.8,73.4 127.8,73.4", fill: "#cccccc", fold: "bottom", delay: 0.4 },
+  { points: "148.4,56.4 148.4,73.6 138.2,73.6", fill: "#8c8c8c", fold: "left", delay: 0.45 },
+  { points: "117.6,56.2 127.4,56.2 127.4,73", fill: "#b4b4b4", fold: "bottom", delay: 0.5 },
+  { points: "148.6,56.2 158.6,56.2 148.6,73.2", fill: "#787878", fold: "left", delay: 0.55 },
+  { points: "117.4,55.8 127.4,39 127.4,55.8", fill: "#8c8c8c", fold: "bottom", delay: 0.6 },
+  { points: "148.6,38.8 158.6,55.8 148.6,55.8", fill: "#8c8c8c", fold: "left", delay: 0.65 },
+  { points: "117.4,38.4 127.4,38.4 117.4,55.4", fill: "#787878", fold: "bottom", delay: 0.7 },
+  { points: "158.8,38.4 158.8,55.4 148.8,38.6", fill: "#b4b4b4", fold: "left", delay: 0.75 },
+  { points: "117.4,38.2 127.4,21.4 127.4,38.2", fill: "#8c8c8c", fold: "bottom", delay: 0.8 },
+  { points: "148.6,21 158.8,38.2 148.6,38.2", fill: "#cccccc", fold: "left", delay: 0.85 },
+  { points: "117.2,20.8 127.4,20.8 117.2,38", fill: "#b4b4b4", fold: "bottom", delay: 0.9 },
+  { points: "148.8,20.8 158.8,20.8 158.8,37.8", fill: "#b4b4b4", fold: "left", delay: 0.95 },
+  { points: "183,52.4 195.4,73.4 183,73.4", fill: "#34687d", fold: "bottom", delay: 0.6 },
+  { points: "208.6,52.2 208.6,73.4 196.2,73.4", fill: "#447d8e", fold: "left", delay: 0.65 },
+  { points: "170,51.8 182.6,51.8 182.6,73.2", fill: "#447d8e", fold: "bottom", delay: 0.7 },
+  { points: "209,51.8 221.6,52 209,73.2", fill: "#56929d", fold: "left", delay: 0.75 },
+  { points: "170,51.4 182.6,30 182.6,51.4", fill: "#56929d", fold: "bottom", delay: 0.8 },
+  { points: "169.8,29.6 182.4,29.6 169.8,51", fill: "#66a6af", fold: "right", delay: 0.85 },
+  { points: "182.6,8 182.6,29.4 170,29.4", fill: "#76bbc0", fold: "bottom", delay: 0.9 },
+  { points: "209,8 221.6,29.4 209,29.4", fill: "#66a6af", fold: "left", delay: 0.95 },
+  { points: "183,7.6 195.6,7.6 183,28.8", fill: "#87cfce", fold: "bottom", delay: 1.0 },
+  { points: "196,7.6 208.6,7.6 208.6,28.8", fill: "#76bbc0", fold: "left", delay: 1.05 },
+  { points: "238.2,56.4 248.2,73.4 238.2,73.4", fill: "#8c8c8c", fold: "bottom", delay: 0.8 },
+  { points: "258.8,56.2 258.8,73.6 248.6,73.6", fill: "#b4b4b4", fold: "left", delay: 0.85 },
+  { points: "228,56.2 238,56.2 238,73.2", fill: "#787878", fold: "bottom", delay: 0.9 },
+  { points: "259.2,56.2 269.2,56.2 259.2,73", fill: "#cccccc", fold: "left", delay: 0.95 },
+  { points: "238,38.8 238,55.8 228,55.8", fill: "#8c8c8c", fold: "bottom", delay: 1.0 },
+  { points: "259.2,38.6 269.2,55.8 259,55.8", fill: "#b4b4b4", fold: "left", delay: 1.05 },
+  { points: "227.8,38.4 237.8,38.6 227.8,55.4", fill: "#a0a0a0", fold: "bottom", delay: 1.1 },
+  { points: "259.2,38.4 269.2,38.4 269.2,55.4", fill: "#8c8c8c", fold: "left", delay: 1.15 },
+  { points: "227.8,38.2 238,21 238,38.2", fill: "#b4b4b4", fold: "bottom", delay: 1.2 },
+  { points: "259.2,21.4 269.2,38.2 259.2,38.2", fill: "#787878", fold: "left", delay: 1.25 },
+  { points: "238.2,20.8 248.2,20.8 238.2,37.8", fill: "#cccccc", fold: "bottom", delay: 1.3 },
+  { points: "248.8,20.8 258.8,20.8 258.8,37.8", fill: "#8c8c8c", fold: "left", delay: 1.35 },
+  { points: "279.8,56.4 289.8,73.4 279.8,73.4", fill: "#b4b4b4", fold: "bottom", delay: 1.0 },
+  { points: "311.2,73.6 321.4,56.4 321.4,73.6", fill: "#b4b4b4", fold: "left", delay: 1.05 },
+  { points: "280,56.2 290,56.2 290,73", fill: "#cccccc", fold: "bottom", delay: 1.1 },
+  { points: "311.2,56.2 321.2,56.2 311.2,73", fill: "#8c8c8c", fold: "left", delay: 1.15 },
+  { points: "279.8,38.8 289.8,55.8 279.8,55.8", fill: "#b4b4b4", fold: "bottom", delay: 1.2 },
+  { points: "321.4,38.8 321.4,55.8 311.4,55.8", fill: "#787878", fold: "left", delay: 1.25 },
+  { points: "290,38.4 290,55.4 280,38.6", fill: "#8c8c8c", fold: "bottom", delay: 1.3 },
+  { points: "311.2,38.4 321.2,38.4 311.2,55.6", fill: "#8c8c8c", fold: "left", delay: 1.35 },
+  { points: "280,38.2 290,21.2 290,38.2", fill: "#787878", fold: "bottom", delay: 1.4 },
+  { points: "311.2,21.2 321.2,38.2 311.2,38.2", fill: "#b4b4b4", fold: "left", delay: 1.45 },
+  { points: "290.4,20.8 300.4,20.8 290.4,38", fill: "#8c8c8c", fold: "bottom", delay: 1.5 },
+  { points: "300.8,20.8 311,20.8 311,38", fill: "#cccccc", fold: "left", delay: 1.55 },
+];
