@@ -17,6 +17,7 @@ export const routes = {
   contact: "/contact",
   login: "/inloggen",
   account: "/account",
+  privacy: "/privacy",
   admin: "/admin",
   /** Append `/nieuw`, `/{id}` or `/{id}/aanmeldingen`. */
   adminActivities: "/admin/activiteiten",
