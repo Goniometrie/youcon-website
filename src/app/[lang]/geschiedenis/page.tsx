@@ -56,19 +56,9 @@ export default async function HistoryPage() {
           {founders.map((founder) => (
             <li
               key={founder.name}
-              className="relative overflow-hidden rounded-lg border border-border bg-white p-5 shadow-sm"
+              className="rounded-lg border border-border bg-white p-5 shadow-sm"
             >
-              {founder.initiator && (
-                <svg
-                  viewBox="0 0 40 40"
-                  aria-hidden="true"
-                  className="absolute top-0 right-0 size-8"
-                >
-                  <polygon points="0,0 40,0 40,40" fill="#87cfce" />
-                  <polygon points="20,0 40,0 40,20" fill="#56929d" />
-                </svg>
-              )}
-              <p className="pr-4 font-bold text-teal-800">{founder.name}</p>
+              <p className="font-bold text-teal-800">{founder.name}</p>
               <p className="mt-1 text-sm text-muted-foreground">{founder.organisation}</p>
               {founder.initiator && (
                 <p className="mt-2 text-[11px] font-bold tracking-wider text-teal-500 uppercase">
