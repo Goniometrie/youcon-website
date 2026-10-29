@@ -25,3 +25,9 @@ export const routes = {
   /** Append `/nieuw`, `/{id}` or `/{id}/aanmeldingen`. */
   adminActivities: "/admin/activiteiten",
 } as const;
+
+/**
+ * Creating an account with email and password on `/lid-worden`. Off until our
+ * own SMTP (Resend) sends the confirmation emails; see `docs/email-login.md`.
+ */
+export const emailSignUpEnabled = process.env.NEXT_PUBLIC_EMAIL_SIGNUP_ENABLED === "true";

@@ -2,6 +2,12 @@
 
 Naast Google (`google-login.md`) kunnen leden een account aanmaken met hun e-mailadres en een wachtwoord, op `/lid-worden`. Ze bevestigen hun adres via een link in een mail. Wie zijn wachtwoord kwijt is, vraagt op `/inloggen/wachtwoord-vergeten` een link aan om een nieuw wachtwoord te kiezen.
 
+## Aan- en uitzetten
+
+Registreren met e-mail staat **uit** tot de eigen mailserver (stap 1 hieronder) werkt; zonder komt de bevestigingsmail niet aan. `/lid-worden` biedt dan alleen Google aan, met de melding dat e-mail binnenkort kan. Inloggen en "wachtwoord vergeten" op `/inloggen` blijven gewoon werken voor accounts die al bestaan.
+
+Aanzetten: zet in Vercel (Settings → Environment Variables, Production en Preview) en in `.env.local` de variabele `NEXT_PUBLIC_EMAIL_SIGNUP_ENABLED=true` en deploy opnieuw (de waarde wordt bij de build ingebakken). Leeg of iets anders is uit. De schakelaar is `emailSignUpEnabled` in `src/lib/site.ts`.
+
 ## Zo werkt het
 
 - **Registreren:** het formulier op `/lid-worden` (`signup-form.tsx`) roept `signUp` aan (`lid-worden/actions.ts`). Die controleert geboortedatum en wachtwoord en maakt het account aan bij Supabase, met naam, bedrijf en geboortedatum als metadata. De trigger `private.handle_new_user` zet die in het profiel (rol `member`).

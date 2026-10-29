@@ -5,7 +5,7 @@ import { GoogleSignIn } from "@/components/google-sign-in";
 import { PageHeader, Section } from "@/components/page-header";
 import type { Locale } from "@/i18n/config";
 import { type Dictionary, getDictionary, getLocale } from "@/i18n/dictionaries";
-import { routes } from "@/lib/site";
+import { emailSignUpEnabled, routes } from "@/lib/site";
 import { safeNext } from "../inloggen/next";
 import { EmailSignUp } from "./signup-form";
 
@@ -22,7 +22,7 @@ export default async function JoinPage({ searchParams }: PageProps<"/[lang]/lid-
       <PageHeader title={t.heading} intro={t.intro} />
       <Section>
         <div className="mx-auto max-w-xl">
-          <p className="text-center text-body">{t.signUp}</p>
+          <p className="text-center text-body">{emailSignUpEnabled ? t.signUp : t.signUpGoogle}</p>
           {/* `?next=` comes from the request; the forms themselves stay in the static shell. */}
           <Suspense fallback={<JoinOptions locale={locale} dict={dict} />}>
             <JoinOptionsWithParams locale={locale} dict={dict} searchParams={searchParams} />
@@ -50,7 +50,11 @@ function JoinOptions({ locale, dict, next }: { locale: Locale; dict: Dictionary;
         pendingLabel={dict.login.googlePending}
         next={next}
       />
-      <EmailSignUp locale={locale} t={t} account={dict.account} next={next} />
+      {emailSignUpEnabled ? (
+        <EmailSignUp locale={locale} t={t} account={dict.account} next={next} />
+      ) : (
+        <p className="text-center text-sm text-muted-foreground">{t.emailSoon}</p>
+      )}
       <p className="mt-3 text-center text-sm text-muted-foreground">
         {t.haveAccount}{" "}
         <Link href={login} className="font-bold text-brand hover:underline">
