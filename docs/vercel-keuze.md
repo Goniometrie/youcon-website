@@ -53,13 +53,18 @@ Begin met **A (gratis)**, met een openbare repo. De site verdient geen geld, het
 
 Vink af wat klaar is.
 
-**1. Repo openbaar**
+**1. Repo naar YouCon en openbaar**
+
+Alleen de eigenaar van een repo op een persoonlijk GitHub-account kan die aan Vercel koppelen ([Vercel](https://vercel.com/kb/guide/unable-to-find-github-repository)). Daarom wordt `stichting-youcon` eigenaar en blijft Goniometrie de ontwikkelaar als collaborator.
 
 - [x] Geschiedenis gecontroleerd op sleutels en `.env`-bestanden: niets gevonden. Wel zichtbaar na openbaar maken: e-mailadressen in de docs en in de commits.
 - [x] Repo openbaar gemaakt (29 oktober 2026).
-- De repo blijft voorlopig bij Goniometrie. De overdracht naar `stichting-youcon` (aangevraagd op 29 oktober) wordt **niet** geaccepteerd; GitHub laat zo'n verzoek na een dag vervallen.
+- [x] Goniometrie heeft de overdracht naar `stichting-youcon` aangevraagd (29 oktober 2026). Het verzoek vervalt na een dag; daarna opnieuw aanvragen.
+- [ ] `stichting-youcon` accepteert via de mail op info@youcon.nu (of github.com/notifications). Vanaf dat moment heeft Goniometrie geen toegang meer, dus doe meteen de volgende stap.
+- [ ] `stichting-youcon` voegt Goniometrie toe als collaborator (Settings → Collaborators → Add people). Goniometrie accepteert de uitnodiging.
+- [ ] Lokaal de remote bijwerken: `git remote set-url origin git@github.com:stichting-youcon/youcon-website.git` (de oude URL stuurt GitHub wel door).
 
-Zolang de repo bij Goniometrie staat, kan het YouCon-account de repo niet via de Vercel GitHub-app koppelen: bij een repo op een persoonlijk account mag alleen de eigenaar dat ([Vercel](https://vercel.com/kb/guide/unable-to-find-github-repository)). Stap 2 en 3 hieronder gaan uit van een repo bij `stichting-youcon`; tot die overdracht moet het publiceren op een andere manier.
+Een collaborator op een persoonlijke repo kan pushen, branches maken, pull requests openen, reviewen en mergen, en issues beheren. Alleen de eigenaar kan instellingen wijzigen (zoals branchbeveiliging en secrets), collaborators toevoegen, en de repo overzetten of verwijderen.
 
 **2. Vercel-account**
 
