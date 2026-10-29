@@ -10,14 +10,14 @@ Bewaar de wachtwoorden van info@youcon.nu en het GitHub-account `stichting-youco
 |---|---|---|---|
 | Google Cloud, project `youcon-website` | Inloggen met Google (zie `google-login.md`) | info@youcon.nu + tomdiks96@gmail.com (beide Owner) | klaar; supportmail is info@youcon.nu |
 | Supabase, organisatie "Goniometrie", project `youcon-website` | Database, accounts, foto's | info@youcon.nu (inlog via GitHub `stichting-youcon`) + tomdiks96@gmail.com (beide Owner) | klaar; MFA nog aanzetten |
-| GitHub, `Goniometrie/youcon-website` (openbaar) | Code | Goniometrie (eigenaar); `stichting-youcon` (info@youcon.nu) is collaborator met schrijfrechten | overdracht naar `stichting-youcon` aangevraagd; wacht op acceptatie |
+| GitHub, `Goniometrie/youcon-website` (openbaar) | Code | Goniometrie (eigenaar); `stichting-youcon` (info@youcon.nu) is collaborator met schrijfrechten | blijft voorlopig bij Goniometrie; later overzetten |
 | Vercel, gratis Hobby-account | Hosting | info@youcon.nu (inlog via GitHub `stichting-youcon`) | gekozen op 29 oktober 2026; account en project nog aanmaken (`vercel-keuze.md`). Tot dan draait het project in Toms persoonlijke account "Tom's projects" |
 | Domein youcon.nu | Domeinnaam en e-mail | onbekend | nagaan bij welke registrar |
 
 ## Nog te doen
 
 1. **Supabase:** zet voor beide accounts tweestapsverificatie (MFA) aan. Overweeg de organisatie te hernoemen van "Goniometrie" naar "YouCon" (Organization Settings).
-2. **GitHub:** de repo is openbaar en de overdracht naar `stichting-youcon` is aangevraagd (29 oktober 2026). `stichting-youcon` moet die accepteren en daarna Goniometrie toevoegen als collaborator. Geen GitHub-organisatie: Vercel Hobby kan geen privérepo's van een organisatie deployen.
+2. **GitHub:** de repo is openbaar (29 oktober 2026) en blijft voorlopig bij Goniometrie; het overdrachtsverzoek van die dag niet accepteren. Later: verplaats de repo naar `stichting-youcon` (Settings → Transfer) en voeg Goniometrie toe als collaborator. Geen GitHub-organisatie: Vercel Hobby kan geen privérepo's van een organisatie deployen.
 3. **Vercel:** het bestuur koos een gratis account (Hobby) op naam van YouCon. Volg het stappenplan in `vercel-keuze.md`. YouCon maakt een nieuw project; het huidige project in "Tom's projects" wordt daarna verwijderd.
 
 ## Bij een bestuurswissel

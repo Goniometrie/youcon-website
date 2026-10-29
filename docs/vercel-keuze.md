@@ -53,13 +53,13 @@ Begin met **A (gratis)**, met een openbare repo. De site verdient geen geld, het
 
 Vink af wat klaar is.
 
-**1. Repo naar YouCon en openbaar**
+**1. Repo openbaar**
 
 - [x] Geschiedenis gecontroleerd op sleutels en `.env`-bestanden: niets gevonden. Wel zichtbaar na openbaar maken: e-mailadressen in de docs en in de commits.
-- [x] Goniometrie heeft de overdracht naar `stichting-youcon` aangevraagd (29 oktober 2026).
-- [ ] `stichting-youcon` accepteert via de mail op info@youcon.nu (of github.com/notifications). Tot dan blijft de repo van Goniometrie.
-- [ ] `stichting-youcon` voegt Goniometrie toe als collaborator met schrijfrechten (Settings → Collaborators).
 - [x] Repo openbaar gemaakt (29 oktober 2026).
+- De repo blijft voorlopig bij Goniometrie. De overdracht naar `stichting-youcon` (aangevraagd op 29 oktober) wordt **niet** geaccepteerd; GitHub laat zo'n verzoek na een dag vervallen.
+
+Zolang de repo bij Goniometrie staat, kan het YouCon-account de repo niet via de Vercel GitHub-app koppelen: bij een repo op een persoonlijk account mag alleen de eigenaar dat ([Vercel](https://vercel.com/kb/guide/unable-to-find-github-repository)). Stap 2 en 3 hieronder gaan uit van een repo bij `stichting-youcon`; tot die overdracht moet het publiceren op een andere manier.
 
 **2. Vercel-account**
 
