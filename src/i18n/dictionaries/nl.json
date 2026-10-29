@@ -53,8 +53,9 @@
     "boardTitle": "Bestuur",
     "boardText": "Het bestuur organiseert de activiteiten en is je eerste aanspreekpunt.",
     "historyTitle": "Geschiedenis",
-    "historyText": "Nog aan te vullen: de geschiedenis van YouCon.",
-    "missionLink": "Lees onze missie"
+    "historyText": "YouCon is opgericht op 19 november 2009, tijdens de Betondag, door tien jonge constructeurs.",
+    "missionLink": "Lees onze missie",
+    "historyLink": "Lees de geschiedenis"
   },
   "mission": {
     "title": "Missie",
@@ -87,6 +88,35 @@
     "ctaTitle": "Doe mee",
     "ctaText": "Kom naar een excursie of thema-avond en leer je vakgenoten kennen. Iedere jonge constructeur is welkom.",
     "ctaAgenda": "Bekijk de agenda"
+  },
+  "history": {
+    "title": "Geschiedenis",
+    "intro": "Hoe YouCon in 2009 ontstond: van een jong geluid in de Betonvereniging tot een eigen vereniging.",
+    "timelineTitle": "Hoe het begon",
+    "moments": [
+      {
+        "date": "Herfst 2009",
+        "title": "Initiatief",
+        "text": [
+          "In de herfst van 2009 vonden de eerste overleggen plaats tussen Dick Stoelhorst, destijds directeur van de Betonvereniging, en Raphaël Steenbergen over het verzorgen van ‘een jong geluid in de Betonvereniging’.",
+          "In de twee maanden daarna vormde zich een groep jonge constructeurs, werkzaam in onder meer de ingenieursbranche, de aannemerij, de onderzoekswereld en het toezicht."
+        ]
+      },
+      {
+        "date": "19 november 2009",
+        "title": "Oprichting",
+        "text": [
+          "YouCon is opgericht op 19 november 2009, tijdens de Betondag. In de BetonverenigingsarenA werd om 15.00 uur voor de toehoorders op de tribune het startsein gegeven.",
+          "Raphaël Steenbergen gaf een korte presentatie, waarin hij de oprichters voorstelde en aandacht vroeg voor het vak van de constructeur. Jongere leden van de Betonvereniging en jonge constructeurs werden opgeroepen zich aan te sluiten bij YouCon."
+        ]
+      }
+    ],
+    "foundersTitle": "De oprichters",
+    "foundersIntro": "YouCon is opgericht door tien jonge constructeurs.",
+    "initiator": "Initiatiefnemer",
+    "todayTitle": "YouCon vandaag",
+    "todayText": "Het bestuur zet het werk van de oprichters voort, met excursies en thema-avonden voor jonge constructeurs.",
+    "missionLink": "Lees onze missie"
   },
   "board": {
     "title": "Bestuur",

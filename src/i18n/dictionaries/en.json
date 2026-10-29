@@ -53,8 +53,9 @@
     "boardTitle": "Board",
     "boardText": "The board organises the activities and is your first point of contact.",
     "historyTitle": "History",
-    "historyText": "To be added: the history of YouCon.",
-    "missionLink": "Read our mission"
+    "historyText": "YouCon was founded on 19 November 2009, during the Betondag, by ten young structural engineers.",
+    "missionLink": "Read our mission",
+    "historyLink": "Read our history"
   },
   "mission": {
     "title": "Mission",
@@ -87,6 +88,35 @@
     "ctaTitle": "Join in",
     "ctaText": "Come to an excursion or theme evening and get to know your peers. Every young structural engineer is welcome.",
     "ctaAgenda": "View the calendar"
+  },
+  "history": {
+    "title": "History",
+    "intro": "How YouCon came about in 2009: from a young voice in the Betonvereniging to an association of its own.",
+    "timelineTitle": "How it started",
+    "moments": [
+      {
+        "date": "Autumn 2009",
+        "title": "The initiative",
+        "text": [
+          "In the autumn of 2009, Dick Stoelhorst, then director of the Betonvereniging (the Dutch concrete association), and Raphaël Steenbergen held the first meetings about bringing ‘a young voice to the Betonvereniging’.",
+          "In the two months that followed, a group of young structural engineers came together, working in consultancy, contracting, research and inspection, among other fields."
+        ]
+      },
+      {
+        "date": "19 November 2009",
+        "title": "The founding",
+        "text": [
+          "YouCon was founded on 19 November 2009, during the Betondag (Concrete Day). At 3 pm, in the BetonverenigingsarenA, the starting signal was given in front of the audience in the stands.",
+          "Raphaël Steenbergen gave a short presentation in which he introduced the founders and drew attention to the profession of the structural engineer. Younger members of the Betonvereniging and young structural engineers were invited to join YouCon."
+        ]
+      }
+    ],
+    "foundersTitle": "The founders",
+    "foundersIntro": "YouCon was founded by ten young structural engineers.",
+    "initiator": "Initiator",
+    "todayTitle": "YouCon today",
+    "todayText": "The board carries on the work of the founders, with excursions and theme evenings for young structural engineers.",
+    "missionLink": "Read our mission"
   },
   "board": {
     "title": "Board",

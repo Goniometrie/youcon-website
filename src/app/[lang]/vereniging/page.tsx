@@ -24,7 +24,12 @@ export default async function AssociationPage() {
       text: t.boardText,
       link: { href: `/${locale}${routes.board}`, label: dict.home.community.board },
     },
-    { id: "geschiedenis", title: t.historyTitle, text: t.historyText },
+    {
+      id: "geschiedenis",
+      title: t.historyTitle,
+      text: t.historyText,
+      link: { href: `/${locale}${routes.history}`, label: t.historyLink },
+    },
   ];
 
   return (
