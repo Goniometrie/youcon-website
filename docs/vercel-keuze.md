@@ -89,7 +89,8 @@ Tip: de kopieerknop in het Supabase-dashboard werkt niet in elke ingebouwde brow
 **5. Testen**
 
 - [ ] Inloggen met e-mail en met Google werkt op de Vercel-URL.
-- [ ] Een pull request van Goniometrie krijgt een preview. Lukt dat niet ("Hobby teams do not support collaboration"), dan blokkeert Vercel ook bij een openbare repo: upgrade naar Pro (Settings → Billing).
+- [x] Een pull request van Goniometrie krijgt een preview (getest met #14 op 29 oktober 2026): met een openbare repo blokkeert Hobby commits van collaborators niet. Mocht dat ooit veranderen ("Hobby teams do not support collaboration"), dan is upgraden naar Pro de oplossing (Settings → Billing).
+- Previews zijn standaard afgeschermd met Vercel Authentication: alleen wie als `stichting-youcon` bij Vercel is ingelogd kan ze openen. Openbaar maken kan via Settings → Deployment Protection.
 
 **6. Domein** (later, als de nieuwe site af is)
 
