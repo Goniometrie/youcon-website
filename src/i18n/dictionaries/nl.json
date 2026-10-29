@@ -207,8 +207,31 @@
   },
   "partners": {
     "title": "Studie- en vakverenigingen",
-    "intro": "YouCon werkt samen met studie- en vakverenigingen in de bouw.",
-    "comingSoon": "Overzicht volgt."
+    "intro": "Naast YouCon zijn er meer verenigingen voor constructeurs, elk met een eigen vakgebied. Hier vind je ze per materiaal of onderwerp.",
+    "lead": "Sommige zijn heel praktisch, andere juist theoretisch. De meeste zoeken altijd versterking, als lid of in een commissie. Zo verdiep je je in een vakgebied en leer je vakgenoten buiten je eigen bedrijf kennen.",
+    "categories": {
+      "safety": "Constructieve veiligheid",
+      "concrete": "Beton",
+      "steel": "Staal",
+      "timber": "Hout",
+      "international": "Internationaal"
+    },
+    "descriptions": {
+      "vnconstructeurs": "Vereniging die de constructieve kwaliteit en veiligheid van bouwwerken wil waarborgen en verder verbeteren.",
+      "kpcv": "Online kennisbank over constructieve veiligheid, per fase van een bouwproject. De digitale opvolger van het Compendium Aanpak Constructieve Veiligheid.",
+      "betonvereniging": "Branchevereniging voor kennisdeling, netwerk en opleiding rond betonconstructies.",
+      "stufib": "Studievereniging voor constructief beton. Onderzoek en lezingen voor en door de leden, van tunnels tot hoogbouw.",
+      "stubeco": "Studievereniging voor de uitvoering van betonconstructies.",
+      "stutech": "Studievereniging voor betontechnologie.",
+      "bouwenMetStaal": "Kennisorganisatie voor staal in de bouw, infra en offshore. Geeft het vakblad Bouwen met Staal uit en organiseert onder meer de Staalbouwdag en de studentenSTAALprijs.",
+      "houtconstructeurs": "Vereniging voor kennisdeling, netwerk en opleiding rond houtconstructies.",
+      "iabse": "Internationale vereniging voor het uitwisselen van kennis en praktijkervaring in constructief ontwerp."
+    },
+    "stufibOfferLabel": "Voor YouCon-leden",
+    "stufibOffer": "Een jaar lang gratis naar de lezingen van Stufib. Handig als je lidmaatschap van YouCon afloopt omdat je 35 wordt, maar ook eerder ben je welkom.",
+    "newTab": "opent in een nieuw tabblad",
+    "missingTitle": "Mis je een vereniging?",
+    "missingText": "Ken je een studie- of vakvereniging die hier niet tussen staat, of klopt er iets niet? Laat het ons weten."
   },
   "contact": {
     "title": "Contact",
