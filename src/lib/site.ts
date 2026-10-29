@@ -16,6 +16,9 @@ export const routes = {
   partners: "/verenigingen",
   contact: "/contact",
   login: "/inloggen",
+  /** Under `/inloggen`, so the proxy refreshes the session there too. */
+  forgotPassword: "/inloggen/wachtwoord-vergeten",
+  newPassword: "/inloggen/nieuw-wachtwoord",
   account: "/account",
   privacy: "/privacy",
   admin: "/admin",

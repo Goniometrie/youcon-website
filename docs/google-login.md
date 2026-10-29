@@ -1,6 +1,6 @@
 # Inloggen met Google
 
-Leden maken zelf een account aan met hun Google-account (`/lid-worden`) en loggen ermee in (`/inloggen`). Een nieuw account krijgt de rol `member`; na de eerste login vult het lid op `/account` zijn gegevens aan (geboortedatum is verplicht).
+Leden maken zelf een account aan met hun Google-account (`/lid-worden`) en loggen ermee in (`/inloggen`). Zonder Google kan het ook met e-mail en wachtwoord, zie `email-login.md`. Een nieuw account krijgt de rol `member`; na de eerste login vult het lid op `/account` zijn gegevens aan (geboortedatum is verplicht).
 
 Heeft iemand al een account met hetzelfde e-mailadres, dan koppelt Supabase de Google-login aan dat account. Er ontstaat dus geen dubbel account.
 

@@ -4,36 +4,14 @@ import Link from "next/link";
 import { useActionState } from "react";
 import { describedBy, Field, inputClass } from "@/components/admin/fields";
 import { buttonClass } from "@/components/button";
+import { Notice } from "@/components/notice";
 import type { Dictionary } from "@/i18n/dictionaries";
+import { MIN_PASSWORD_LENGTH } from "@/lib/password";
 import { type PasswordState, type ProfileState, updatePassword, updateProfile } from "./actions";
-import { MIN_PASSWORD_LENGTH } from "./password";
 
 type T = Dictionary["account"];
 
 const submitClass = `${buttonClass("primary")} self-start disabled:opacity-70`;
-
-function Notice({
-  tone,
-  children,
-}: {
-  tone: "success" | "error" | "info";
-  children: React.ReactNode;
-}) {
-  return (
-    <p
-      role={tone === "error" ? "alert" : "status"}
-      className={`rounded-md px-4 py-3 text-sm font-semibold ${
-        tone === "error"
-          ? "bg-danger-muted text-danger"
-          : tone === "info"
-            ? "border border-teal-700/30 text-teal-700"
-            : "bg-teal-100/25 text-teal-700"
-      }`}
-    >
-      {children}
-    </p>
-  );
-}
 
 export function ProfileForm({
   t,

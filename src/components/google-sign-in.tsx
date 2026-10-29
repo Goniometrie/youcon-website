@@ -4,6 +4,10 @@ import { useFormStatus } from "react-dom";
 import { signInWithGoogle } from "@/app/[lang]/inloggen/actions";
 import type { Locale } from "@/i18n/config";
 
+/** White button with a logo in front, for the ways to sign in or sign up. */
+export const providerButtonClass =
+  "inline-flex min-h-12 w-full cursor-pointer items-center justify-center gap-3 rounded-md border-2 border-input bg-white px-6 font-bold text-body transition-colors hover:border-brand disabled:opacity-70";
+
 /** "Continue with Google", per Google's branding guidelines: white, with the "G" logo. */
 export function GoogleSignIn({
   locale,
@@ -28,11 +32,7 @@ export function GoogleSignIn({
 function SubmitButton({ label, pendingLabel }: { label: string; pendingLabel: string }) {
   const { pending } = useFormStatus();
   return (
-    <button
-      type="submit"
-      disabled={pending}
-      className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-md border-2 border-input bg-white px-6 font-bold text-body transition-colors hover:border-brand disabled:opacity-70"
-    >
+    <button type="submit" disabled={pending} className={providerButtonClass}>
       <GoogleLogo />
       {pending ? pendingLabel : label}
     </button>
