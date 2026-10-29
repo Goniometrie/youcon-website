@@ -43,3 +43,10 @@ export async function requireStaff(): Promise<Profile> {
   if (!profile || !isStaff(profile)) throw new Error("Not authorized");
   return profile;
 }
+
+/** How the signed-in user can sign in: "email" (password), "google", … */
+export const getSignInProviders = cache(async (): Promise<string[]> => {
+  const supabase = await createSessionClient();
+  const { data } = await supabase.auth.getClaims();
+  return data?.claims.app_metadata?.providers ?? [];
+});

@@ -1,8 +1,12 @@
 import Image from "next/image";
-import { site } from "@/lib/site";
+import Link from "next/link";
+import { getDictionary, getLocale } from "@/i18n/dictionaries";
+import { routes, site } from "@/lib/site";
 import icon from "../../public/brand/yc-icon.jpg";
 
-export function SiteFooter() {
+export async function SiteFooter() {
+  const [{ footer: t }, locale] = await Promise.all([getDictionary(), getLocale()]);
+
   return (
     <footer className="bg-teal-700 text-white">
       <div className="mx-auto flex max-w-site flex-wrap items-center justify-between gap-6 px-4 py-10 text-sm sm:px-6">
@@ -20,6 +24,11 @@ export function SiteFooter() {
             <a href={site.linkedin} className="underline hover:text-teal-100">
               LinkedIn
             </a>
+          </li>
+          <li>
+            <Link href={`/${locale}${routes.privacy}`} className="underline hover:text-teal-100">
+              {t.privacy}
+            </Link>
           </li>
         </ul>
       </div>

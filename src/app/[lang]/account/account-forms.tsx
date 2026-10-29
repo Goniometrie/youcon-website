@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useActionState } from "react";
 import { describedBy, Field, inputClass } from "@/components/admin/fields";
 import { buttonClass } from "@/components/button";
@@ -11,12 +12,22 @@ type T = Dictionary["account"];
 
 const submitClass = `${buttonClass("primary")} self-start disabled:opacity-70`;
 
-function Notice({ tone, children }: { tone: "success" | "error"; children: React.ReactNode }) {
+function Notice({
+  tone,
+  children,
+}: {
+  tone: "success" | "error" | "info";
+  children: React.ReactNode;
+}) {
   return (
     <p
       role={tone === "error" ? "alert" : "status"}
       className={`rounded-md px-4 py-3 text-sm font-semibold ${
-        tone === "error" ? "bg-danger-muted text-danger" : "bg-teal-100/25 text-teal-700"
+        tone === "error"
+          ? "bg-danger-muted text-danger"
+          : tone === "info"
+            ? "border border-teal-700/30 text-teal-700"
+            : "bg-teal-100/25 text-teal-700"
       }`}
     >
       {children}
@@ -31,6 +42,7 @@ export function ProfileForm({
   company,
   birthDate,
   today,
+  next,
 }: {
   t: T;
   firstName: string;
@@ -39,13 +51,28 @@ export function ProfileForm({
   birthDate: string;
   /** YYYY-MM-DD, the latest date the birth date picker allows. */
   today: string;
+  /** Page to continue to once the details are saved (after signing up). */
+  next?: string;
 }) {
   const [state, action, pending] = useActionState<ProfileState, FormData>(updateProfile, {});
   const birthDateError = state.invalidBirthDate ? t.birthDateError : undefined;
 
   return (
     <form action={action} className="mt-6 flex flex-col gap-5">
-      {state.saved && <Notice tone="success">{t.profileSaved}</Notice>}
+      {!birthDate && !state.saved && <Notice tone="info">{t.profileIncomplete}</Notice>}
+      {state.saved && (
+        <Notice tone="success">
+          {t.profileSaved}
+          {next && (
+            <>
+              {" "}
+              <Link href={next} className="underline hover:no-underline">
+                {t.continue}
+              </Link>
+            </>
+          )}
+        </Notice>
+      )}
       {state.failed && <Notice tone="error">{t.profileFailed}</Notice>}
       <div className="grid gap-5 sm:grid-cols-2">
         <Field id="first_name" label={t.firstName}>

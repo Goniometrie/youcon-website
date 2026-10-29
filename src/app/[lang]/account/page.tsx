@@ -5,8 +5,9 @@ import { PageHeader, Section, SectionTitle } from "@/components/page-header";
 import type { Locale } from "@/i18n/config";
 import { type Dictionary, getDictionary, getLocale } from "@/i18n/dictionaries";
 import { today } from "@/lib/activities";
-import { getCurrentProfile } from "@/lib/auth";
+import { getCurrentProfile, getSignInProviders } from "@/lib/auth";
 import { routes, site } from "@/lib/site";
+import { safeNext } from "../inloggen/next";
 import { PasswordForm, ProfileForm } from "./account-forms";
 
 // Everything below the header waits on the session; signed-out visitors are
@@ -17,14 +18,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: (await getDictionary()).account.title, robots: { index: false } };
 }
 
-export default async function AccountPage() {
+export default async function AccountPage({ searchParams }: PageProps<"/[lang]/account">) {
   const [dict, locale] = await Promise.all([getDictionary(), getLocale()]);
 
   return (
     <>
       <PageHeader title={dict.account.title} intro={dict.account.intro} />
       <Suspense fallback={<div className="min-h-[50vh]" />}>
-        <AccountDetails dict={dict} locale={locale} />
+        <AccountDetails dict={dict} locale={locale} searchParams={searchParams} />
       </Suspense>
     </>
   );
@@ -32,8 +33,20 @@ export default async function AccountPage() {
 
 const card = "rounded-lg border border-border bg-white p-6 sm:p-8";
 
-async function AccountDetails({ dict, locale }: { dict: Dictionary; locale: Locale }) {
-  const profile = await getCurrentProfile();
+async function AccountDetails({
+  dict,
+  locale,
+  searchParams,
+}: {
+  dict: Dictionary;
+  locale: Locale;
+  searchParams: PageProps<"/[lang]/account">["searchParams"];
+}) {
+  const [profile, providers, { next }] = await Promise.all([
+    getCurrentProfile(),
+    getSignInProviders(),
+    searchParams,
+  ]);
   if (!profile) redirect(`/${locale}${routes.login}`);
   const t = dict.account;
   const since = new Intl.DateTimeFormat(locale === "nl" ? "nl-NL" : "en-GB", {
@@ -74,13 +87,22 @@ async function AccountDetails({ dict, locale }: { dict: Dictionary; locale: Loca
             company={profile.company ?? ""}
             birthDate={profile.birth_date ?? ""}
             today={today()}
+            next={safeNext(next)}
           />
         </div>
 
-        <div className={card}>
-          <SectionTitle className="text-xl text-teal-700">{t.password}</SectionTitle>
-          <PasswordForm t={t} email={profile.email} />
-        </div>
+        {/* Accounts made with Google have no password to change. */}
+        {providers.includes("email") ? (
+          <div className={card}>
+            <SectionTitle className="text-xl text-teal-700">{t.password}</SectionTitle>
+            <PasswordForm t={t} email={profile.email} />
+          </div>
+        ) : (
+          <div className={card}>
+            <SectionTitle className="text-xl text-teal-700">{t.googleTitle}</SectionTitle>
+            <p className="mt-4 text-body">{t.googleText}</p>
+          </div>
+        )}
       </div>
     </Section>
   );
