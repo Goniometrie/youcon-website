@@ -12,7 +12,7 @@ Nieuwe website voor YouCon, de studievereniging voor jonge constructeurs. Vervan
 - **Repo:** Git + GitHub (`Goniometrie/youcon-website`); `main` = productie, werk via featurebranches en PR's
 - **Hosting:** Vercel (gepland): push naar `main` → productie, PR → preview-deploy
 - **Backend:** Supabase (gekozen boven Firebase), project `youcon-website` in eu-central-1: auth, profielen met rollen, activiteiten, foto-opslag. Inschrijvingen en nieuwsbrief volgen. Postgres met Row Level Security
-- Keuzes en onderbouwing: `docs/tech-stack.md`
+- Keuzes en onderbouwing: `docs/tech-stack.md`; accounts en overdracht: `docs/beheer.md`
 
 ## Commando's
 

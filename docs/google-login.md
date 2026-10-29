@@ -14,7 +14,7 @@ De trigger `private.handle_new_user` maakt het profiel aan en haalt voor- en ach
 
 ## Huidige stand (29 oktober 2026)
 
-- Google Cloud-project `youcon-website` (eigenaar tomdiks96@gmail.com), OAuth-client "YouCon website (Supabase)".
+- Google Cloud-project `youcon-website` (eigenaren tomdiks96@gmail.com en info@youcon.nu, zie `beheer.md`), OAuth-client "YouCon website (Supabase)".
 - Supabase: Google staat aan; redirect-URL's `http://localhost:3000/**` en `https://youcon.nu/**`. Site URL staat nog op `http://localhost:3000`.
 - Branding: homepage `https://youcon.nu`, privacyverklaring `https://youcon.nu/nl/privacy` (de pagina `src/app/[lang]/privacy/`; live zodra de nieuwe site op youcon.nu staat).
 - Publicatiestatus: **In production**, dus iedereen met een Google-account kan inloggen. Geen verificatie nodig zolang er geen logo is en alleen `email`/`profile` wordt gevraagd.
