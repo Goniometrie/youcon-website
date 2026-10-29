@@ -10,15 +10,15 @@ Bewaar de wachtwoorden van info@youcon.nu en het GitHub-account `stichting-youco
 |---|---|---|---|
 | Google Cloud, project `youcon-website` | Inloggen met Google (zie `google-login.md`) | info@youcon.nu + tomdiks96@gmail.com (beide Owner) | klaar; supportmail is info@youcon.nu |
 | Supabase, organisatie "Goniometrie", project `youcon-website` | Database, accounts, foto's | info@youcon.nu (inlog via GitHub `stichting-youcon`) + tomdiks96@gmail.com (beide Owner) | klaar; MFA nog aanzetten |
-| GitHub, `Goniometrie/youcon-website` | Code | Goniometrie (eigenaar); `stichting-youcon` (info@youcon.nu) is collaborator met schrijfrechten | blijft tijdens de ontwikkeling bij Goniometrie; later overzetten |
-| Vercel, team "toms-projects" | Hosting | persoonlijk account | nog overzetten |
+| GitHub, `Goniometrie/youcon-website` (openbaar) | Code | Goniometrie (eigenaar); `stichting-youcon` (info@youcon.nu) is collaborator met schrijfrechten | overdracht naar `stichting-youcon` aangevraagd; wacht op acceptatie |
+| Vercel, gratis Hobby-account | Hosting | info@youcon.nu (inlog via GitHub `stichting-youcon`) | gekozen op 29 oktober 2026; account en project nog aanmaken (`vercel-keuze.md`). Tot dan draait het project in Toms persoonlijke account "Tom's projects" |
 | Domein youcon.nu | Domeinnaam en e-mail | onbekend | nagaan bij welke registrar |
 
 ## Nog te doen
 
 1. **Supabase:** zet voor beide accounts tweestapsverificatie (MFA) aan. Overweeg de organisatie te hernoemen van "Goniometrie" naar "YouCon" (Organization Settings).
-2. **GitHub:** als de ontwikkeling klaar is, verplaats de repo naar `stichting-youcon` (Settings → Transfer) en voeg Goniometrie toe als collaborator. Tot dan is `stichting-youcon` collaborator; dat geeft schrijfrechten maar geen beheer (een collaborator kan de repo niet overzetten of verwijderen). Geen GitHub-organisatie: Vercel Hobby kan geen privérepo's van een organisatie deployen. Koppel daarna Vercel opnieuw aan de repo.
-3. **Vercel:** maak een account voor info@youcon.nu en verplaats het project, of neem een team. Let op: het gratis Hobby-abonnement is bedoeld voor persoonlijk, niet-commercieel gebruik; laat het bestuur kiezen.
+2. **GitHub:** de repo is openbaar en de overdracht naar `stichting-youcon` is aangevraagd (29 oktober 2026). `stichting-youcon` moet die accepteren en daarna Goniometrie toevoegen als collaborator. Geen GitHub-organisatie: Vercel Hobby kan geen privérepo's van een organisatie deployen.
+3. **Vercel:** het bestuur koos een gratis account (Hobby) op naam van YouCon. Volg het stappenplan in `vercel-keuze.md`. YouCon maakt een nieuw project; het huidige project in "Tom's projects" wordt daarna verwijderd.
 
 ## Bij een bestuurswissel
 
