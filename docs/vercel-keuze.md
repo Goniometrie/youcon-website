@@ -2,7 +2,7 @@
 
 Keuze voor het bestuur. Vercel host de website: elke wijziging op GitHub wordt automatisch gebouwd en gepubliceerd. Het doel uit `beheer.md` blijft: **info@youcon.nu is eigenaar**, niet een bestuurslid.
 
-Stand op 29 oktober 2026: er staat nog **geen** YouCon-project op Vercel (ook niet in Toms persoonlijke account). Er hoeft dus niets verhuisd te worden; het project wordt meteen aangemaakt op de plek die het bestuur kiest.
+Stand op 29 oktober 2026: het project `youcon-website` staat tijdelijk in Toms persoonlijke Hobby-account ("Tom's projects") en bouwt daar `main` en elke pull request. Het eenvoudigst is dat YouCon een nieuw project aanmaakt (er gaan alleen twee omgevingsvariabelen mee) en dat het oude daarna verwijderd wordt.
 
 ## De twee opties
 
@@ -56,9 +56,10 @@ Vink af wat klaar is.
 **1. Repo naar YouCon en openbaar**
 
 - [x] Geschiedenis gecontroleerd op sleutels en `.env`-bestanden: niets gevonden. Wel zichtbaar na openbaar maken: e-mailadressen in de docs en in de commits.
-- [ ] Goniometrie zet de repo over (Settings → Transfer → `stichting-youcon`). `stichting-youcon` accepteert via de mail op info@youcon.nu.
+- [x] Goniometrie heeft de overdracht naar `stichting-youcon` aangevraagd (29 oktober 2026).
+- [ ] `stichting-youcon` accepteert via de mail op info@youcon.nu (of github.com/notifications). Tot dan blijft de repo van Goniometrie.
 - [ ] `stichting-youcon` voegt Goniometrie toe als collaborator met schrijfrechten (Settings → Collaborators).
-- [ ] Repo openbaar maken (Settings → Danger Zone → Change visibility → Public).
+- [x] Repo openbaar gemaakt (29 oktober 2026).
 
 **2. Vercel-account**
 
@@ -68,7 +69,7 @@ Vink af wat klaar is.
 **3. Project**
 
 - [ ] Add New → Project → importeer `youcon-website`. Framework: Next.js (automatisch herkend), verder standaard.
-- [ ] Omgevingsvariabelen voor Production en Preview (waarden uit Supabase → Project Settings → API Keys):
+- [ ] Omgevingsvariabelen voor Production en Preview (waarden uit Supabase → Project Settings → API Keys, of over te nemen uit het oude project in "Tom's projects"):
   - `NEXT_PUBLIC_SUPABASE_URL`
   - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
 - [ ] Deploy. De site staat dan op `youcon-website-….vercel.app`.
@@ -88,3 +89,8 @@ Vink af wat klaar is.
 - [ ] Nagaan bij welke registrar youcon.nu staat (zie `beheer.md`); let op dat de e-mail van info@youcon.nu blijft werken.
 - [ ] Domein toevoegen in Vercel (Settings → Domains) en de DNS-records zetten die Vercel aangeeft.
 - [ ] Site URL in Supabase op `https://youcon.nu`.
+
+**7. Oude project opruimen** (zodra het YouCon-project werkt)
+
+- [ ] Verwijder `youcon-website` uit "Tom's projects" (Settings → General → Delete Project), anders bouwen beide projecten elke commit.
+- [ ] Haal de oude preview-URL's van "Tom's projects" weg uit de redirect URL's in Supabase.
