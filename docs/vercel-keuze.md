@@ -73,16 +73,18 @@ Een collaborator op een persoonlijke repo kan pushen, branches maken, pull reque
 
 **3. Project**
 
-- [ ] Add New → Project → importeer `youcon-website`. Framework: Next.js (automatisch herkend), verder standaard.
-- [ ] Omgevingsvariabelen voor Production en Preview (waarden uit Supabase → Project Settings → API Keys, of over te nemen uit het oude project in "Tom's projects"):
+- [x] Project `youcon-website` geïmporteerd in team `stichting-youcon` (29 oktober 2026). Framework: Next.js, verder standaard.
+- [x] Omgevingsvariabelen voor Production en Preview (waarden uit Supabase → Project Settings → API Keys):
   - `NEXT_PUBLIC_SUPABASE_URL`
-  - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
-- [ ] Deploy. De site staat dan op `youcon-website-….vercel.app`.
+  - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, type **Config**. Vercel weigert een `NEXT_PUBLIC_`-variabele van het type Secret; zo'n variabele kun je daarna ook niet meer omzetten, alleen verwijderen en opnieuw aanmaken.
+- [x] Productie draait op https://youcon-website-chi.vercel.app.
+
+Tip: de kopieerknop in het Supabase-dashboard werkt niet in elke ingebouwde browser. Controleer na het plakken dat er echt een `sb_publishable_…`-sleutel staat; een verkeerde sleutel geeft bij de build "Invalid API key".
 
 **4. Supabase laten kloppen** (Authentication → URL Configuration, zie `google-login.md`)
 
-- [ ] Redirect URL's: voeg de productie-URL van Vercel toe (`https://<project>.vercel.app/**`) en voor previews `https://*-<team-slug>.vercel.app/**`. De team-slug staat in de URL van het Vercel-dashboard.
-- [ ] Site URL: de Vercel-URL, tot youcon.nu omgezet is.
+- [x] Redirect URL's toegevoegd: `https://youcon-website-chi.vercel.app/**` en voor previews `https://*-stichting-youcon.vercel.app/**`.
+- [ ] Site URL: `https://youcon-website-chi.vercel.app`, tot youcon.nu omgezet is (nu nog `http://localhost:3000`).
 
 **5. Testen**
 
