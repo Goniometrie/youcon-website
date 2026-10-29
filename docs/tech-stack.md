@@ -7,7 +7,7 @@ Vastgestelde keuzes voor de YouCon-website, met de reden erachter.
 | Runtime & taal     | Node.js + TypeScript                         |
 | Framework          | Next.js 16 (App Router), React 19            |
 | Styling            | Tailwind CSS v4                              |
-| Code & versiebeheer | Git, repository op GitHub (`Goniometrie/youcon-website`) |
+| Code & versiebeheer | Git, repository op GitHub (`stichting-youcon/youcon-website`) |
 | Hosting & deploy   | Vercel                                       |
 | Database & auth    | Supabase (Postgres, Auth, Row Level Security) |
 
