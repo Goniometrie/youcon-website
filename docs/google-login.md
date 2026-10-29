@@ -15,7 +15,7 @@ De trigger `private.handle_new_user` maakt het profiel aan en haalt voor- en ach
 ## Huidige stand (29 oktober 2026)
 
 - Google Cloud-project `youcon-website` (eigenaren tomdiks96@gmail.com en info@youcon.nu, zie `beheer.md`), OAuth-client "YouCon website (Supabase)".
-- Supabase: Google staat aan; redirect-URL's `http://localhost:3000/**` en `https://youcon.nu/**`. Site URL staat nog op `http://localhost:3000`.
+- Supabase: Google staat aan; redirect-URL's `http://localhost:3000/**`, `https://youcon.nu/**`, `https://youcon-website-chi.vercel.app/**` en `https://*-stichting-youcon.vercel.app/**` (previews). Site URL staat op `https://youcon-website-chi.vercel.app` (tot youcon.nu live is).
 - Branding: homepage `https://youcon.nu`, privacyverklaring `https://youcon.nu/nl/privacy` (de pagina `src/app/[lang]/privacy/`; live zodra de nieuwe site op youcon.nu staat).
 - Publicatiestatus: **In production**, dus iedereen met een Google-account kan inloggen. Geen verificatie nodig zolang er geen logo is en alleen `email`/`profile` wordt gevraagd.
 
@@ -38,7 +38,7 @@ Alleen de standaardscopes (`openid`, `email`, `profile`) worden gebruikt, dus ee
 1. **Authentication → Sign In / Providers → Google:** zet aan en vul de client-ID en het secret in.
 2. **Authentication → URL Configuration:**
    - Site URL: `https://youcon.nu` (zolang de site nog niet live is: de Vercel-URL)
-   - Redirect URLs: `http://localhost:3000/**`, `https://youcon.nu/**` en voor previews `https://*-<vercel-team>.vercel.app/**`
+   - Redirect URLs: `http://localhost:3000/**`, `https://youcon.nu/**` en voor previews `https://*-stichting-youcon.vercel.app/**`
 3. "Allow new users to sign up" (Authentication → Sign In / Providers) moet aan staan, anders werkt Google alleen voor bestaande accounts.
 
 ## Privacy

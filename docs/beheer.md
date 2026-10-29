@@ -10,14 +10,14 @@ Bewaar de wachtwoorden van info@youcon.nu en het GitHub-account `stichting-youco
 |---|---|---|---|
 | Google Cloud, project `youcon-website` | Inloggen met Google (zie `google-login.md`) | info@youcon.nu + tomdiks96@gmail.com (beide Owner) | klaar; supportmail is info@youcon.nu |
 | Supabase, organisatie "Goniometrie", project `youcon-website` | Database, accounts, foto's | info@youcon.nu (inlog via GitHub `stichting-youcon`) + tomdiks96@gmail.com (beide Owner) | klaar; MFA nog aanzetten |
-| GitHub, `Goniometrie/youcon-website` (openbaar) | Code | Goniometrie (eigenaar); `stichting-youcon` (info@youcon.nu) is collaborator met schrijfrechten | overdracht naar `stichting-youcon` aangevraagd; wacht op acceptatie |
-| Vercel, gratis Hobby-account | Hosting | info@youcon.nu (inlog via GitHub `stichting-youcon`) | gekozen op 29 oktober 2026; account en project nog aanmaken (`vercel-keuze.md`). Tot dan draait het project in Toms persoonlijke account "Tom's projects" |
+| GitHub, `stichting-youcon/youcon-website` (openbaar) | Code | `stichting-youcon` (info@youcon.nu); Goniometrie is collaborator met schrijfrechten | klaar (overgezet op 29 oktober 2026) |
+| Vercel, gratis Hobby-account | Hosting | info@youcon.nu (inlog via GitHub `stichting-youcon`) | project `youcon-website` draait op https://youcon-website-chi.vercel.app (29 oktober 2026); zie `vercel-keuze.md` voor wat nog open staat. Het oude project in Toms account "Tom's projects" nog verwijderen |
 | Domein youcon.nu | Domeinnaam en e-mail | onbekend | nagaan bij welke registrar |
 
 ## Nog te doen
 
 1. **Supabase:** zet voor beide accounts tweestapsverificatie (MFA) aan. Overweeg de organisatie te hernoemen van "Goniometrie" naar "YouCon" (Organization Settings).
-2. **GitHub:** de repo is openbaar en de overdracht naar `stichting-youcon` is aangevraagd (29 oktober 2026). `stichting-youcon` moet die accepteren en daarna Goniometrie toevoegen als collaborator. Geen GitHub-organisatie: Vercel Hobby kan geen privérepo's van een organisatie deployen.
+2. **GitHub:** zet tweestapsverificatie aan voor `stichting-youcon` als dat nog niet zo is. Geen GitHub-organisatie: Vercel Hobby kan geen privérepo's van een organisatie deployen.
 3. **Vercel:** het bestuur koos een gratis account (Hobby) op naam van YouCon. Volg het stappenplan in `vercel-keuze.md`. YouCon maakt een nieuw project; het huidige project in "Tom's projects" wordt daarna verwijderd.
 
 ## Bij een bestuurswissel

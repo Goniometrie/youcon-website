@@ -55,34 +55,42 @@ Vink af wat klaar is.
 
 **1. Repo naar YouCon en openbaar**
 
+Alleen de eigenaar van een repo op een persoonlijk GitHub-account kan die aan Vercel koppelen ([Vercel](https://vercel.com/kb/guide/unable-to-find-github-repository)). Daarom wordt `stichting-youcon` eigenaar en blijft Goniometrie de ontwikkelaar als collaborator.
+
 - [x] Geschiedenis gecontroleerd op sleutels en `.env`-bestanden: niets gevonden. Wel zichtbaar na openbaar maken: e-mailadressen in de docs en in de commits.
-- [x] Goniometrie heeft de overdracht naar `stichting-youcon` aangevraagd (29 oktober 2026).
-- [ ] `stichting-youcon` accepteert via de mail op info@youcon.nu (of github.com/notifications). Tot dan blijft de repo van Goniometrie.
-- [ ] `stichting-youcon` voegt Goniometrie toe als collaborator met schrijfrechten (Settings → Collaborators).
 - [x] Repo openbaar gemaakt (29 oktober 2026).
+- [x] Repo overgezet naar `stichting-youcon` (29 oktober 2026).
+- [x] Goniometrie is collaborator met schrijfrechten.
+- [ ] Iedereen met een lokale kopie werkt de remote bij: `git remote set-url origin git@github.com:stichting-youcon/youcon-website.git` (de oude URL stuurt GitHub wel door).
+
+Een collaborator op een persoonlijke repo kan pushen, branches maken, pull requests openen, reviewen en mergen, en issues beheren. Alleen de eigenaar kan instellingen wijzigen (zoals branchbeveiliging en secrets), collaborators toevoegen, en de repo overzetten of verwijderen.
 
 **2. Vercel-account**
 
-- [ ] Ga naar vercel.com/signup, kies **Hobby** en "Continue with GitHub" als `stichting-youcon`. E-mailadres: info@youcon.nu. Zet tweestapsverificatie aan; herstelcodes in de wachtwoordmanager.
-- [ ] Installeer de Vercel GitHub-app alleen voor `stichting-youcon/youcon-website` ("Only select repositories").
+- [x] Hobby-account aangemaakt via GitHub `stichting-youcon`, e-mailadres info@youcon.nu (29 oktober 2026).
+- [ ] Tweestapsverificatie aanzetten (Account Settings → Authentication); herstelcodes in de wachtwoordmanager.
+- [x] Vercel GitHub-app geïnstalleerd, alleen voor `stichting-youcon/youcon-website`.
 
 **3. Project**
 
-- [ ] Add New → Project → importeer `youcon-website`. Framework: Next.js (automatisch herkend), verder standaard.
-- [ ] Omgevingsvariabelen voor Production en Preview (waarden uit Supabase → Project Settings → API Keys, of over te nemen uit het oude project in "Tom's projects"):
+- [x] Project `youcon-website` geïmporteerd in team `stichting-youcon` (29 oktober 2026). Framework: Next.js, verder standaard.
+- [x] Omgevingsvariabelen voor Production en Preview (waarden uit Supabase → Project Settings → API Keys):
   - `NEXT_PUBLIC_SUPABASE_URL`
-  - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
-- [ ] Deploy. De site staat dan op `youcon-website-….vercel.app`.
+  - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, type **Config**. Vercel weigert een `NEXT_PUBLIC_`-variabele van het type Secret; zo'n variabele kun je daarna ook niet meer omzetten, alleen verwijderen en opnieuw aanmaken.
+- [x] Productie draait op https://youcon-website-chi.vercel.app.
+
+Tip: de kopieerknop in het Supabase-dashboard werkt niet in elke ingebouwde browser. Controleer na het plakken dat er echt een `sb_publishable_…`-sleutel staat; een verkeerde sleutel geeft bij de build "Invalid API key".
 
 **4. Supabase laten kloppen** (Authentication → URL Configuration, zie `google-login.md`)
 
-- [ ] Redirect URL's: voeg de productie-URL van Vercel toe (`https://<project>.vercel.app/**`) en voor previews `https://*-<team-slug>.vercel.app/**`. De team-slug staat in de URL van het Vercel-dashboard.
-- [ ] Site URL: de Vercel-URL, tot youcon.nu omgezet is.
+- [x] Redirect URL's toegevoegd: `https://youcon-website-chi.vercel.app/**` en voor previews `https://*-stichting-youcon.vercel.app/**`.
+- [x] Site URL: `https://youcon-website-chi.vercel.app`, tot youcon.nu omgezet is.
 
 **5. Testen**
 
 - [ ] Inloggen met e-mail en met Google werkt op de Vercel-URL.
-- [ ] Een pull request van Goniometrie krijgt een preview. Lukt dat niet ("Hobby teams do not support collaboration"), dan blokkeert Vercel ook bij een openbare repo: upgrade naar Pro (Settings → Billing).
+- [x] Een pull request van Goniometrie krijgt een preview (getest met #14 op 29 oktober 2026): met een openbare repo blokkeert Hobby commits van collaborators niet. Mocht dat ooit veranderen ("Hobby teams do not support collaboration"), dan is upgraden naar Pro de oplossing (Settings → Billing).
+- Previews zijn standaard afgeschermd met Vercel Authentication: alleen wie als `stichting-youcon` bij Vercel is ingelogd kan ze openen. Openbaar maken kan via Settings → Deployment Protection.
 
 **6. Domein** (later, als de nieuwe site af is)
 
