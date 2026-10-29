@@ -11,7 +11,7 @@ Bewaar de wachtwoorden van info@youcon.nu en het GitHub-account `stichting-youco
 | Google Cloud, project `youcon-website` | Inloggen met Google (zie `google-login.md`) | info@youcon.nu + tomdiks96@gmail.com (beide Owner) | klaar; supportmail is info@youcon.nu |
 | Supabase, organisatie "Goniometrie", project `youcon-website` | Database, accounts, foto's | info@youcon.nu (inlog via GitHub `stichting-youcon`) + tomdiks96@gmail.com (beide Owner) | klaar; MFA nog aanzetten |
 | GitHub, `stichting-youcon/youcon-website` (openbaar) | Code | `stichting-youcon` (info@youcon.nu); Goniometrie is collaborator met schrijfrechten | klaar (overgezet op 29 oktober 2026) |
-| Vercel, gratis Hobby-account | Hosting | info@youcon.nu (inlog via GitHub `stichting-youcon`) | gekozen op 29 oktober 2026; account en project nog aanmaken (`vercel-keuze.md`). Tot dan draait het project in Toms persoonlijke account "Tom's projects" |
+| Vercel, gratis Hobby-account | Hosting | info@youcon.nu (inlog via GitHub `stichting-youcon`) | account aangemaakt en GitHub-app geïnstalleerd (29 oktober 2026); project nog aanmaken (`vercel-keuze.md`). Tot dan draait het project in Toms persoonlijke account "Tom's projects" |
 | Domein youcon.nu | Domeinnaam en e-mail | onbekend | nagaan bij welke registrar |
 
 ## Nog te doen

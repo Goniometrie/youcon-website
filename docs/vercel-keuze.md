@@ -67,8 +67,9 @@ Een collaborator op een persoonlijke repo kan pushen, branches maken, pull reque
 
 **2. Vercel-account**
 
-- [ ] Ga naar vercel.com/signup, kies **Hobby** en "Continue with GitHub" als `stichting-youcon`. E-mailadres: info@youcon.nu. Zet tweestapsverificatie aan; herstelcodes in de wachtwoordmanager.
-- [ ] Installeer de Vercel GitHub-app alleen voor `stichting-youcon/youcon-website` ("Only select repositories").
+- [x] Hobby-account aangemaakt via GitHub `stichting-youcon`, e-mailadres info@youcon.nu (29 oktober 2026).
+- [ ] Tweestapsverificatie aanzetten (Account Settings → Authentication); herstelcodes in de wachtwoordmanager.
+- [x] Vercel GitHub-app geïnstalleerd, alleen voor `stichting-youcon/youcon-website`.
 
 **3. Project**
 
