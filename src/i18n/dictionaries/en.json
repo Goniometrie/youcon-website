@@ -118,7 +118,10 @@
   "join": {
     "title": "Join YouCon",
     "intro": "Become a member of YouCon and stay up to date on all site visits and theme evenings.",
-    "comingSoon": "Online sign-up is coming soon. Until then, please get in touch."
+    "signUp": "Create an account in one step with your Google account. Then complete your details and sign up for site visits and theme evenings.",
+    "withoutGoogle": "No Google account, or rather not use it?",
+    "contact": "Get in touch",
+    "privacy": "Read how we handle your data in our privacy statement."
   },
   "partners": {
     "title": "Study and professional associations",
@@ -132,13 +135,17 @@
   },
   "login": {
     "title": "Log in",
-    "intro": "For the YouCon board. Member login will follow later.",
+    "intro": "Log in with your Google account or with your email address and password.",
     "email": "Email address",
     "password": "Password",
     "submit": "Log in",
     "submitting": "Logging in…",
     "invalid": "The email address or password is incorrect.",
-    "forgotten": "Forgot your password or need an account? Email"
+    "forgotten": "Forgot your password? Email",
+    "google": "Continue with Google",
+    "googlePending": "Redirecting to Google…",
+    "googleFailed": "Signing in with Google didn't work. Please try again.",
+    "or": "or"
   },
   "account": {
     "title": "My account",
@@ -179,7 +186,11 @@
       "mismatch": "The new passwords don't match.",
       "same": "Choose a password different from your current one.",
       "failed": "Changing it didn't work. Please try again later."
-    }
+    },
+    "profileIncomplete": "Welcome to YouCon! Please complete your details, at least your date of birth.",
+    "continue": "Continue",
+    "googleTitle": "Signing in",
+    "googleText": "You sign in with your Google account, so you don't need a password here."
   },
   "admin": {
     "title": "Admin",
@@ -289,6 +300,111 @@
         "generic": "Adding didn't work. Please try again."
       }
     }
+  },
+  "privacy": {
+    "title": "Privacy statement",
+    "intro": "What personal data YouCon processes through this website, why, and what your rights are.",
+    "updated": "Last updated on 29 October 2026.",
+    "sections": [
+      {
+        "title": "Who we are",
+        "text": [
+          "YouCon is the study association for young structural engineers. YouCon is responsible for processing the personal data collected through this website.",
+          "Questions about privacy? Email info@youcon.nu."
+        ],
+        "list": []
+      },
+      {
+        "title": "What data we process",
+        "text": [
+          "When you create or use an account, we store:"
+        ],
+        "list": [
+          "your email address;",
+          "your first and last name;",
+          "your date of birth;",
+          "the company you work at, if you fill it in;",
+          "your password, stored encrypted. We can't see it;",
+          "the activities you sign up for."
+        ]
+      },
+      {
+        "title": "Signing in with Google",
+        "text": [
+          "If you sign in with your Google account, Google gives us your name, email address and profile picture. We use your name and email address for your account. We don't use your profile picture. We don't give Google any information about what you do on this website."
+        ],
+        "list": []
+      },
+      {
+        "title": "What we use your data for",
+        "text": [
+          "We only use your data to:"
+        ],
+        "list": [
+          "manage your account and let you sign in;",
+          "keep track of your registrations for site visits and theme evenings, so we know who is coming and whether there are places left;",
+          "check with your date of birth whether you are within YouCon's age limit (up to 35);",
+          "contact you about activities you have signed up for."
+        ]
+      },
+      {
+        "title": "Legal basis",
+        "text": [
+          "We process your data because it is needed for your account and your registrations: you ask us to when you create an account or sign up (performance of a contract)."
+        ],
+        "list": []
+      },
+      {
+        "title": "Who can see your data",
+        "text": [
+          "Only the YouCon board and web admin can see accounts and registrations. Other members can't see your data. We don't sell your data or share it for marketing."
+        ],
+        "list": []
+      },
+      {
+        "title": "Parties that help us",
+        "text": [
+          "We use services from others for the website. They only process data on our behalf:"
+        ],
+        "list": [
+          "Supabase: database and sign-in. The data is stored on servers in Frankfurt (Germany);",
+          "Vercel: website hosting;",
+          "Google: only if you choose to sign in with Google."
+        ]
+      },
+      {
+        "title": "How long we keep data",
+        "text": [
+          "We keep your data as long as your account exists. Want your account deleted? Email info@youcon.nu and we'll delete your account and registrations."
+        ],
+        "list": []
+      },
+      {
+        "title": "Cookies",
+        "text": [
+          "We only use cookies that are needed to keep you signed in. We don't use cookies to track you or to measure visits."
+        ],
+        "list": []
+      },
+      {
+        "title": "Your rights",
+        "text": [
+          "You may view, correct or delete your data. You may also object to its use or request a copy to take elsewhere. You can change your name, company and date of birth yourself on your account page. For anything else, email info@youcon.nu.",
+          "Not happy with how we handle your data? You can file a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens)."
+        ],
+        "list": []
+      },
+      {
+        "title": "Changes",
+        "text": [
+          "We may update this privacy statement, for example when the website changes. The date at the top shows when it was last changed."
+        ],
+        "list": []
+      }
+    ]
+  },
+  "footer": {
+    "privacy": "Privacy"
   },
   "notFound": {
     "title": "Page not found",

@@ -1,9 +1,11 @@
 "use server";
 
+import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import type { Locale } from "@/i18n/config";
 import { routes } from "@/lib/site";
 import { createSessionClient } from "@/lib/supabase/server";
+import { safeNext } from "./next";
 
 export type SignInState = { error?: boolean; email?: string };
 
@@ -14,14 +16,33 @@ export async function signIn(
 ): Promise<SignInState> {
   const email = String(formData.get("email") ?? "").trim();
   const password = String(formData.get("password") ?? "");
-  const next = String(formData.get("next") ?? "");
+  const next = safeNext(formData.get("next"));
 
   const supabase = await createSessionClient();
   const { error } = await supabase.auth.signInWithPassword({ email, password });
   if (error) return { error: true, email };
 
   // Back to where they came from, but only to a page on this site.
-  redirect(/^\/(nl|en)([/?#]|$)/.test(next) ? next : `/${locale}${routes.admin}`);
+  redirect(next ?? `/${locale}${routes.admin}`);
+}
+
+/**
+ * Off to Google. Signs in an existing account, or creates one (role member)
+ * for a new address. Google sends the user back to the callback route.
+ */
+export async function signInWithGoogle(locale: Locale, formData: FormData) {
+  const next = safeNext(formData.get("next"));
+  const callback = new URL(`/${locale}${routes.login}/callback`, (await headers()).get("origin")!);
+  if (next) callback.searchParams.set("next", next);
+
+  const supabase = await createSessionClient();
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: { redirectTo: callback.href },
+  });
+  if (error) redirect(`/${locale}${routes.login}?error=google`);
+
+  redirect(data.url);
 }
 
 export async function signOut(locale: Locale) {

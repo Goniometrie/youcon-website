@@ -118,7 +118,10 @@
   "join": {
     "title": "Word lid",
     "intro": "Word lid van YouCon en blijf op de hoogte van alle excursies en thema-avonden.",
-    "comingSoon": "Online aanmelden komt binnenkort. Neem tot die tijd contact met ons op."
+    "signUp": "Maak met je Google-account in één stap een account aan. Daarna vul je je gegevens aan en kun je je inschrijven voor excursies en thema-avonden.",
+    "withoutGoogle": "Geen Google-account of liever zonder?",
+    "contact": "Neem contact met ons op",
+    "privacy": "Lees in onze privacyverklaring hoe we met je gegevens omgaan."
   },
   "partners": {
     "title": "Studie- en vakverenigingen",
@@ -132,13 +135,17 @@
   },
   "login": {
     "title": "Inloggen",
-    "intro": "Voor het bestuur van YouCon. Inloggen voor leden volgt later.",
+    "intro": "Log in met je Google-account of met je e-mailadres en wachtwoord.",
     "email": "E-mailadres",
     "password": "Wachtwoord",
     "submit": "Inloggen",
     "submitting": "Bezig met inloggen…",
     "invalid": "Het e-mailadres of wachtwoord klopt niet.",
-    "forgotten": "Wachtwoord vergeten of nog geen account? Mail naar"
+    "forgotten": "Wachtwoord vergeten? Mail naar",
+    "google": "Doorgaan met Google",
+    "googlePending": "Doorsturen naar Google…",
+    "googleFailed": "Inloggen met Google is niet gelukt. Probeer het opnieuw.",
+    "or": "of"
   },
   "account": {
     "title": "Mijn account",
@@ -179,7 +186,11 @@
       "mismatch": "De nieuwe wachtwoorden zijn niet hetzelfde.",
       "same": "Kies een ander wachtwoord dan je huidige.",
       "failed": "Wijzigen is niet gelukt. Probeer het later opnieuw."
-    }
+    },
+    "profileIncomplete": "Welkom bij YouCon! Vul je gegevens aan, in elk geval je geboortedatum.",
+    "continue": "Verder",
+    "googleTitle": "Inloggen",
+    "googleText": "Je logt in met je Google-account. Een wachtwoord heb je hier niet nodig."
   },
   "admin": {
     "title": "Beheer",
@@ -289,6 +300,111 @@
         "generic": "Toevoegen is niet gelukt. Probeer het opnieuw."
       }
     }
+  },
+  "privacy": {
+    "title": "Privacyverklaring",
+    "intro": "Welke gegevens YouCon via deze website verwerkt, waarom, en wat je rechten zijn.",
+    "updated": "Laatst bijgewerkt op 29 oktober 2026.",
+    "sections": [
+      {
+        "title": "Wie zijn wij",
+        "text": [
+          "YouCon is de studievereniging voor jonge constructeurs. YouCon is verantwoordelijk voor de verwerking van de persoonsgegevens die via deze website binnenkomen.",
+          "Vragen over privacy? Mail naar info@youcon.nu."
+        ],
+        "list": []
+      },
+      {
+        "title": "Welke gegevens we verwerken",
+        "text": [
+          "Als je een account aanmaakt of gebruikt, bewaren we:"
+        ],
+        "list": [
+          "je e-mailadres;",
+          "je voor- en achternaam;",
+          "je geboortedatum;",
+          "het bedrijf waar je werkt, als je dat invult;",
+          "je wachtwoord, versleuteld opgeslagen. Wij kunnen het niet inzien;",
+          "de activiteiten waarvoor je je inschrijft."
+        ]
+      },
+      {
+        "title": "Inloggen met Google",
+        "text": [
+          "Log je in met je Google-account, dan geeft Google ons je naam, e-mailadres en profielfoto. Je naam en e-mailadres gebruiken we voor je account. Je profielfoto gebruiken we niet. Google krijgt van ons geen gegevens over wat je op deze website doet."
+        ],
+        "list": []
+      },
+      {
+        "title": "Waarvoor we je gegevens gebruiken",
+        "text": [
+          "We gebruiken je gegevens alleen om:"
+        ],
+        "list": [
+          "je account te beheren en je te laten inloggen;",
+          "je inschrijvingen voor excursies en thema-avonden bij te houden, zodat we weten wie er komt en of er nog plek is;",
+          "met je geboortedatum na te gaan of je binnen de leeftijdsgrens van YouCon valt (tot 35 jaar);",
+          "contact met je op te nemen over activiteiten waarvoor je bent ingeschreven."
+        ]
+      },
+      {
+        "title": "Grondslag",
+        "text": [
+          "We verwerken je gegevens omdat dat nodig is voor je account en je inschrijvingen: daar vraag je ons om als je een account aanmaakt of je inschrijft (uitvoering van een overeenkomst)."
+        ],
+        "list": []
+      },
+      {
+        "title": "Wie je gegevens kan zien",
+        "text": [
+          "Alleen het bestuur en de webbeheerder van YouCon kunnen accounts en inschrijvingen inzien. Andere leden zien je gegevens niet. We verkopen je gegevens niet en geven ze niet door voor marketing."
+        ],
+        "list": []
+      },
+      {
+        "title": "Partijen die ons helpen",
+        "text": [
+          "Voor de website gebruiken we diensten van anderen. Zij verwerken gegevens alleen in onze opdracht:"
+        ],
+        "list": [
+          "Supabase: database en inloggen. De gegevens staan op servers in Frankfurt (Duitsland);",
+          "Vercel: hosting van de website;",
+          "Google: alleen als je kiest voor inloggen met Google."
+        ]
+      },
+      {
+        "title": "Hoe lang we gegevens bewaren",
+        "text": [
+          "We bewaren je gegevens zolang je account bestaat. Wil je je account laten verwijderen? Mail naar info@youcon.nu, dan verwijderen we je account en je inschrijvingen."
+        ],
+        "list": []
+      },
+      {
+        "title": "Cookies",
+        "text": [
+          "We gebruiken alleen cookies die nodig zijn om je ingelogd te houden. We gebruiken geen cookies om je te volgen of om bezoek te meten."
+        ],
+        "list": []
+      },
+      {
+        "title": "Je rechten",
+        "text": [
+          "Je mag je gegevens inzien, laten verbeteren of laten verwijderen. Je mag ook bezwaar maken tegen het gebruik ervan of je gegevens opvragen om mee te nemen. Je naam, bedrijf en geboortedatum pas je zelf aan op je accountpagina. Voor de rest mail je naar info@youcon.nu.",
+          "Ben je niet tevreden over hoe we met je gegevens omgaan? Dan kun je een klacht indienen bij de Autoriteit Persoonsgegevens."
+        ],
+        "list": []
+      },
+      {
+        "title": "Wijzigingen",
+        "text": [
+          "We kunnen deze privacyverklaring aanpassen, bijvoorbeeld als de website verandert. Bovenaan staat wanneer dat voor het laatst is gebeurd."
+        ],
+        "list": []
+      }
+    ]
+  },
+  "footer": {
+    "privacy": "Privacy"
   },
   "notFound": {
     "title": "Pagina niet gevonden",
