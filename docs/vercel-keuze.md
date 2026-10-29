@@ -84,7 +84,7 @@ Tip: de kopieerknop in het Supabase-dashboard werkt niet in elke ingebouwde brow
 **4. Supabase laten kloppen** (Authentication → URL Configuration, zie `google-login.md`)
 
 - [x] Redirect URL's toegevoegd: `https://youcon-website-chi.vercel.app/**` en voor previews `https://*-stichting-youcon.vercel.app/**`.
-- [ ] Site URL: `https://youcon-website-chi.vercel.app`, tot youcon.nu omgezet is (nu nog `http://localhost:3000`).
+- [x] Site URL: `https://youcon-website-chi.vercel.app`, tot youcon.nu omgezet is.
 
 **5. Testen**
 
