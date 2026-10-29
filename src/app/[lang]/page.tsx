@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { AgendaRow, FeaturedActivity } from "@/components/agenda";
 import { buttonClass } from "@/components/button";
@@ -6,7 +7,12 @@ import { SectionTitle } from "@/components/page-header";
 import { PhotoMosaic } from "@/components/photo-mosaic";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { getAgenda } from "@/lib/activities";
+import { alternates } from "@/lib/seo";
 import { routes } from "@/lib/site";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return { alternates: await alternates(routes.home) };
+}
 
 export default async function HomePage() {
   const [dict, locale, agenda] = await Promise.all([

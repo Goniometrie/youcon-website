@@ -5,12 +5,13 @@ import { GoogleSignIn } from "@/components/google-sign-in";
 import { PageHeader, Section } from "@/components/page-header";
 import type { Locale } from "@/i18n/config";
 import { type Dictionary, getDictionary, getLocale } from "@/i18n/dictionaries";
+import { alternates } from "@/lib/seo";
 import { routes } from "@/lib/site";
 import { safeNext } from "../inloggen/next";
 import { EmailSignUp } from "./signup-form";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return { title: (await getDictionary()).join.title };
+  return { title: (await getDictionary()).join.title, alternates: await alternates(routes.join) };
 }
 
 export default async function JoinPage({ searchParams }: PageProps<"/[lang]/lid-worden">) {

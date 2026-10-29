@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { PageHeader, Section } from "@/components/page-header";
 import { getDictionary } from "@/i18n/dictionaries";
-import { site } from "@/lib/site";
+import { alternates } from "@/lib/seo";
+import { routes, site } from "@/lib/site";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return { title: (await getDictionary()).contact.title };
+  return { title: (await getDictionary()).contact.title, alternates: await alternates(routes.contact) };
 }
 
 export default async function ContactPage() {

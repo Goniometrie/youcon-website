@@ -5,10 +5,11 @@ import { buttonClass } from "@/components/button";
 import { PageHeader, SectionTitle } from "@/components/page-header";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { boardMembers, groupPhoto } from "@/lib/board";
+import { alternates } from "@/lib/seo";
 import { routes, site } from "@/lib/site";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return { title: (await getDictionary()).board.title };
+  return { title: (await getDictionary()).board.title, alternates: await alternates(routes.board) };
 }
 
 export default async function BoardPage() {

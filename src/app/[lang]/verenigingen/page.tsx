@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { PageHeader, Section } from "@/components/page-header";
 import { getDictionary } from "@/i18n/dictionaries";
+import { alternates } from "@/lib/seo";
+import { routes } from "@/lib/site";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return { title: (await getDictionary()).partners.title };
+  return { title: (await getDictionary()).partners.title, alternates: await alternates(routes.partners) };
 }
 
 export default async function PartnersPage() {

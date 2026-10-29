@@ -4,11 +4,12 @@ import { buttonClass } from "@/components/button";
 import { PageHeader, SectionTitle } from "@/components/page-header";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { founders } from "@/lib/founders";
+import { alternates } from "@/lib/seo";
 import { routes } from "@/lib/site";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = (await getDictionary()).history;
-  return { title: t.title, description: t.intro };
+  return { title: t.title, description: t.intro, alternates: await alternates(routes.history) };
 }
 
 export default async function HistoryPage() {

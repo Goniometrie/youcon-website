@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader, Section } from "@/components/page-header";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
+import { alternates } from "@/lib/seo";
 import { routes } from "@/lib/site";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return { title: (await getDictionary()).association.title };
+  return { title: (await getDictionary()).association.title, alternates: await alternates(routes.association) };
 }
 
 export default async function AssociationPage() {
