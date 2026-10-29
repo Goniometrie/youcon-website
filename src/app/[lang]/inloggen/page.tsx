@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Suspense } from "react";
 import { GoogleSignIn } from "@/components/google-sign-in";
 import { PageHeader, Section } from "@/components/page-header";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
-import { site } from "@/lib/site";
+import { routes, site } from "@/lib/site";
 import { LoginForm } from "./login-form";
 import { safeNext } from "./next";
+
+const LOGIN_ERRORS = ["google", "confirm", "reset"] as const;
+type LoginError = (typeof LOGIN_ERRORS)[number];
 
 export async function generateMetadata(): Promise<Metadata> {
   return { title: (await getDictionary()).login.title };
@@ -26,7 +30,7 @@ export default async function LoginPage({ searchParams }: PageProps<"/[lang]/inl
             <LoginOptionsWithParams locale={locale} t={t} searchParams={searchParams} />
           </Suspense>
           <p className="mt-8 text-sm text-muted-foreground">
-            {t.forgotten}{" "}
+            {t.help}{" "}
             <a href={`mailto:${site.email}`} className="font-bold text-brand hover:underline">
               {site.email}
             </a>
@@ -42,18 +46,21 @@ function LoginOptions({
   locale,
   t,
   next,
-  googleFailed,
+  error,
 }: {
   locale: Locale;
   t: Dictionary["login"];
   next?: string;
-  googleFailed?: boolean;
+  /** Why the callback route sent the user back here. */
+  error?: LoginError;
 }) {
+  const join = `/${locale}${routes.join}${next ? `?next=${encodeURIComponent(next)}` : ""}`;
+
   return (
     <div className="flex flex-col gap-6">
-      {googleFailed && (
+      {error && (
         <p role="alert" className="rounded-md bg-danger-muted px-4 py-3 text-sm font-semibold text-danger">
-          {t.googleFailed}
+          {error === "google" ? t.googleFailed : error === "confirm" ? t.confirmFailed : t.resetFailed}
         </p>
       )}
       <GoogleSignIn locale={locale} label={t.google} pendingLabel={t.googlePending} next={next} />
@@ -61,6 +68,12 @@ function LoginOptions({
         {t.or}
       </p>
       <LoginForm locale={locale} t={t} next={next} />
+      <p className="text-sm text-muted-foreground">
+        {t.noAccount}{" "}
+        <Link href={join} className="font-bold text-brand hover:underline">
+          {t.join}
+        </Link>
+      </p>
     </div>
   );
 }
@@ -76,6 +89,11 @@ async function LoginOptionsWithParams({
 }) {
   const { next, error } = await searchParams;
   return (
-    <LoginOptions locale={locale} t={t} next={safeNext(next)} googleFailed={error === "google"} />
+    <LoginOptions
+      locale={locale}
+      t={t}
+      next={safeNext(next)}
+      error={LOGIN_ERRORS.find((e) => e === error)}
+    />
   );
 }

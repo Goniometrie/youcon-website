@@ -26,7 +26,8 @@ Nieuwe website voor YouCon, de studievereniging voor jonge constructeurs. Vervan
 - `src/proxy.ts` — stuurt URL's zonder taalprefix door naar `/nl` of `/en` (Accept-Language); ververst de Supabase-sessie op `/admin` en `/inloggen` en stuurt niet-ingelogden van `/admin` naar inloggen
 - `src/i18n/` — `config.ts` (locales), `dictionaries.ts` (`getDictionary()`, `getLocale()` via `next/root-params`), `dictionaries/{nl,en}.json`
 - `src/components/` — gedeelde UI (header, footer, kaarten)
-- `src/app/[lang]/admin/` — beheer voor bestuur/admin (activiteiten aanmaken, bewerken, verwijderen, aanmeldingen per activiteit); `inloggen/` is de loginpagina (e-mail/wachtwoord of Google; `?next=` stuurt na inloggen terug), `inloggen/callback/` ruilt de Google-code in voor een sessie. Instellen van Google: `docs/google-login.md`
+- `src/app/[lang]/admin/` — beheer voor bestuur/admin (activiteiten aanmaken, bewerken, verwijderen, aanmeldingen per activiteit); `inloggen/` is de loginpagina (e-mail/wachtwoord of Google; `?next=` stuurt na inloggen terug), `inloggen/callback/` ruilt de code uit Google of uit een bevestigings-/resetmail in voor een sessie, `inloggen/wachtwoord-vergeten/` en `inloggen/nieuw-wachtwoord/` zijn de wachtwoordreset. Instellen: `docs/google-login.md` en `docs/email-login.md` (SMTP, mailteksten)
+- `src/app/[lang]/lid-worden/` — account aanmaken met Google of met e-mail/wachtwoord (`signUp` in `actions.ts`; Supabase mailt een bevestigingslink)
 - `src/app/[lang]/activiteiten/actions.ts` — inschrijven en uitschrijven door ingelogde gebruikers; de database (trigger op `registrations`) controleert of er plek is
 - `src/lib/` — data en helpers; `activities.ts` leest activiteiten uit Supabase (`use cache` + tag `activities`), `registrations.ts` geeft aantallen aanmeldingen (`use cache` + tag `registrations`) en je eigen inschrijvingen, `auth.ts` geeft het ingelogde profiel
 - `src/lib/supabase/` — clients: `createSessionClient()` (als ingelogde gebruiker, leest cookies), `createPublicClient()` (anoniem, veilig in `use cache`), browser-client voor foto-uploads; `database.types.ts` is gegenereerd
@@ -46,6 +47,6 @@ Nieuwe website voor YouCon, de studievereniging voor jonge constructeurs. Vervan
 
 1. Content van de oude site overzetten (missie, bestuur, geschiedenis, verenigingen)
 2. ~~Supabase koppelen + inloggen voor bestuur, activiteiten beheren~~ (klaar)
-3. ~~Inloggen voor leden en inschrijven voor activiteiten~~ (klaar; zelf een account aanmaken via Google op `/lid-worden`; wachtlijst nog niet)
+3. ~~Inloggen voor leden en inschrijven voor activiteiten~~ (klaar; zelf een account aanmaken op `/lid-worden` met Google of e-mail/wachtwoord; voor e-mail is nog eigen SMTP nodig, zie `docs/email-login.md`; wachtlijst nog niet)
 4. Nieuwsbrief-aanmelding
 5. Deploy op Vercel en domein youcon.nu overzetten

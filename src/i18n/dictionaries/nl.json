@@ -181,9 +181,27 @@
   "join": {
     "title": "Word lid",
     "intro": "Word lid van YouCon en blijf op de hoogte van alle excursies en thema-avonden.",
-    "signUp": "Maak met je Google-account in één stap een account aan. Daarna vul je je gegevens aan en kun je je inschrijven voor excursies en thema-avonden.",
-    "withoutGoogle": "Geen Google-account of liever zonder?",
-    "contact": "Neem contact met ons op",
+    "signUp": "Maak een account aan met Google, of met je e-mailadres en een wachtwoord. Daarna kun je je inschrijven voor excursies en thema-avonden.",
+    "withEmail": "Doorgaan met e-mailadres",
+    "email": "E-mailadres",
+    "password": "Wachtwoord",
+    "confirmPassword": "Herhaal wachtwoord",
+    "submit": "Account aanmaken",
+    "submitting": "Bezig met aanmaken…",
+    "sent": "Bijna klaar! We hebben een mail gestuurd naar {email}. Klik op de link in die mail om je account te activeren.",
+    "sentHint": "Geen mail gekregen? Kijk in je spam. Heb je al een account met dit adres? Dan krijg je geen mail en kun je gewoon inloggen.",
+    "errors": {
+      "birthDate": "Vul een geldige geboortedatum in.",
+      "short": "Je wachtwoord moet minimaal {min} tekens hebben.",
+      "mismatch": "De wachtwoorden zijn niet hetzelfde.",
+      "weak": "Dit wachtwoord is te makkelijk te raden. Kies een sterker wachtwoord.",
+      "email": "Vul een geldig e-mailadres in.",
+      "exists": "Er is al een account met dit e-mailadres. Log in, of vraag een nieuw wachtwoord aan.",
+      "rateLimit": "Er zijn net te veel accounts aangemaakt. Probeer het over een uur opnieuw.",
+      "failed": "Account aanmaken is niet gelukt. Probeer het later opnieuw."
+    },
+    "haveAccount": "Heb je al een account?",
+    "login": "Log in",
     "privacy": "Lees in onze privacyverklaring hoe we met je gegevens omgaan."
   },
   "partners": {
@@ -204,11 +222,40 @@
     "submit": "Inloggen",
     "submitting": "Bezig met inloggen…",
     "invalid": "Het e-mailadres of wachtwoord klopt niet.",
-    "forgotten": "Wachtwoord vergeten? Mail naar",
+    "unconfirmed": "Je e-mailadres is nog niet bevestigd. Klik eerst op de link in de mail die we je stuurden.",
     "google": "Doorgaan met Google",
     "googlePending": "Doorsturen naar Google…",
     "googleFailed": "Inloggen met Google is niet gelukt. Probeer het opnieuw.",
-    "or": "of"
+    "confirmFailed": "Je account bevestigen is niet gelukt. Misschien is het al bevestigd: probeer dan hieronder in te loggen. Werkt dat niet, maak je account dan opnieuw aan voor een nieuwe link.",
+    "resetFailed": "Deze link om je wachtwoord te herstellen is verlopen of al gebruikt. Vraag via “Wachtwoord vergeten?” een nieuwe aan.",
+    "or": "of",
+    "forgot": "Wachtwoord vergeten?",
+    "help": "Lukt inloggen niet? Mail naar",
+    "noAccount": "Nog geen account?",
+    "join": "Word lid"
+  },
+  "password": {
+    "forgotTitle": "Wachtwoord vergeten",
+    "forgotIntro": "Vul je e-mailadres in. Je krijgt een mail met een link om een nieuw wachtwoord te kiezen.",
+    "send": "Stuur link",
+    "sending": "Bezig met versturen…",
+    "sent": "Als er een account is met {email}, hebben we daar een mail met een link naartoe gestuurd. Geen mail? Kijk in je spam.",
+    "rateLimit": "Er zijn net te veel mails verstuurd. Probeer het over een uur opnieuw.",
+    "failed": "Versturen is niet gelukt. Probeer het later opnieuw.",
+    "newTitle": "Nieuw wachtwoord",
+    "newIntro": "Kies een nieuw wachtwoord voor je account.",
+    "save": "Wachtwoord opslaan",
+    "saved": "Je nieuwe wachtwoord is opgeslagen en je bent ingelogd.",
+    "errors": {
+      "short": "Je wachtwoord moet minimaal {min} tekens hebben.",
+      "mismatch": "De wachtwoorden zijn niet hetzelfde.",
+      "same": "Kies een ander wachtwoord dan je huidige.",
+      "expired": "Deze link is verlopen of al gebruikt.",
+      "failed": "Opslaan is niet gelukt. Probeer het later opnieuw."
+    },
+    "requestNew": "Vraag een nieuwe link aan",
+    "toAccount": "Naar mijn account",
+    "backToLogin": "Terug naar inloggen"
   },
   "account": {
     "title": "Mijn account",
