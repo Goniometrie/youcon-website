@@ -49,11 +49,74 @@
     "title": "Association",
     "intro": "YouCon is the study association for young and future structural engineers.",
     "missionTitle": "Mission",
-    "missionText": "To be added: YouCon's mission.",
+    "missionText": "A network for young structural engineers, where you share knowledge and look beyond your own field.",
     "boardTitle": "Board",
     "boardText": "The board organises the activities and is your first point of contact.",
     "historyTitle": "History",
-    "historyText": "To be added: the history of YouCon."
+    "historyText": "YouCon was founded on 19 November 2009, during the Betondag, by ten young structural engineers.",
+    "missionLink": "Read our mission",
+    "historyLink": "Read our history"
+  },
+  "mission": {
+    "title": "Mission",
+    "intro": "Why we started YouCon and what we stand for.",
+    "storyTitle": "Why YouCon",
+    "story": [
+      "We didn’t start YouCon on a whim: we believe there is a need for it. It’s good to talk about our profession with other young people and to share experiences with people other than your colleagues. And it’s interesting to look beyond your own field now and then.",
+      "We run into each other in the construction process, and although we are all structural engineers, we sometimes don’t understand each other. That’s a shame, because there is a lot you can learn from others."
+    ],
+    "storyClosing": "That’s why we started YouCon.",
+    "pointsTitle": "Our mission in four points",
+    "points": [
+      {
+        "title": "A network",
+        "text": "YouCon is a network for young structural engineers, where you get to know your peers in an informal way."
+      },
+      {
+        "title": "Sharing knowledge",
+        "text": "YouCon gives young structural engineers a platform to share knowledge and exchange experiences."
+      },
+      {
+        "title": "Looking further",
+        "text": "YouCon lets young structural engineers look beyond their own sector, for more understanding of each other. We are there for all structural engineers: consultants, contractors and inspectors, in buildings, infrastructure, geotechnics and research."
+      },
+      {
+        "title": "Putting the profession on the map",
+        "text": "YouCon wants to contribute to a positive image of the structural engineer and to structural safety."
+      }
+    ],
+    "ctaTitle": "Join in",
+    "ctaText": "Come to an excursion or theme evening and get to know your peers. Every young structural engineer is welcome.",
+    "ctaAgenda": "View the calendar"
+  },
+  "history": {
+    "title": "History",
+    "intro": "How YouCon came about in 2009: from a young voice in the Betonvereniging to an association of its own.",
+    "timelineTitle": "How it started",
+    "moments": [
+      {
+        "date": "Autumn 2009",
+        "title": "The initiative",
+        "text": [
+          "In the autumn of 2009, Dick Stoelhorst, then director of the Betonvereniging (the Dutch concrete association), and Raphaël Steenbergen held the first meetings about bringing ‘a young voice to the Betonvereniging’.",
+          "In the two months that followed, a group of young structural engineers came together, working in consultancy, contracting, research and inspection, among other fields."
+        ]
+      },
+      {
+        "date": "19 November 2009",
+        "title": "The founding",
+        "text": [
+          "YouCon was founded on 19 November 2009, during the Betondag (Concrete Day). At 3 pm, in the BetonverenigingsarenA, the starting signal was given in front of the audience in the stands.",
+          "Raphaël Steenbergen gave a short presentation in which he introduced the founders and drew attention to the profession of the structural engineer. Younger members of the Betonvereniging and young structural engineers were invited to join YouCon."
+        ]
+      }
+    ],
+    "foundersTitle": "The founders",
+    "foundersIntro": "YouCon was founded by ten young structural engineers.",
+    "initiator": "Initiator",
+    "todayTitle": "YouCon today",
+    "todayText": "The board carries on the work of the founders, with excursions and theme evenings for young structural engineers.",
+    "missionLink": "Read our mission"
   },
   "board": {
     "title": "Board",

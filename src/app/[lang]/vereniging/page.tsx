@@ -12,14 +12,24 @@ export default async function AssociationPage() {
   const [dict, locale] = await Promise.all([getDictionary(), getLocale()]);
   const t = dict.association;
   const blocks = [
-    { id: "missie", title: t.missionTitle, text: t.missionText },
+    {
+      id: "missie",
+      title: t.missionTitle,
+      text: t.missionText,
+      link: { href: `/${locale}${routes.mission}`, label: t.missionLink },
+    },
     {
       id: "bestuur",
       title: t.boardTitle,
       text: t.boardText,
       link: { href: `/${locale}${routes.board}`, label: dict.home.community.board },
     },
-    { id: "geschiedenis", title: t.historyTitle, text: t.historyText },
+    {
+      id: "geschiedenis",
+      title: t.historyTitle,
+      text: t.historyText,
+      link: { href: `/${locale}${routes.history}`, label: t.historyLink },
+    },
   ];
 
   return (

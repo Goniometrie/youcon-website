@@ -49,11 +49,74 @@
     "title": "Vereniging",
     "intro": "YouCon is de studievereniging voor jonge en toekomstige constructeurs.",
     "missionTitle": "Missie",
-    "missionText": "Nog aan te vullen: de missie van YouCon.",
+    "missionText": "Een netwerk voor jonge constructeurs, waar je kennis deelt en verder kijkt dan je eigen vakgebied.",
     "boardTitle": "Bestuur",
     "boardText": "Het bestuur organiseert de activiteiten en is je eerste aanspreekpunt.",
     "historyTitle": "Geschiedenis",
-    "historyText": "Nog aan te vullen: de geschiedenis van YouCon."
+    "historyText": "YouCon is opgericht op 19 november 2009, tijdens de Betondag, door tien jonge constructeurs.",
+    "missionLink": "Lees onze missie",
+    "historyLink": "Lees de geschiedenis"
+  },
+  "mission": {
+    "title": "Missie",
+    "intro": "Waarom we YouCon zijn begonnen en waar we voor staan.",
+    "storyTitle": "Waarom YouCon",
+    "story": [
+      "We zijn niet zomaar met YouCon begonnen: we denken dat er behoefte aan is. Het is fijn om met andere jonge mensen over ons vak te praten en ervaringen uit te wisselen met anderen dan je collega’s. En het is interessant om eens verder te kijken dan je eigen vakgebied.",
+      "We komen elkaar tegen in het bouwproces, en hoewel we allemaal constructeurs zijn, begrijpen we elkaar soms niet. Dat is jammer, want je kunt veel van anderen leren."
+    ],
+    "storyClosing": "Daarom zijn we begonnen met YouCon.",
+    "pointsTitle": "Onze missie in vier punten",
+    "points": [
+      {
+        "title": "Een netwerk",
+        "text": "YouCon vormt een netwerk voor jonge constructeurs. Zo leer je je vakgenoten op een informele manier beter kennen."
+      },
+      {
+        "title": "Kennis delen",
+        "text": "YouCon biedt jonge constructeurs een platform om kennis te delen en ervaringen uit te wisselen."
+      },
+      {
+        "title": "Verder kijken",
+        "text": "YouCon laat jonge constructeurs verder kijken dan hun eigen bedrijfstak, voor meer begrip voor elkaar. We zijn er voor alle constructeurs: adviseurs, aannemers en toezichthouders, in de utiliteitsbouw, infra, geotechniek en wetenschap."
+      },
+      {
+        "title": "Het vak op de kaart",
+        "text": "YouCon wil bijdragen aan een positief imago van de constructeur en aan constructieve veiligheid."
+      }
+    ],
+    "ctaTitle": "Doe mee",
+    "ctaText": "Kom naar een excursie of thema-avond en leer je vakgenoten kennen. Iedere jonge constructeur is welkom.",
+    "ctaAgenda": "Bekijk de agenda"
+  },
+  "history": {
+    "title": "Geschiedenis",
+    "intro": "Hoe YouCon in 2009 ontstond: van een jong geluid in de Betonvereniging tot een eigen vereniging.",
+    "timelineTitle": "Hoe het begon",
+    "moments": [
+      {
+        "date": "Herfst 2009",
+        "title": "Initiatief",
+        "text": [
+          "In de herfst van 2009 vonden de eerste overleggen plaats tussen Dick Stoelhorst, destijds directeur van de Betonvereniging, en Raphaël Steenbergen over het verzorgen van ‘een jong geluid in de Betonvereniging’.",
+          "In de twee maanden daarna vormde zich een groep jonge constructeurs, werkzaam in onder meer de ingenieursbranche, de aannemerij, de onderzoekswereld en het toezicht."
+        ]
+      },
+      {
+        "date": "19 november 2009",
+        "title": "Oprichting",
+        "text": [
+          "YouCon is opgericht op 19 november 2009, tijdens de Betondag. In de BetonverenigingsarenA werd om 15.00 uur voor de toehoorders op de tribune het startsein gegeven.",
+          "Raphaël Steenbergen gaf een korte presentatie, waarin hij de oprichters voorstelde en aandacht vroeg voor het vak van de constructeur. Jongere leden van de Betonvereniging en jonge constructeurs werden opgeroepen zich aan te sluiten bij YouCon."
+        ]
+      }
+    ],
+    "foundersTitle": "De oprichters",
+    "foundersIntro": "YouCon is opgericht door tien jonge constructeurs.",
+    "initiator": "Initiatiefnemer",
+    "todayTitle": "YouCon vandaag",
+    "todayText": "Het bestuur zet het werk van de oprichters voort, met excursies en thema-avonden voor jonge constructeurs.",
+    "missionLink": "Lees onze missie"
   },
   "board": {
     "title": "Bestuur",
