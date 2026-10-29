@@ -19,7 +19,7 @@ export default async function JoinPage({ searchParams }: PageProps<"/[lang]/lid-
 
   return (
     <>
-      <PageHeader title={t.title} intro={t.intro} />
+      <PageHeader title={t.heading} intro={t.intro} />
       <Section>
         <div className="mx-auto max-w-xl">
           <p className="text-center text-body">{t.signUp}</p>
