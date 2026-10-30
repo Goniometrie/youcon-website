@@ -20,7 +20,7 @@ Bewaar de wachtwoorden van info@youcon.nu en het GitHub-account `stichting-youco
 
 1. **Supabase en Resend:** zet tweestapsverificatie (MFA) aan (Supabase voor beide accounts; Resend: Settings → Account). Overweeg de organisatie te hernoemen van "Goniometrie" naar "YouCon" (Organization Settings).
 2. **GitHub:** zet tweestapsverificatie aan voor `stichting-youcon` als dat nog niet zo is. Geen GitHub-organisatie: Vercel Hobby kan geen privérepo's van een organisatie deployen.
-3. **Vercel:** het bestuur koos een gratis account (Hobby) op naam van YouCon. Volg het stappenplan in `vercel-keuze.md`. Het oude project in "Tom's projects" is niet meer te vinden (30 oktober 2026), dus lijkt verwijderd.
+3. **Vercel:** het bestuur koos een gratis account (Hobby) op naam van YouCon. Volg het stappenplan in `vercel-keuze.md`. Het oude project in "Tom's projects" (persoonlijk account van de ontwikkelaar) is op 30 oktober 2026 verwijderd; `youcon-website.vercel.app` bestaat niet meer.
 4. **Domein youcon.nu:** CL Web beheert de DNS. Zet contactpersoon en klantnummer bij CL Web in de wachtwoordmanager en stuur CL Web één verzoek met de records uit `dns-youcon-nu.md` (stap 0). Vraag daarbij wie de houder van het domein is. Op termijn het domein verhuizen naar een registrar waar info@youcon.nu eigenaar is, vóór de verlenging op 18 februari 2027.
 5. **Google Workspace:** nagaan wie beheerder is van de Google Workspace van youcon.nu (de mailbox info@youcon.nu) en die inlog ook in de wachtwoordmanager zetten.
 
