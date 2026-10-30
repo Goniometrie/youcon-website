@@ -438,7 +438,7 @@
   "privacy": {
     "title": "Privacy statement",
     "intro": "What personal data YouCon processes through this website, why, and what your rights are.",
-    "updated": "Last updated on 29 October 2026.",
+    "updated": "Last updated on 30 October 2026.",
     "sections": [
       {
         "title": "Who we are",
@@ -484,7 +484,8 @@
       {
         "title": "Legal basis",
         "text": [
-          "We process your data because it is needed for your account and your registrations: you ask us to when you create an account or sign up (performance of a contract)."
+          "We process your data because it is needed for your account and your registrations: you ask us to when you create an account or sign up (performance of a contract).",
+          "For analytics cookies, the legal basis is your consent. We ask for it beforehand and you can withdraw it at any time."
         ],
         "list": []
       },
@@ -503,7 +504,7 @@
         "list": [
           "Supabase: database and sign-in. The data is stored on servers in Frankfurt (Germany);",
           "Vercel: website hosting;",
-          "Google: only if you choose to sign in with Google."
+          "Google: if you choose to sign in with Google, and for Google Analytics if you consent to analytics cookies."
         ]
       },
       {
@@ -516,7 +517,9 @@
       {
         "title": "Cookies",
         "text": [
-          "We only use cookies that are needed to keep you signed in. We don't use cookies to track you or to measure visits."
+          "Necessary cookies: when you sign in, cookies from Supabase keep you signed in. We store your cookie choice for 12 months in the cookie youcon_consent. We don't ask consent for these cookies.",
+          "Analytics cookies: only if you consent, we use Google Analytics to measure how the website is used, for example which pages are visited. Google Analytics sets the cookies _ga and _ga_… for this (up to 2 years). Without your consent we don't load Google Analytics. Google processes this data on our behalf and may also process it outside the EU, including in the United States; Google is covered by the EU-US Data Privacy Framework.",
+          "Changing your choice: through ‘Cookie settings’ at the bottom of every page you can change your choice or withdraw your consent at any time. If you withdraw your consent, we remove the Google Analytics cookies from your browser."
         ],
         "list": []
       },
@@ -537,8 +540,29 @@
       }
     ]
   },
+  "cookies": {
+    "title": "Cookies on this website",
+    "text": "We use necessary cookies to make the website work. With your consent, we also measure how the website is used, with Google Analytics. You can change your choice at any time through Cookie settings at the bottom of the page.",
+    "privacyLink": "More in the privacy statement",
+    "acceptAll": "Accept all",
+    "rejectAll": "Necessary only",
+    "customize": "Let me choose",
+    "save": "Save choice",
+    "close": "Close",
+    "categoriesLabel": "Types of cookies",
+    "alwaysOn": "Always on",
+    "necessary": {
+      "title": "Necessary",
+      "text": "To keep you signed in and remember your cookie choice."
+    },
+    "analytics": {
+      "title": "Analytics",
+      "text": "Google Analytics shows us how the website is used, for example which pages are visited. Google processes this data on our behalf."
+    }
+  },
   "footer": {
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "cookieSettings": "Cookie settings"
   },
   "notFound": {
     "title": "Page not found",

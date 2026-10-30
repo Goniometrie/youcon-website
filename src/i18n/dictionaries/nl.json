@@ -438,7 +438,7 @@
   "privacy": {
     "title": "Privacyverklaring",
     "intro": "Welke gegevens YouCon via deze website verwerkt, waarom, en wat je rechten zijn.",
-    "updated": "Laatst bijgewerkt op 29 oktober 2026.",
+    "updated": "Laatst bijgewerkt op 30 oktober 2026.",
     "sections": [
       {
         "title": "Wie zijn wij",
@@ -484,7 +484,8 @@
       {
         "title": "Grondslag",
         "text": [
-          "We verwerken je gegevens omdat dat nodig is voor je account en je inschrijvingen: daar vraag je ons om als je een account aanmaakt of je inschrijft (uitvoering van een overeenkomst)."
+          "We verwerken je gegevens omdat dat nodig is voor je account en je inschrijvingen: daar vraag je ons om als je een account aanmaakt of je inschrijft (uitvoering van een overeenkomst).",
+          "Voor analytische cookies is de grondslag je toestemming. Die vragen we vooraf en je kunt hem altijd intrekken."
         ],
         "list": []
       },
@@ -503,7 +504,7 @@
         "list": [
           "Supabase: database en inloggen. De gegevens staan op servers in Frankfurt (Duitsland);",
           "Vercel: hosting van de website;",
-          "Google: alleen als je kiest voor inloggen met Google."
+          "Google: als je kiest voor inloggen met Google, en voor Google Analytics als je toestemming geeft voor analytische cookies."
         ]
       },
       {
@@ -516,7 +517,9 @@
       {
         "title": "Cookies",
         "text": [
-          "We gebruiken alleen cookies die nodig zijn om je ingelogd te houden. We gebruiken geen cookies om je te volgen of om bezoek te meten."
+          "Noodzakelijke cookies: log je in, dan houden cookies van Supabase je ingelogd. Je keuze over cookies bewaren we 12 maanden in de cookie youcon_consent. Voor deze cookies vragen we geen toestemming.",
+          "Analytische cookies: alleen als je daar toestemming voor geeft, gebruiken we Google Analytics om te meten hoe de website wordt gebruikt, bijvoorbeeld welke pagina's worden bezocht. Google Analytics zet daarvoor de cookies _ga en _ga_… (tot 2 jaar). Zonder toestemming laden we Google Analytics niet. Google verwerkt deze gegevens in onze opdracht en kan ze ook buiten de EU verwerken, onder meer in de Verenigde Staten; Google valt onder het EU-VS Data Privacy Framework.",
+          "Je keuze wijzigen: via ‘Cookie-instellingen’ onderaan elke pagina kun je je keuze altijd wijzigen of je toestemming intrekken. Trek je je toestemming in, dan verwijderen we de cookies van Google Analytics uit je browser."
         ],
         "list": []
       },
@@ -537,8 +540,29 @@
       }
     ]
   },
+  "cookies": {
+    "title": "Cookies op deze website",
+    "text": "We gebruiken noodzakelijke cookies om de website te laten werken. Met je toestemming meten we ook hoe de website wordt gebruikt, met Google Analytics. Je kunt je keuze altijd wijzigen via Cookie-instellingen onderaan de pagina.",
+    "privacyLink": "Meer in de privacyverklaring",
+    "acceptAll": "Alles accepteren",
+    "rejectAll": "Alleen noodzakelijk",
+    "customize": "Zelf kiezen",
+    "save": "Keuze opslaan",
+    "close": "Sluiten",
+    "categoriesLabel": "Soorten cookies",
+    "alwaysOn": "Altijd aan",
+    "necessary": {
+      "title": "Noodzakelijk",
+      "text": "Om je ingelogd te houden en je cookiekeuze te onthouden."
+    },
+    "analytics": {
+      "title": "Analytisch",
+      "text": "Google Analytics laat ons zien hoe de website wordt gebruikt, bijvoorbeeld welke pagina's worden bezocht. Google verwerkt die gegevens in onze opdracht."
+    }
+  },
   "footer": {
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "cookieSettings": "Cookie-instellingen"
   },
   "notFound": {
     "title": "Pagina niet gevonden",

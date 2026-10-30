@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
+import { CookieConsent } from "@/components/cookie-consent";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { locales } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { ogLocales } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { routes, site } from "@/lib/site";
 import "../globals.css";
 
 // Huisletter van de huidige youcon.nu.
@@ -37,7 +38,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
-  const locale = await getLocale();
+  const [dict, locale] = await Promise.all([getDictionary(), getLocale()]);
 
   return (
     <html
@@ -45,6 +46,8 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
       className={`${openSans.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
+        {/* Vooraan, zodat de banner als eerste met het toetsenbord bereikbaar is. */}
+        <CookieConsent t={dict.cookies} privacyHref={`/${locale}${routes.privacy}`} />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
