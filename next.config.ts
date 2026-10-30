@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { legacyRedirects } from "./src/lib/legacy-redirects";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 
@@ -11,6 +12,8 @@ const nextConfig: NextConfig = {
       : [],
   },
   partialPrefetching: true,
+  // Old youcon.nu URLs; these run before the proxy.
+  redirects: async () => legacyRedirects,
   turbopack: {
     rules: {
       "*.css": {
