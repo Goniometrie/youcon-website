@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { AgendaRow, FeaturedActivity } from "@/components/agenda";
 import { buttonClass } from "@/components/button";
-import { NewsletterBand } from "@/components/newsletter-band";
+import { FollowBand } from "@/components/follow-band";
 import { SectionTitle } from "@/components/page-header";
 import { PhotoMosaic } from "@/components/photo-mosaic";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
@@ -84,7 +84,7 @@ export default async function HomePage() {
         <PhotoMosaic className="min-w-0 flex-[1_1_460px]" />
       </section>
 
-      <NewsletterBand dict={dict.home.newsletter} />
+      <FollowBand dict={dict.home.follow} locale={locale} />
     </>
   );
 }

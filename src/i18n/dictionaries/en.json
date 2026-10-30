@@ -36,13 +36,11 @@
       "text": "YouCon brings students and young structural engineers together. You learn from peers, get a look behind the scenes at remarkable construction projects and build a network that lasts your whole career.",
       "board": "Meet the board"
     },
-    "newsletter": {
+    "follow": {
       "title": "Never miss a site visit",
-      "text": "New activities often fill up fast. With the newsletter, they land in your inbox first.",
-      "email": "Email address",
-      "placeholder": "name@example.com",
-      "submit": "Sign up",
-      "comingSoon": "Newsletter sign-up is coming soon."
+      "text": "New activities often fill up fast. Become a member for free to sign up, and follow YouCon on LinkedIn to be the first to see what's coming.",
+      "join": "Become a member for free",
+      "linkedin": "Follow us on LinkedIn"
     }
   },
   "association": {
