@@ -92,13 +92,17 @@ Tip: de kopieerknop in het Supabase-dashboard werkt niet in elke ingebouwde brow
 - [x] Een pull request van Goniometrie krijgt een preview (getest met #14 op 29 oktober 2026): met een openbare repo blokkeert Hobby commits van collaborators niet. Mocht dat ooit veranderen ("Hobby teams do not support collaboration"), dan is upgraden naar Pro de oplossing (Settings → Billing).
 - Previews zijn standaard afgeschermd met Vercel Authentication: alleen wie als `stichting-youcon` bij Vercel is ingelogd kan ze openen. Openbaar maken kan via Settings → Deployment Protection.
 
-**6. Domein** (later, als de nieuwe site af is)
+**6. Domein** (issue #25; volledig stappenplan en huidige DNS in [`dns-youcon-nu.md`](dns-youcon-nu.md))
 
-- [ ] Nagaan bij welke registrar youcon.nu staat (zie `beheer.md`); let op dat de e-mail van info@youcon.nu blijft werken.
-- [ ] Domein toevoegen in Vercel (Settings → Domains) en de DNS-records zetten die Vercel aangeeft.
-- [ ] Site URL in Supabase op `https://youcon.nu`.
+- [x] Registrar nagegaan (30 oktober 2026): Key-Systems, DNS bij Leaseweb, vermoedelijk beheerd door CL Web. Verloopt 18 februari 2027.
+- [x] Huidige DNS-records vastgelegd, met wat moet blijven voor de mail van info@youcon.nu.
+- [ ] Inlog of contactpersoon voor het domein achterhalen en in de wachtwoordmanager zetten.
+- [ ] Domein toevoegen in Vercel (Settings → Domains): `youcon.nu`, met `www.youcon.nu` als doorverwijzing.
+- [ ] Alleen de A-records van `youcon.nu` en `www` vervangen door de records die Vercel aangeeft; mailrecords blijven staan.
+- [ ] Records voor Resend erbij (#16).
+- [ ] Site URL in Supabase op `https://youcon.nu`; JavaScript origin in Google Cloud controleren.
 
 **7. Oude project opruimen** (zodra het YouCon-project werkt)
 
-- [ ] Verwijder `youcon-website` uit "Tom's projects" (Settings → General → Delete Project), anders bouwen beide projecten elke commit.
+- [x] `youcon-website` uit "Tom's projects" is weg (30 oktober 2026 niet meer gevonden).
 - [ ] Haal de oude preview-URL's van "Tom's projects" weg uit de redirect URL's in Supabase.

@@ -17,7 +17,7 @@ De formulieren verraden niet welke e-mailadressen al een account hebben: bij een
 
 De ingebouwde mailserver van Supabase mailt **alleen naar leden van het Supabase-team** en maar een paar keer per uur. Voor echte leden is een eigen SMTP-dienst nodig. Advies: [Resend](https://resend.com) (gratis tot 3000 mails per maand, 100 per dag).
 
-1. Maak een Resend-account met `info@youcon.nu` en voeg het domein `youcon.nu` toe. Zet de DNS-records die Resend geeft (SPF/DKIM) bij de domeinbeheerder van youcon.nu.
+1. Maak een Resend-account met `info@youcon.nu` en voeg het domein `youcon.nu` toe. Zet de DNS-records die Resend geeft (SPF/DKIM) bij de domeinbeheerder van youcon.nu (zie `dns-youcon-nu.md`, stap 4).
 2. Maak een API-key met alleen "Sending access".
 3. Supabase-dashboard → **Authentication → Emails → SMTP Settings:** zet "Enable custom SMTP" aan.
    - Sender email `noreply@youcon.nu`, sender name `YouCon`
