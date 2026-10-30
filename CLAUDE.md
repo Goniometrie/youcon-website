@@ -43,6 +43,7 @@ Nieuwe website voor YouCon, de studievereniging voor jonge constructeurs. Vervan
 - Nederlands is de standaardtaal.
 - Elke Server Action die data wijzigt roept eerst `requireStaff()` aan en daarna `updateTag("activities")`. RLS in de database is de echte beveiliging; UI-checks zijn extra.
 - Sessie lezen (cookies) alleen achter een `<Suspense>`-grens of in een Server Action (`cacheComponents`).
+- Tracking en andere niet-noodzakelijke cookies alleen na toestemming: voeg een categorie toe in `src/lib/consent.ts` en laad de dienst in `src/components/cookie-consent.tsx` (zoals GA4 via `NEXT_PUBLIC_GA_MEASUREMENT_ID`). De keuze staat in de cookie `youcon_consent` en wordt alleen in de browser gelezen. Hoog `VERSION` op als er een dienst bijkomt, dan vraagt de banner opnieuw.
 
 ## Roadmap
 

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { CookieSettingsButton } from "@/components/cookie-consent";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
+import { activeCategories } from "@/lib/consent";
 import { routes, site } from "@/lib/site";
 import icon from "../../public/brand/yc-icon.jpg";
 
@@ -30,6 +32,11 @@ export async function SiteFooter() {
               {t.privacy}
             </Link>
           </li>
+          {activeCategories.length > 0 && (
+            <li>
+              <CookieSettingsButton label={t.cookieSettings} />
+            </li>
+          )}
         </ul>
       </div>
     </footer>
