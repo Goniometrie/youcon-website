@@ -207,8 +207,31 @@
   },
   "partners": {
     "title": "Study and professional associations",
-    "intro": "YouCon works together with study and professional associations in construction.",
-    "comingSoon": "Overview coming soon."
+    "intro": "Besides YouCon, there are more associations for structural engineers, each with its own field. Here they are, grouped by material or topic.",
+    "lead": "Some are very practical, others more theoretical. Most of them are always looking for new members or committee members: a good way to dig deeper into a field and meet engineers from outside your own company.",
+    "categories": {
+      "safety": "Structural safety",
+      "concrete": "Concrete",
+      "steel": "Steel",
+      "timber": "Timber",
+      "international": "International"
+    },
+    "descriptions": {
+      "vnconstructeurs": "Association that aims to safeguard and further improve the structural quality and safety of buildings and structures.",
+      "kpcv": "Online knowledge base on structural safety, organised by project phase. The digital successor to the Compendium Aanpak Constructieve Veiligheid.",
+      "betonvereniging": "Industry association for knowledge sharing, networking and training in concrete construction.",
+      "stufib": "Study association for structural concrete. Research and lectures for and by its members, from tunnels to high-rise.",
+      "stubeco": "Study association for the execution of concrete structures.",
+      "stutech": "Study association for concrete technology.",
+      "bouwenMetStaal": "Knowledge organisation for steel in construction, infrastructure and offshore. Publishes the journal Bouwen met Staal and organises events such as the Staalbouwdag and the studentenSTAALprijs.",
+      "houtconstructeurs": "Association for knowledge sharing, networking and training in timber structures.",
+      "iabse": "International association for sharing knowledge and practical experience in structural design."
+    },
+    "stufibOfferLabel": "For YouCon members",
+    "stufibOffer": "One year of free access to Stufib's lectures. Ideal when your YouCon membership ends because you turn 35, but you are welcome sooner too.",
+    "newTab": "opens in a new tab",
+    "missingTitle": "Missing an association?",
+    "missingText": "Know a study or professional association that should be on this list, or spotted a mistake? Let us know."
   },
   "contact": {
     "title": "Contact",
