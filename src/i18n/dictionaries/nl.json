@@ -36,13 +36,11 @@
       "text": "YouCon brengt studenten en jonge constructeurs samen. Je leert van vakgenoten, kijkt mee op bijzondere bouwprojecten en bouwt een netwerk op dat je hele loopbaan meegaat.",
       "board": "Maak kennis met het bestuur"
     },
-    "newsletter": {
+    "follow": {
       "title": "Mis geen excursie meer",
-      "text": "Nieuwe activiteiten staan vaak snel vol. Met de nieuwsbrief krijg je ze als eerste in je inbox.",
-      "email": "E-mailadres",
-      "placeholder": "naam@voorbeeld.nl",
-      "submit": "Aanmelden",
-      "comingSoon": "Aanmelden voor de nieuwsbrief komt binnenkort."
+      "text": "Nieuwe activiteiten staan vaak snel vol. Word gratis lid om je in te schrijven, en volg YouCon op LinkedIn om als eerste te zien wat er aankomt.",
+      "join": "Word gratis lid",
+      "linkedin": "Volg ons op LinkedIn"
     }
   },
   "association": {
