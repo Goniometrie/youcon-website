@@ -16,7 +16,7 @@ Opgezocht op 30 oktober 2026 (WHOIS en `dig`):
 | Nameservers | `ns1.leaseweb.nl`, `ns5.leaseweb.nl`, `ns4.leaseweb.net` (Leaseweb) |
 | Oude website en mailserver | `136.144.169.242` = `server5.clweb.nl`, een server van **CL Web** (webbureau, clweb.nl) bij TransIP |
 
-CL Web zet zijn eigen domein clweb.nl ook op dezelfde Leaseweb-nameservers. Hoogstwaarschijnlijk regelt **CL Web** dus de registratie (via Key-Systems), de DNS (bij Leaseweb) en de hosting van de oude WordPress-site. Wie bij YouCon het contact met CL Web heeft, en of er een eigen inlog voor YouCon bestaat, is nog **onbekend**.
+**Bevestigd door het bestuur (30 oktober 2026):** CL Web beheert de DNS, YouCon niet. YouCon heeft geen eigen inlog; wijzigingen gaan via een verzoek aan CL Web. Het domein gaat over ongeveer twee weken om (verwacht rond half november 2026); tot dan blijft de oude site op youcon.nu.
 
 ## Huidige records
 
@@ -55,18 +55,19 @@ for t in A AAAA MX TXT; do dig +noall +answer @ns1.leaseweb.nl youcon.nu $t; don
 
 De site wordt `https://youcon.nu` (zonder www, zie `site.url` in `src/lib/site.ts`); `www.youcon.nu` stuurt door naar youcon.nu.
 
-### Stap 0. Toegang regelen (bestuur)
+### Stap 0. Verzoek aan CL Web voorbereiden (bestuur)
 
-- [ ] Achterhalen wie bij YouCon contact heeft met CL Web en of er een contract of factuur voor domein en hosting is.
-- [ ] Bij CL Web navragen: wie staat als houder (`arebet3360-00001`) geregistreerd, kan YouCon zelf inloggen om DNS te beheren, en zo niet, of CL Web de records hieronder wil zetten.
-- [ ] Inlog (of contactpersoon en klantnummer) in de wachtwoordmanager van het bestuur zetten en in `beheer.md` noemen.
+CL Web beheert de DNS; YouCon heeft geen eigen inlog. Alle wijzigingen gaan dus in één verzoek naar CL Web. Daarvoor zijn eerst de exacte waarden van Vercel en Resend nodig:
 
-Zonder deze toegang kan niemand de DNS wijzigen. Twee routes:
+- [ ] Stap 1 (domein in Vercel) en het Resend-deel van stap 4 doen: dit kan nu al en verandert niets aan de oude site.
+- [ ] Contactpersoon en klantnummer bij CL Web in de wachtwoordmanager van het bestuur zetten en in `beheer.md` noemen.
+- [ ] Verzoek aan CL Web sturen, met daarin:
+  - het moment van omzetten (de oude site is daarna niet meer bereikbaar op youcon.nu);
+  - de twee records uit stap 2 (website) en de records uit stap 4 (Resend), met de exacte waarden;
+  - uitdrukkelijk: **alle andere records ongewijzigd laten**, vooral MX, SPF, `mail`, `smtp`, `pop` en `google-site-verification` (mail van info@youcon.nu), en de nameservers en DNSSEC niet aanraken;
+  - de vraag wie als houder van het domein (`arebet3360-00001`) staat geregistreerd en of er op de oude server nog mailboxen voor youcon.nu zijn (zie [Oude mailserver](#oude-mailserver)).
 
-- **Snel:** CL Web zet de records uit stap 2 en 4 voor ons. Mail ze de tabellen uit dit document.
-- **Duurzaam:** het domein verhuist naar een registrar waar info@youcon.nu zelf eigenaar is (bijvoorbeeld TransIP of een andere Nederlandse registrar die .nu aanbiedt). Daarvoor is de verhuiscode (auth-code) van CL Web nodig, en mogelijk moet de status `serverTransferProhibited` eerst worden opgeheven. Doe dit vóór **18 februari 2027**, anders verlengt CL Web het domein nog een jaar. Zet bij de nieuwe registrar eerst exact dezelfde records (tabel hierboven, plus die uit stap 2), denk aan DNSSEC, en pas daarna de nameservers aan.
-
-Advies: eerst de snelle route (de site en Resend kunnen dan meteen live), daarna rustig de verhuizing naar een eigen registrar.
+Op termijn: het domein verhuizen naar een registrar waar info@youcon.nu zelf eigenaar is (bijvoorbeeld TransIP of een andere Nederlandse registrar die .nu aanbiedt). Daarvoor is de verhuiscode (auth-code) van CL Web nodig, en mogelijk moet de status `serverTransferProhibited` eerst worden opgeheven. Doe dit vóór **18 februari 2027**, anders wordt het domein nog een jaar verlengd. Zet bij de nieuwe registrar eerst exact dezelfde records, denk aan DNSSEC, en pas daarna de nameservers aan. Dit hoeft niet voor de verhuizing van de site.
 
 ### Stap 1. Domein toevoegen in Vercel (kan nu al)
 
@@ -77,7 +78,7 @@ Dit verandert niets aan de oude site; Vercel laat daarna zien welke records nodi
 3. Vercel toont "Invalid Configuration" met de records die nodig zijn. Neem de waarden **exact** over in stap 2: Vercel geeft sinds 2025 per project een eigen IP-adres en CNAME (bijvoorbeeld `216.198.79.1` en `…vercel-dns-017.com`). Het oudere `76.76.21.21` en `cname.vercel-dns.com` werken ook nog.
 4. Vraagt Vercel om een TXT-record op `_vercel.youcon.nu` (als het domein al ergens anders bij Vercel bekend is), neem dat ook mee.
 
-### Stap 2. Records voor de website (bij Leaseweb, via CL Web)
+### Stap 2. Records voor de website (CL Web zet ze)
 
 Vervang alleen deze twee records; laat al het andere staan.
 
@@ -99,7 +100,7 @@ Kies hiervoor een rustig moment: zodra het A-record om is, is de oude WordPress-
 
 ### Stap 4. Records voor Resend (#16)
 
-Kan tegelijk met stap 2 in één verzoek aan CL Web; deze records botsen niet met de bestaande. Zie `email-login.md` voor de rest van de instelling.
+Gaat mee in hetzelfde verzoek aan CL Web; deze records botsen niet met de bestaande. Ze staan los van de website, dus CL Web kan ze ook al eerder zetten als #16 niet op de verhuizing hoeft te wachten. Zie `email-login.md` voor de rest van de instelling.
 
 1. Maak een Resend-account met info@youcon.nu, voeg het domein `youcon.nu` toe (regio EU) en neem de records over die Resend toont. Meestal zijn dat:
 

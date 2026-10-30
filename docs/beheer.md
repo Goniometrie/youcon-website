@@ -12,7 +12,7 @@ Bewaar de wachtwoorden van info@youcon.nu en het GitHub-account `stichting-youco
 | Supabase, organisatie "Goniometrie", project `youcon-website` | Database, accounts, foto's | info@youcon.nu (inlog via GitHub `stichting-youcon`) + tomdiks96@gmail.com (beide Owner) | klaar; MFA nog aanzetten |
 | GitHub, `stichting-youcon/youcon-website` (openbaar) | Code | `stichting-youcon` (info@youcon.nu); Goniometrie is collaborator met schrijfrechten | klaar (overgezet op 29 oktober 2026) |
 | Vercel, gratis Hobby-account | Hosting | info@youcon.nu (inlog via GitHub `stichting-youcon`) | project `youcon-website` draait op https://youcon-website-chi.vercel.app (29 oktober 2026); zie `vercel-keuze.md` voor wat nog open staat |
-| Domein youcon.nu | Domeinnaam en e-mail | onbekend: registrar Key-Systems, DNS bij Leaseweb, vermoedelijk geregeld door webbureau CL Web (dat ook de oude site host). YouCon heeft nog geen inlog | verloopt **18 februari 2027**; DNS vastgelegd en stappenplan in `dns-youcon-nu.md` (30 oktober 2026) |
+| Domein youcon.nu | Domeinnaam en e-mail | webbureau CL Web beheert registratie (Key-Systems) en DNS (Leaseweb); YouCon heeft geen eigen inlog, wijzigingen via een verzoek aan CL Web | omzetten naar Vercel verwacht rond half november 2026; verloopt **18 februari 2027**. DNS vastgelegd en stappenplan in `dns-youcon-nu.md` |
 | E-mail info@youcon.nu | Mail van de vereniging | onbekend wie Google Workspace beheert | MX wijst naar Google (`smtp.google.com`); records blijven staan bij de verhuizing |
 
 ## Nog te doen
@@ -20,7 +20,7 @@ Bewaar de wachtwoorden van info@youcon.nu en het GitHub-account `stichting-youco
 1. **Supabase:** zet voor beide accounts tweestapsverificatie (MFA) aan. Overweeg de organisatie te hernoemen van "Goniometrie" naar "YouCon" (Organization Settings).
 2. **GitHub:** zet tweestapsverificatie aan voor `stichting-youcon` als dat nog niet zo is. Geen GitHub-organisatie: Vercel Hobby kan geen privérepo's van een organisatie deployen.
 3. **Vercel:** het bestuur koos een gratis account (Hobby) op naam van YouCon. Volg het stappenplan in `vercel-keuze.md`. Het oude project in "Tom's projects" is niet meer te vinden (30 oktober 2026), dus lijkt verwijderd.
-4. **Domein youcon.nu:** achterhaal wie bij YouCon contact heeft met CL Web (clweb.nl) en vraag daar wie de houder van het domein is en hoe YouCon zelf de DNS kan beheren. Zet de inlog of contactpersoon in de wachtwoordmanager. Daarna het stappenplan in `dns-youcon-nu.md`. Op termijn het domein verhuizen naar een registrar waar info@youcon.nu eigenaar is, vóór de verlenging op 18 februari 2027.
+4. **Domein youcon.nu:** CL Web beheert de DNS. Zet contactpersoon en klantnummer bij CL Web in de wachtwoordmanager en stuur CL Web één verzoek met de records uit `dns-youcon-nu.md` (stap 0). Vraag daarbij wie de houder van het domein is. Op termijn het domein verhuizen naar een registrar waar info@youcon.nu eigenaar is, vóór de verlenging op 18 februari 2027.
 5. **Google Workspace:** nagaan wie beheerder is van de Google Workspace van youcon.nu (de mailbox info@youcon.nu) en die inlog ook in de wachtwoordmanager zetten.
 
 ## Bij een bestuurswissel

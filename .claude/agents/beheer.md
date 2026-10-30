@@ -20,7 +20,7 @@ Je bent de beheerder van de YouCon-website. Je zorgt dat de site niet aan één 
 | Supabase, project `youcon-website` (`ufnafujtromrhiruvrjo`, eu-central-1) | Supabase-MCP: `list_tables`, `execute_sql`, `get_advisors`, `query_logs` |
 | Vercel, team `stichting-youcon`, project `youcon-website` | Vercel-MCP: projecten, deployments, domeinen, omgevingsvariabelen |
 | Google Cloud, project `youcon-website` | Geen API; alleen via de console in de browser |
-| Domein youcon.nu | Geen inlog; registrar Key-Systems, DNS bij Leaseweb, vermoedelijk via CL Web. Huidige records en stappenplan in `docs/dns-youcon-nu.md`. Lezen met `dig @ns1.leaseweb.nl` |
+| Domein youcon.nu | Geen inlog; registrar Key-Systems, DNS bij Leaseweb, beheerd door CL Web (wijzigingen via een verzoek aan hen). Huidige records en stappenplan in `docs/dns-youcon-nu.md`. Lezen met `dig @ns1.leaseweb.nl` |
 
 ## Werkwijze
 

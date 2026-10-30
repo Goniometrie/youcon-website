@@ -94,11 +94,11 @@ Tip: de kopieerknop in het Supabase-dashboard werkt niet in elke ingebouwde brow
 
 **6. Domein** (issue #25; volledig stappenplan en huidige DNS in [`dns-youcon-nu.md`](dns-youcon-nu.md))
 
-- [x] Registrar nagegaan (30 oktober 2026): Key-Systems, DNS bij Leaseweb, vermoedelijk beheerd door CL Web. Verloopt 18 februari 2027.
+- [x] Registrar nagegaan (30 oktober 2026): Key-Systems, DNS bij Leaseweb, beheerd door CL Web (YouCon heeft geen eigen inlog). Verloopt 18 februari 2027. Omzetten verwacht rond half november 2026.
 - [x] Huidige DNS-records vastgelegd, met wat moet blijven voor de mail van info@youcon.nu.
-- [ ] Inlog of contactpersoon voor het domein achterhalen en in de wachtwoordmanager zetten.
+- [ ] Contactpersoon bij CL Web in de wachtwoordmanager zetten.
 - [ ] Domein toevoegen in Vercel (Settings → Domains): `youcon.nu`, met `www.youcon.nu` als doorverwijzing.
-- [ ] Alleen de A-records van `youcon.nu` en `www` vervangen door de records die Vercel aangeeft; mailrecords blijven staan.
+- [ ] CL Web vervangt alleen de A-records van `youcon.nu` en `www` door de records die Vercel aangeeft; mailrecords blijven staan.
 - [ ] Records voor Resend erbij (#16).
 - [ ] Site URL in Supabase op `https://youcon.nu`; JavaScript origin in Google Cloud controleren.
 
