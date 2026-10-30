@@ -61,7 +61,7 @@ Alleen de eigenaar van een repo op een persoonlijk GitHub-account kan die aan Ve
 - [x] Repo openbaar gemaakt (29 oktober 2026).
 - [x] Repo overgezet naar `stichting-youcon` (29 oktober 2026).
 - [x] Goniometrie is collaborator met schrijfrechten.
-- [ ] Iedereen met een lokale kopie werkt de remote bij: `git remote set-url origin git@github.com:stichting-youcon/youcon-website.git` (de oude URL stuurt GitHub wel door).
+- [x] Iedereen met een lokale kopie werkt de remote bij: `git remote set-url origin git@github.com:stichting-youcon/youcon-website.git` (de oude URL stuurt GitHub wel door). Bij de ontwikkelaar gedaan (30 oktober 2026); wie later een kopie maakt, krijgt de nieuwe URL vanzelf.
 
 Een collaborator op een persoonlijke repo kan pushen, branches maken, pull requests openen, reviewen en mergen, en issues beheren. Alleen de eigenaar kan instellingen wijzigen (zoals branchbeveiliging en secrets), collaborators toevoegen, en de repo overzetten of verwijderen.
 
