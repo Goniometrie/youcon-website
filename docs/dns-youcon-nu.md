@@ -59,7 +59,8 @@ De site wordt `https://youcon.nu` (zonder www, zie `site.url` in `src/lib/site.t
 
 CL Web beheert de DNS; YouCon heeft geen eigen inlog. Alle wijzigingen gaan dus in één verzoek naar CL Web. Daarvoor zijn eerst de exacte waarden van Vercel en Resend nodig:
 
-- [ ] Stap 1 (domein in Vercel) en het Resend-deel van stap 4 doen: dit kan nu al en verandert niets aan de oude site.
+- [x] Stap 1: domein in Vercel toegevoegd (30 oktober 2026).
+- [ ] Het Resend-deel van stap 4: kan nu al en verandert niets aan de oude site.
 - [ ] Contactpersoon en klantnummer bij CL Web in de wachtwoordmanager van het bestuur zetten en in `beheer.md` noemen.
 - [ ] Verzoek aan CL Web sturen, met daarin:
   - het moment van omzetten (de oude site is daarna niet meer bereikbaar op youcon.nu);
@@ -69,25 +70,25 @@ CL Web beheert de DNS; YouCon heeft geen eigen inlog. Alle wijzigingen gaan dus 
 
 Op termijn: het domein verhuizen naar een registrar waar info@youcon.nu zelf eigenaar is (bijvoorbeeld TransIP of een andere Nederlandse registrar die .nu aanbiedt). Daarvoor is de verhuiscode (auth-code) van CL Web nodig, en mogelijk moet de status `serverTransferProhibited` eerst worden opgeheven. Doe dit vóór **18 februari 2027**, anders wordt het domein nog een jaar verlengd. Zet bij de nieuwe registrar eerst exact dezelfde records, denk aan DNSSEC, en pas daarna de nameservers aan. Dit hoeft niet voor de verhuizing van de site.
 
-### Stap 1. Domein toevoegen in Vercel (kan nu al)
+### Stap 1. Domein toevoegen in Vercel (klaar, 30 oktober 2026)
 
-Dit verandert niets aan de oude site; Vercel laat daarna zien welke records nodig zijn.
+- [x] In Vercel (`stichting-youcon` → project `youcon-website` → **Settings → Domains**) staan nu:
+  - `youcon.nu`, gekoppeld aan Production;
+  - `www.youcon.nu`, met een permanente doorverwijzing (308) naar `youcon.nu`.
 
-1. Log in bij Vercel als `stichting-youcon` → project `youcon-website` → **Settings → Domains → Add Domain**.
-2. Voeg `youcon.nu` toe. Vercel stelt standaard voor om youcon.nu door te sturen naar www; kies in plaats daarvan de optie waarbij **`www.youcon.nu` doorstuurt naar `youcon.nu`**. Vercel voegt `www.youcon.nu` dan zelf toe als doorverwijzing.
-3. Vercel toont "Invalid Configuration" met de records die nodig zijn. Neem de waarden **exact** over in stap 2: Vercel geeft sinds 2025 per project een eigen IP-adres en CNAME (bijvoorbeeld `216.198.79.1` en `…vercel-dns-017.com`). Het oudere `76.76.21.21` en `cname.vercel-dns.com` werken ook nog.
-4. Vraagt Vercel om een TXT-record op `_vercel.youcon.nu` (als het domein al ergens anders bij Vercel bekend is), neem dat ook mee.
+  Bij het toevoegen stelt Vercel standaard voor om youcon.nu naar www door te sturen ("Redirect apex domains to www"); dat vinkje is bewust uitgezet, omdat de site op youcon.nu zelf staat.
+- Beide staan op "Invalid Configuration" tot CL Web de records uit stap 2 zet. Dat is normaal en raakt de oude site niet. Een TXT-record om het domein te verifiëren was niet nodig.
 
 ### Stap 2. Records voor de website (CL Web zet ze)
 
-Vervang alleen deze twee records; laat al het andere staan.
+Vervang alleen deze twee records; laat al het andere staan. Waarden zoals Vercel ze op 30 oktober 2026 opgaf:
 
 | Naam | Oud | Nieuw |
 |---|---|---|
-| `youcon.nu` | A `136.144.169.242` | A `<IP-adres uit Vercel>` |
-| `www.youcon.nu` | A `136.144.169.242` | CNAME `<CNAME uit Vercel>` (eerst het A-record verwijderen; een naam kan niet allebei hebben) |
+| `youcon.nu` | A `136.144.169.242` | A `216.198.79.1` |
+| `www.youcon.nu` | A `136.144.169.242` | CNAME `972a407821e68577.vercel-dns-017.com.` (eerst het A-record verwijderen; een naam kan niet allebei hebben) |
 
-Eventueel `_vercel.youcon.nu` TXT uit stap 1.4.
+Vercel noemt `76.76.21.21` en `cname.vercel-dns.com` als oudere waarden die ook blijven werken; gebruik bij voorkeur die hierboven. Kijk vlak voor het verzoek nog even in Vercel (Settings → Domains → View DNS configuration) of de waarden niet veranderd zijn.
 
 Kies hiervoor een rustig moment: zodra het A-record om is, is de oude WordPress-site niet meer bereikbaar op youcon.nu. De redirects van oude URL's (#24) zitten al in de nieuwe site.
 

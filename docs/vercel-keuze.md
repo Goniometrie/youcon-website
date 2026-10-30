@@ -97,7 +97,7 @@ Tip: de kopieerknop in het Supabase-dashboard werkt niet in elke ingebouwde brow
 - [x] Registrar nagegaan (30 oktober 2026): Key-Systems, DNS bij Leaseweb, beheerd door CL Web (YouCon heeft geen eigen inlog). Verloopt 18 februari 2027. Omzetten verwacht rond half november 2026.
 - [x] Huidige DNS-records vastgelegd, met wat moet blijven voor de mail van info@youcon.nu.
 - [ ] Contactpersoon bij CL Web in de wachtwoordmanager zetten.
-- [ ] Domein toevoegen in Vercel (Settings → Domains): `youcon.nu`, met `www.youcon.nu` als doorverwijzing.
+- [x] Domein toegevoegd in Vercel (30 oktober 2026): `youcon.nu` op Production, `www.youcon.nu` met 308 naar `youcon.nu`. Records voor CL Web staan in `dns-youcon-nu.md`, stap 2.
 - [ ] CL Web vervangt alleen de A-records van `youcon.nu` en `www` door de records die Vercel aangeeft; mailrecords blijven staan.
 - [ ] Records voor Resend erbij (#16).
 - [ ] Site URL in Supabase op `https://youcon.nu`; JavaScript origin in Google Cloud controleren.
