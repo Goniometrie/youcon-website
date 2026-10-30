@@ -39,6 +39,7 @@ Nieuwe website voor YouCon, de studievereniging voor jonge constructeurs. Vervan
 - Alle zichtbare tekst gaat via de dictionaries. Voeg elke nieuwe sleutel toe aan **zowel** `nl.json` als `en.json`; het type `Dictionary` komt uit `nl.json`.
 - URL-slugs zijn Nederlands en voor beide talen gelijk (`/en/activiteiten`). Routes staan in `src/lib/site.ts`.
 - Links altijd met taalprefix: `` `/${locale}${routes.x}` ``.
+- Nieuwe openbare pagina: zet `alternates: await alternates(routes.x)` in `generateMetadata` (canonical + hreflang) en voeg de route toe aan `publicRoutes` in `src/lib/seo.ts` (sitemap). Privépagina's krijgen `robots: { index: false }`. Absolute URL's gaan via `site.url`, nooit via de host van het verzoek.
 - Nederlands is de standaardtaal.
 - Elke Server Action die data wijzigt roept eerst `requireStaff()` aan en daarna `updateTag("activities")`. RLS in de database is de echte beveiliging; UI-checks zijn extra.
 - Sessie lezen (cookies) alleen achter een `<Suspense>`-grens of in een Server Action (`cacheComponents`).

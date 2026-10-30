@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { PageHeader, Section } from "@/components/page-header";
 import { getDictionary } from "@/i18n/dictionaries";
+import { alternates } from "@/lib/seo";
+import { routes } from "@/lib/site";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return { title: (await getDictionary()).privacy.title };
+  return { title: (await getDictionary()).privacy.title, alternates: await alternates(routes.privacy) };
 }
 
 export default async function PrivacyPage() {

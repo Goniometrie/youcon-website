@@ -1,5 +1,7 @@
 export const site = {
   name: "YouCon",
+  /** Productie-URL: canonical, hreflang, sitemap en deelafbeeldingen, ook op previews. */
+  url: "https://youcon.nu",
   email: "info@youcon.nu",
   linkedin: "https://www.linkedin.com/company/66207220/",
 };

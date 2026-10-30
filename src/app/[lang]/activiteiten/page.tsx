@@ -3,9 +3,11 @@ import { ActivityCard } from "@/components/activity-card";
 import { PageHeader, Section } from "@/components/page-header";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { getActivities } from "@/lib/activities";
+import { alternates } from "@/lib/seo";
+import { routes } from "@/lib/site";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return { title: (await getDictionary()).activities.title };
+  return { title: (await getDictionary()).activities.title, alternates: await alternates(routes.activities) };
 }
 
 export default async function ActivitiesPage() {

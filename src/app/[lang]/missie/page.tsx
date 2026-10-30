@@ -3,11 +3,12 @@ import Link from "next/link";
 import { buttonClass } from "@/components/button";
 import { PageHeader, SectionTitle } from "@/components/page-header";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
+import { alternates } from "@/lib/seo";
 import { routes } from "@/lib/site";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = (await getDictionary()).mission;
-  return { title: t.title, description: t.intro };
+  return { title: t.title, description: t.intro, alternates: await alternates(routes.mission) };
 }
 
 export default async function MissionPage() {

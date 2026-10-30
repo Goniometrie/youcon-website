@@ -3,11 +3,12 @@ import { buttonClass } from "@/components/button";
 import { PageHeader, SectionTitle } from "@/components/page-header";
 import { getDictionary, type Dictionary } from "@/i18n/dictionaries";
 import { partnerCategories, partnerDomain, partners, type Partner } from "@/lib/partners";
-import { site } from "@/lib/site";
+import { alternates } from "@/lib/seo";
+import { routes, site } from "@/lib/site";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = (await getDictionary()).partners;
-  return { title: t.title, description: t.intro };
+  return { title: t.title, description: t.intro, alternates: await alternates(routes.partners) };
 }
 
 /** Kaart van één vereniging; de hele kaart linkt naar hun site. */
