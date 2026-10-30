@@ -26,3 +26,5 @@ Bewaar de wachtwoorden van info@youcon.nu en het GitHub-account `stichting-youco
 2. Voeg de nieuwe beheerder per dienst toe als extra beheerder.
 3. Haal de vertrekkende beheerder per dienst weg (Google Cloud → IAM, Supabase → Team, GitHub → People, Vercel → Members).
 4. Werk de tabel hierboven bij.
+5. Nieuwe bestuursleden maken zelf een account op `/lid-worden`; daarna zet de webbeheerder hun rol op `board` (Supabase → Table Editor → `profiles`). Zet de rol van vertrekkende bestuursleden terug op `member`.
+6. Geef nieuwe bestuursleden de [handleiding voor het bestuur](handleiding-bestuur.md): activiteit aanmaken, foto toevoegen, aanmeldingen bekijken en downloaden.
