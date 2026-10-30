@@ -60,7 +60,7 @@ De site wordt `https://youcon.nu` (zonder www, zie `site.url` in `src/lib/site.t
 CL Web beheert de DNS; YouCon heeft geen eigen inlog. Alle wijzigingen gaan dus in één verzoek naar CL Web. Daarvoor zijn eerst de exacte waarden van Vercel en Resend nodig:
 
 - [x] Stap 1: domein in Vercel toegevoegd (30 oktober 2026).
-- [ ] Het Resend-deel van stap 4: kan nu al en verandert niets aan de oude site.
+- [x] Stap 4: domein in Resend aangemaakt (30 oktober 2026).
 - [ ] Contactpersoon en klantnummer bij CL Web in de wachtwoordmanager van het bestuur zetten en in `beheer.md` noemen.
 - [ ] Verzoek aan CL Web sturen, met daarin:
   - het moment van omzetten (de oude site is daarna niet meer bereikbaar op youcon.nu);
@@ -103,16 +103,28 @@ Kies hiervoor een rustig moment: zodra het A-record om is, is de oude WordPress-
 
 Gaat mee in hetzelfde verzoek aan CL Web; deze records botsen niet met de bestaande. Ze staan los van de website, dus CL Web kan ze ook al eerder zetten als #16 niet op de verhuizing hoeft te wachten. Zie `email-login.md` voor de rest van de instelling.
 
-1. Maak een Resend-account met info@youcon.nu, voeg het domein `youcon.nu` toe (regio EU) en neem de records over die Resend toont. Meestal zijn dat:
+- [x] Resend-account (info@youcon.nu) en domein `youcon.nu` aangemaakt, regio Ireland (`eu-west-1`). Status: "Not Started" tot de records er staan.
 
-   | Naam | Type | Waarde |
-   |---|---|---|
-   | `resend._domainkey.youcon.nu` | TXT | DKIM-sleutel uit Resend (`p=…`) |
-   | `send.youcon.nu` | MX | `10 feedback-smtp.eu-west-1.amazonses.com` (exacte waarde uit Resend) |
-   | `send.youcon.nu` | TXT | `v=spf1 include:amazonses.com ~all` |
+Records zoals Resend ze op 30 oktober 2026 opgaf (Resend → **Domains → youcon.nu**):
 
-   Resend gebruikt het subdomein `send`, dus het SPF-record van youcon.nu zelf hoeft hiervoor niet te veranderen.
-2. Klik in Resend op **Verify**; daarna SMTP instellen in Supabase volgens `email-login.md`.
+| Naam | Type | Waarde | Waarvoor |
+|---|---|---|---|
+| `resend._domainkey.youcon.nu` | TXT | zie hieronder | DKIM: bewijst dat de mail echt van youcon.nu komt |
+| `send.youcon.nu` | CNAME | `send.forge.rmta.net` | SPF en bounces voor het verzenden |
+| `rsend.youcon.nu` | CNAME | `rsend-euw1.forge.rmta.net` | idem |
+| `_dmarc.youcon.nu` | TXT | `v=DMARC1; p=none;` | DMARC (optioneel, aangeraden; zie hieronder) |
+
+Waarde van het DKIM-record (één regel, zonder spaties; het is een openbare sleutel, dus geen geheim):
+
+```
+p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC947pM9GfuPPriUNQx8wCrfj0YaY5PckHBuQQwcFtNdMvmiw6cFtBpKXZfb+Txnq4NHz0pZ+POb4+dDqw369NG8EQ7RGQQH+Tqizp2ZOd/SjEnUpfCiBiY2yArfG1w2VxBxcq5csuEBSehEG42Oquopyi/dyqEl3SEACbygFx8VwIDAQAB
+```
+
+- Resend werkt met de subdomeinen `send` en `rsend`, dus het SPF-record van youcon.nu zelf hoeft hiervoor niet te veranderen, en de mail van info@youcon.nu merkt er niets van.
+- **DMARC** met `p=none` vraagt ontvangers niets te weigeren; het maakt bezorging wel betrouwbaarder (Gmail en Yahoo verwachten een DMARC-record). Gebruik dit record in plaats van het voorstel onder [Later aanzetten](#later-aanzetten).
+- Zet in Resend **niet** "Enable receiving" aan: dat vraagt een MX-record op youcon.nu, en dan komt de mail van info@youcon.nu niet meer bij Google aan.
+
+Daarna: in Resend op **Verify DNS records** klikken en SMTP instellen in Supabase volgens `email-login.md`.
 
 ### Stap 5. Supabase
 
@@ -156,4 +168,4 @@ Het tweede MX-record (`10 mail.youcon.nu`) wijst naar de server van CL Web. Als 
 ### Later aanzetten
 
 - **DKIM voor Google Workspace:** Google Admin → Apps → Google Workspace → Gmail → E-mail verifiëren; zet het record dat Google geeft in de DNS.
-- **DMARC:** na SPF en DKIM een TXT-record op `_dmarc.youcon.nu` met `v=DMARC1; p=none; rua=mailto:info@youcon.nu`; later eventueel strenger.
+- **DMARC:** het record `v=DMARC1; p=none;` gaat mee in het verzoek voor Resend (stap 4). Later eventueel strenger (`p=quarantine`), pas als SPF en DKIM voor Google Workspace en Resend allebei kloppen.
